@@ -107,21 +107,18 @@
 <br>
 
 <h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><ul>
-<li><p>문자열</p>
-</li>
-<li><p><code>&quot;</code>, <code>&#39;</code> 구분없이 사용</p>
-</li>
-<li><p><code>&quot;&quot;&quot;</code>, <code>&#39;&#39;&#39;</code> 세 개 사용으로 멀티라인 </p>
-</li>
-<li><p>escape string</p>
-<ul>
-<li><p><code>\n</code>: new line</p>
-</li>
-<li><p><code>\t</code>: tap</p>
-<p><code>s = &quot;AaBb ccc DD &quot;</code></p>
-</li>
+<li>문자열</li>
+<li><code>&quot;</code>, <code>&#39;</code> 구분없이 사용</li>
+<li><code>&quot;&quot;&quot;</code>, <code>&#39;&#39;&#39;</code> 세 개 사용으로 멀티라인 </li>
+<li>escape string<ul>
+<li><code>\n</code>: new line</li>
+<li><code>\t</code>: tap</li>
 </ul>
 </li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">"AaBb ccc DD "</span></span><br></pre></td></tr></table></figure>
+
+<ul>
 <li><p>대문자/소문자 변환 함수</p>
    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s.upper()  = <span class="string">'AABB CCC DD '</span></span><br><span class="line">s.lower() = <span class="string">'aabb ccc dd '</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -141,22 +138,22 @@
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">"this is a peach!!"</span></span><br><span class="line">s.endswith(<span class="string">"peach!!"</span>) = <span class="literal">True</span></span><br><span class="line">s.endswith(<span class="string">"peach"</span>) = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>string format</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a, b = <span class="number">123</span>, <span class="string">"python"</span></span><br><span class="line">      <span class="string">"&#123;&#125;,&#123;&#125;"</span>.format(a, b)) = <span class="string">'123, python'</span></span><br><span class="line">      &#123;str_&#125;, &#123;num&#125;<span class="string">".format(num=a, str_=b)) = 'python, 123'</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a, b = <span class="number">123</span>, <span class="string">"python"</span></span><br><span class="line"><span class="string">"&#123;&#125;,&#123;&#125;"</span>.format(a, b)) = <span class="string">'123, python'</span></span><br><span class="line"><span class="string">"&#123;str_&#125;, &#123;num&#125;"</span>.format(num=a, str_=b)) = <span class="string">'python, 123'</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
 <br>
 
 <h3 id="4-List"><a href="#4-List" class="headerlink" title="4) List"></a>4) List</h3><ul>
-<li><p>iterable</p>
-</li>
-<li><p>여러 자료형 함께 저장 가능</p>
-</li>
-<li><p>수열 리스트</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list(range(<span class="number">5</span>)) = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">list(range(<span class="number">3</span>, <span class="number">10</span>, <span class="number">2</span>)) = [<span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br></pre></td></tr></table></figure>
+<li>iterable</li>
+<li>여러 자료형 함께 저장 가능</li>
+<li>수열 리스트   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list(range(<span class="number">5</span>)) = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">list(range(<span class="number">3</span>, <span class="number">10</span>, <span class="number">2</span>)) = [<span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br></pre></td></tr></table></figure>
 
-<p>  <code>ls = [&#39;a&#39;, 100, [1, &quot;k&quot;]]</code></p>
 </li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="string">'a'</span>, <span class="number">100</span>, [<span class="number">1</span>, <span class="string">"k"</span>]]`</span><br></pre></td></tr></table></figure>
+
+<ul>
 <li><p>자료 수정</p>
    <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls[1] = 50 -&gt; ls = ['a', 50, [1, "k"]]</span><br></pre></td></tr></table></figure>
 </li>
@@ -174,17 +171,16 @@
 </ul>
 </li>
 <li><p>offset 인덱스/슬라이싱</p>
-<p>   <code>slic =  &quot;I want some TTEOKBOKKI!&quot;</code></p>
-<ul>
-<li>slic[7:11] = ‘some’</li>
-<li>slic[3:15:2] = ‘atsm TOBK’</li>
-<li>slic[::2] = ‘Iwn oeTEKOK!’</li>
-<li>slic[::-1] = ‘!IKKOBKOETT emos tnaw I’</li>
-<li>slic.split(“O”) = [‘I want some TTE’, ‘KB’, ‘KKI!’]</li>
-</ul>
 </li>
-<li><p>복사</p>
-<ul>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slic =  <span class="string">"I want some TTEOKBOKKI!"</span>`</span><br></pre></td></tr></table></figure>
+
+<pre><code>- slic[7:11] = &apos;some&apos;
+- slic[3:15:2] = &apos;atsm TOBK&apos;
+- slic[::2] = &apos;Iwn oeTEKOK!&apos;
+- slic[::-1] = &apos;!IKKOBKOETT emos tnaw I&apos;
+- slic.split(&quot;O&quot;) = [&apos;I want some TTE&apos;, &apos;KB&apos;, &apos;KKI!&apos;]</code></pre><ul>
+<li>복사<ul>
 <li>얕은복사 : 주소값만 복사</li>
 <li>깊은복사 : 메모리 복사</li>
 </ul>
