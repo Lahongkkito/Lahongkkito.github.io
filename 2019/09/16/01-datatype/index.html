@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="MJ&#39;s Study Note blog">
 <meta property="og:description" content="종류  Numbers 정수형 : int 실수형(소수) : float 복소수 : complex (2+3j)  123a, b, c, d, e, f = 5, 0.12, -6.0, -6, 0, 0.0type(a), type(b), type(c), type(d), type(e), type(f)(int, float, float, int, int, float)">
 <meta property="og:locale" content="KOR">
-<meta property="og:updated_time" content="2019-09-16T12:02:36.014Z">
+<meta property="og:updated_time" content="2019-09-16T12:14:42.609Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="01_datatype">
 <meta name="twitter:description" content="종류  Numbers 정수형 : int 실수형(소수) : float 복소수 : complex (2+3j)  123a, b, c, d, e, f = 5, 0.12, -6.0, -6, 0, 0.0type(a), type(b), type(c), type(d), type(e), type(f)(int, float, float, int, int, float)">
@@ -133,26 +133,25 @@
 </ul>
 </li>
 <li><p>대문자/소문자 변환 함수</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s.upper()  = &apos;AABB CCC DD &apos;</span><br><span class="line">s.lower() = &apos;aabb ccc dd &apos;</span><br></pre></td></tr></table></figure>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s.upper()  = <span class="string">'AABB CCC DD '</span></span><br><span class="line">s.lower() = <span class="string">'aabb ccc dd '</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>해당 값의 위치 찾기<br>   s.find(“ccc”) = 5    # 중복될 경우 가장 처음, 없을 경우 -1 반환<br>   s.index(“b”) = 3  # 없을 경우 error</p>
+<li><p>해당 값의 위치 찾기</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s.find(<span class="string">"ccc"</span>) = <span class="number">5</span>    <span class="comment"># 중복될 경우 가장 처음, 없을 경우 -1 반환</span></span><br><span class="line">s.index(<span class="string">"b"</span>) = <span class="number">3</span>  <span class="comment"># 없을 경우 error</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>포함된 개수 리턴<br>   s.count(“x”) = 0</p>
+<li><p>포함된 개수 리턴</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s.count(<span class="string">"x"</span>) = <span class="number">0</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>공백 제거</p>
    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s.lstrip() = <span class="string">'AaBb ccc DD '</span> <span class="comment"># 왼쪽 공백 제거</span></span><br><span class="line">s.rstrip() = <span class="string">'AaBb ccc DD'</span> <span class="comment"># 오른쪽 공백 제거</span></span><br><span class="line">s.strip() = <span class="string">'AaBb ccc DD'</span> <span class="comment"># 양쪽 공백 제거</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>문자열 변환</p>
-<ul>
-<li><figure class="highlight plain"><figcaption><span>"k") </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- ```s.replace(&quot; &quot;, &quot;&quot;) = s.replace(&quot; &quot;, &quot;&quot;) # 중간 공백 제거 가능</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s.replace(<span class="string">"c"</span>, <span class="string">"k"</span>) = <span class="string">'AaBb kkk DD '</span></span><br><span class="line">s.replace(<span class="string">" "</span>, <span class="string">""</span>) = s.replace(<span class="string">" "</span>, <span class="string">""</span>) <span class="comment"># 중간 공백 제거 가능</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>체이닝</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">"this is a peach!!"</span></span><br><span class="line">s.endswith(<span class="string">"peach!!"</span>) = <span class="literal">True</span></span><br><span class="line">s.endswith(<span class="string">"peach"</span>) = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">"this is a peach!!"</span></span><br><span class="line">s.endswith(<span class="string">"peach!!"</span>) = <span class="literal">True</span></span><br><span class="line">s.endswith(<span class="string">"peach"</span>) = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>string format</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a, b = 123, &quot;python&quot;</span><br><span class="line">      &quot;&#123;&#125;,&#123;&#125;&quot;.format(a, b)) = &apos;123, python&apos;</span><br><span class="line">      &#123;str_&#125;, &#123;num&#125;&quot;.format(num=a, str_=b)) = &apos;python, 123&apos;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a, b = <span class="number">123</span>, <span class="string">"python"</span></span><br><span class="line">      <span class="string">"&#123;&#125;,&#123;&#125;"</span>.format(a, b)) = <span class="string">'123, python'</span></span><br><span class="line">      &#123;str_&#125;, &#123;num&#125;<span class="string">".format(num=a, str_=b)) = 'python, 123'</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
@@ -164,31 +163,22 @@
 <li><p>여러 자료형 함께 저장 가능</p>
 </li>
 <li><p>수열 리스트</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">```list(range(3, 10, 2)) = [3, 5, 7, 9]</span><br></pre></td></tr></table></figure>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list(range(<span class="number">5</span>)) = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">list(range(<span class="number">3</span>, <span class="number">10</span>, <span class="number">2</span>)) = [<span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br></pre></td></tr></table></figure>
 
 <p>  <code>ls = [&#39;a&#39;, 100, [1, &quot;k&quot;]]</code></p>
 </li>
 <li><p>자료 수정</p>
-<ul>
-<li>ls[1] = 50 -&gt; ls = [‘a’, 50, [1, “k”]]</li>
-</ul>
+   <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls[1] = 50 -&gt; ls = ['a', 50, [1, "k"]]</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>자료 추가</p>
-<ul>
-<li>ls.append(“plus”) -&gt; ls = [‘a’, 100, [1, ‘k’], ‘plus’]</li>
-<li>ls.insert(0, “insert”) -&gt; ls = [‘insert’, ‘a’, 100, [1, ‘k’], ‘plus’]</li>
-</ul>
+   <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls.append("plus") -&gt; ls = ['a', 100, [1, 'k'], 'plus']</span><br><span class="line">ls.insert(0, "insert") -&gt; ls = ['insert', 'a', 100, [1, 'k'], 'plus']</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>자료 삭제</p>
-<ul>
-<li>ls.pop() = ‘plus’</li>
-<li>ls.remove(‘a’) -&gt; ls = [100, [1, ‘k’]] <em>index 값이 가장 작은 데이터 한개만 삭제</em></li>
-<li>del ls[2] -&gt; ls =  [‘a’, 100]</li>
-</ul>
+   <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls.pop() = <span class="string">'plus'</span></span><br><span class="line">ls.remove('a') -&gt; ls = [100, [1, 'k']]  # index 값이 가장 작은 데이터 한개만 삭제</span><br><span class="line">del ls[2] -&gt; ls =  ['a', 100]</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>졍렬</p>
 <ul>
-<li>ls.sort() <code>동일한 타입의 경우만 가능</code></li>
+<li>ls.sort()  # 동일한 타입의 경우만 가능</li>
 <li>ls.sort(key=len)</li>
 <li>ls.reverse()</li>
 </ul>
@@ -234,26 +224,13 @@
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dic = &#123;</span><br><span class="line">    <span class="number">1</span>: <span class="string">"one"</span>,</span><br><span class="line">    <span class="string">"A"</span>: [<span class="string">"data"</span>, <span class="string">"python"</span>],</span><br><span class="line">    <span class="string">"숫자"</span>: <span class="number">1234</span>,</span><br><span class="line">    <span class="number">2</span>: <span class="string">"two"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>호출</p>
-<ul>
-<li>dic.keys()  = dict_keys([1, ‘A’, ‘숫자’, 2])</li>
-<li>dic.values() = dict_values([‘one’, [‘data’, ‘python’], 1234, ‘two’])</li>
-<li>dic.items() = dict_items([(1, ‘one’), (‘A’, [‘data’, ‘python’]), (‘숫자’, 1234), (2, ‘two’)])</li>
-<li>dic.get(“A”) = [‘data’, ‘python’]</li>
-<li>dic[“숫자”] = 1234</li>
-<li>2 in dic = False</li>
-<li>“two” in dic = True <em>key값 존재 확인</em></li>
-</ul>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dic.keys()  = dict_keys([<span class="number">1</span>, <span class="string">'A'</span>, <span class="string">'숫자'</span>, <span class="number">2</span>])</span><br><span class="line">dic.values() = dict_values([<span class="string">'one'</span>, [<span class="string">'data'</span>, <span class="string">'python'</span>], <span class="number">1234</span>, <span class="string">'two'</span>])</span><br><span class="line">dic.items() = dict_items([(<span class="number">1</span>, <span class="string">'one'</span>), (<span class="string">'A'</span>, [<span class="string">'data'</span>, <span class="string">'python'</span>]), (<span class="string">'숫자'</span>, <span class="number">1234</span>), (<span class="number">2</span>, <span class="string">'two'</span>)])</span><br><span class="line">dic.get(<span class="string">"A"</span>) = [<span class="string">'data'</span>, <span class="string">'python'</span>]</span><br><span class="line">dic[<span class="string">"숫자"</span>] = <span class="number">1234</span></span><br><span class="line"><span class="number">2</span> <span class="keyword">in</span> dic = <span class="literal">False</span></span><br><span class="line"><span class="string">"two"</span> <span class="keyword">in</span> dic = <span class="literal">True</span>  <span class="comment"># key값 존재 확인</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>자료 추가</p>
-<ul>
-<li>dic[“key3”] = 40 -&gt; dic = {1: ‘one’, ‘A’: [‘data’, ‘python’], ‘숫자’: 1234, 2: ‘two’, ‘key3’: 40}</li>
-</ul>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dic[<span class="string">"key3"</span>] = <span class="number">40</span></span><br><span class="line">dic = &#123;<span class="number">1</span>: <span class="string">'one'</span>, <span class="string">'A'</span>: [<span class="string">'data'</span>, <span class="string">'python'</span>], <span class="string">'숫자'</span>: <span class="number">1234</span>, <span class="number">2</span>: <span class="string">'two'</span>, <span class="string">'key3'</span>: <span class="number">40</span>&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>자료 삭제</p>
-<ul>
-<li>del dic[“key3”]</li>
-<li>dic.clear() -&gt; dic = {}</li>
-</ul>
+   <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">del</span> dic[<span class="string">"key3"</span>]</span><br><span class="line">dic.clear() -&gt; dic = &#123;&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>update (덮어쓰기)</p>
   <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dic1 = &#123;<span class="number">1</span>: <span class="string">"a"</span>, <span class="number">2</span>: <span class="string">"b"</span>&#125;</span><br><span class="line">dic2 = &#123;<span class="number">3</span>: <span class="string">"d"</span>, <span class="number">2</span>: <span class="string">"c"</span>&#125;</span><br><span class="line">dic1.update(dic2) -&gt; dic1 = &#123;1: 'a', 2: 'c', 3: 'd'&#125;</span><br></pre></td></tr></table></figure>
@@ -272,17 +249,20 @@
 </li>
 <li><p>합집합 </p>
 <ul>
-<li>a_set | b_set, a_set.union(b_set)</li>
+<li>a_set | b_set</li>
+<li>a_set.union(b_set)</li>
 </ul>
 </li>
 <li><p>교집합 </p>
 <ul>
-<li>a_set &amp; b_set, a_set.intersection(b_set)</li>
+<li>a_set &amp; b_set</li>
+<li>a_set.intersection(b_set)</li>
 </ul>
 </li>
 <li><p>차집합 </p>
 <ul>
-<li>a_set - b_set, a_set.difference(b_set)</li>
+<li>a_set - b_set</li>
+<li>a_set.difference(b_set)</li>
 </ul>
 </li>
 <li><p>대칭차집합 </p>
