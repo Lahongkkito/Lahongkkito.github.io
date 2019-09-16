@@ -123,15 +123,14 @@
 </ul>
 </li>
 <li><p>대문자/소문자 변환 함수</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">```s.lower() = &apos;aabb ccc dd &apos;</span><br></pre></td></tr></table></figure>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s.upper()  = &apos;AABB CCC DD &apos;</span><br><span class="line">s.lower() = &apos;aabb ccc dd &apos;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>해당 값의 위치 찾기</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">```s.index(&quot;b&quot;) = 3  # 없을 경우 error</span><br></pre></td></tr></table></figure>
+<li><p>해당 값의 위치 찾기<br>   s.find(“ccc”) = 5    # 중복될 경우 가장 처음, 없을 경우 -1 반환<br>   s.index(“b”) = 3  # 없을 경우 error</p>
 </li>
-<li><p>포함된 개수 리턴</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 공백 제거</span><br><span class="line">     ```s.lstrip() = &apos;AaBb ccc DD &apos; # 왼쪽 공백 제거</span><br></pre></td></tr></table></figure>
-
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">```s.strip() = &apos;AaBb ccc DD&apos; # 양쪽 공백 제거</span><br></pre></td></tr></table></figure>
+<li><p>포함된 개수 리턴<br>   s.count(“x”) = 0</p>
+</li>
+<li><p>공백 제거</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s.lstrip() = <span class="string">'AaBb ccc DD '</span> <span class="comment"># 왼쪽 공백 제거</span></span><br><span class="line">s.rstrip() = <span class="string">'AaBb ccc DD'</span> <span class="comment"># 오른쪽 공백 제거</span></span><br><span class="line">s.strip() = <span class="string">'AaBb ccc DD'</span> <span class="comment"># 양쪽 공백 제거</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>문자열 변환</p>
 <ul>
