@@ -11,18 +11,18 @@
     
 
     
-    <meta name="description" content="연산자   산술연산자+, -, *, /, //, %, **  부동소수점   0.1 + 0.2 = 0.30000000000000004  해결 1 유효숫자 지정 (반올림)    round(2.2) = 2  round(-3.8) = -4  해결 2 고정소수점 연산 : 십진법 연산 모듈, str 객체 생성, int 연산 가능   from decimal import">
+    <meta name="description" content="연산자   산술연산자+, -, *, /, //, %, **  부동소수점  0.1 + 0.2 = 0.30000000000000004   해결 1 유효숫자 지정 (반올림)   round(2.2) = 2  round(-3.8) = -4   해결 2 고정소수점 연산 : 십진법 연산 모듈, str 객체 생성, int 연산 가능  from decimal import">
 <meta name="keywords" content="연산자">
 <meta property="og:type" content="article">
 <meta property="og:title" content="02_operators">
 <meta property="og:url" content="https://Lahongkkito.github.io/2019/09/17/02-operators/index.html">
 <meta property="og:site_name" content="MJ&#39;s Study Note blog">
-<meta property="og:description" content="연산자   산술연산자+, -, *, /, //, %, **  부동소수점   0.1 + 0.2 = 0.30000000000000004  해결 1 유효숫자 지정 (반올림)    round(2.2) = 2  round(-3.8) = -4  해결 2 고정소수점 연산 : 십진법 연산 모듈, str 객체 생성, int 연산 가능   from decimal import">
+<meta property="og:description" content="연산자   산술연산자+, -, *, /, //, %, **  부동소수점  0.1 + 0.2 = 0.30000000000000004   해결 1 유효숫자 지정 (반올림)   round(2.2) = 2  round(-3.8) = -4   해결 2 고정소수점 연산 : 십진법 연산 모듈, str 객체 생성, int 연산 가능  from decimal import">
 <meta property="og:locale" content="KOR">
-<meta property="og:updated_time" content="2019-09-17T06:41:27.304Z">
+<meta property="og:updated_time" content="2019-09-17T06:46:50.102Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="02_operators">
-<meta name="twitter:description" content="연산자   산술연산자+, -, *, /, //, %, **  부동소수점   0.1 + 0.2 = 0.30000000000000004  해결 1 유효숫자 지정 (반올림)    round(2.2) = 2  round(-3.8) = -4  해결 2 고정소수점 연산 : 십진법 연산 모듈, str 객체 생성, int 연산 가능   from decimal import">
+<meta name="twitter:description" content="연산자   산술연산자+, -, *, /, //, %, **  부동소수점  0.1 + 0.2 = 0.30000000000000004   해결 1 유효숫자 지정 (반올림)   round(2.2) = 2  round(-3.8) = -4   해결 2 고정소수점 연산 : 십진법 연산 모듈, str 객체 생성, int 연산 가능  from decimal import">
 
     
     
@@ -104,13 +104,19 @@
 <h3 id="산술연산자"><a href="#산술연산자" class="headerlink" title="산술연산자"></a>산술연산자</h3><p><code>+, -, *, /, //, %, **</code></p>
 <ul>
 <li><p>부동소수점</p>
-<p>  0.1 + 0.2 = 0.30000000000000004</p>
+<blockquote>
+<p>0.1 + 0.2 = 0.30000000000000004</p>
+</blockquote>
 <ul>
 <li><p>해결 1 유효숫자 지정 (반올림) </p>
-<p>  round(2.2) = 2<br>  round(-3.8) = -4</p>
+<blockquote>
+<p>round(2.2) = 2<br>  round(-3.8) = -4</p>
+</blockquote>
 </li>
 <li><p>해결 2 고정소수점 연산 : 십진법 연산 모듈, str 객체 생성, int 연산 가능</p>
-<p>  from decimal import Decimal<br>  float(Decimal(‘0.1’) + Decimal(‘0.2’)) = 0.3</p>
+<blockquote>
+<p>from decimal import Decimal<br>  float(Decimal(‘0.1’) + Decimal(‘0.2’)) = 0.3</p>
+</blockquote>
 </li>
 <li><p>해결 3 : fraction (분자, 분모) int/float 연산 가능</p>
 <blockquote>
@@ -118,7 +124,9 @@
 </blockquote>
 </li>
 <li><p>해결 4 : math 모듈</p>
-<p> import math<br> math.ceil(4.3) = 5</p>
+<blockquote>
+<p>import math<br> math.ceil(4.3) = 5</p>
+</blockquote>
 </li>
 </ul>
 </li>
@@ -151,8 +159,12 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">bin(0b10101 &amp; 0b11100) = 0b10100</span><br><span class="line">0b10101 &amp; 0b11100 = 28 &amp; 21 = 20</span><br><span class="line"></span><br><span class="line">bin(0b10101 | 0b11100) = 0b11101</span><br><span class="line">0b10101 | 0b11100 = 28 | 21 = 29</span><br><span class="line"></span><br><span class="line">bin(0b10101 ^ 0b11100) = 0b1001</span><br><span class="line">0b10101 ^ 0b11100 = 28 ^ 21 = 9</span><br><span class="line"></span><br><span class="line">bin(~0b10101) = -0b10110</span><br><span class="line">~0b10101 = -22</span><br><span class="line">~28 = -29</span><br></pre></td></tr></table></figure>
-
+<blockquote>
+<p>bin(0b10101 &amp; 0b11100) = 0b10100<br>0b10101 &amp; 0b11100 = 28 &amp; 21 = 20</p>
+</blockquote>
+<p>bin(0b10101 | 0b11100) = 0b11101<br>0b10101 | 0b11100 = 28 | 21 = 29</p>
+<p>bin(0b10101 ^ 0b11100) = 0b1001<br>0b10101 ^ 0b11100 = 28 ^ 21 = 9</p>
+<p>bin(~0b10101) = -0b10110<br>~0b10101 = -22<br>~28 = -29</p>
 <br>
 
 <h3 id="논리연산자"><a href="#논리연산자" class="headerlink" title="논리연산자"></a>논리연산자</h3><ul>
