@@ -94,29 +94,19 @@
 <h3 id="산술연산자"><a href="#산술연산자" class="headerlink" title="산술연산자"></a>산술연산자</h3><p><code>+, -, *, /, //, %, **</code></p>
 <ul>
 <li><p>부동소수점</p>
-<blockquote>
-<p>0.1 + 0.2 = 0.30000000000000004</p>
-</blockquote>
+<p>  0.1 + 0.2 = 0.30000000000000004</p>
 <ul>
 <li><p>해결 1 유효숫자 지정 (반올림) </p>
-<blockquote>
-<p>round(2.2) = 2<br>  round(-3.8) = -4</p>
-</blockquote>
+<p>  round(2.2) = 2<br>  round(-3.8) = -4</p>
 </li>
 <li><p>해결 2 고정소수점 연산 : 십진법 연산 모듈, str 객체 생성, int 연산 가능</p>
-<blockquote>
-<p>from decimal import Decimal<br>  float(Decimal(‘0.1’) + Decimal(‘0.2’)) = 0.3</p>
-</blockquote>
+<p>  from decimal import Decimal<br>  float(Decimal(‘0.1’) + Decimal(‘0.2’)) = 0.3</p>
 </li>
 <li><p>해결 3 : fraction (분자, 분모) int/float 연산 가능</p>
-<blockquote>
-<p>import fractions<br> fractions.Fraction(5, 30) = Fraction(1, 6)<br> fractions.Fraction(0.75) = Fraction(3, 4)<br> a = fractions.Fraction(9, 28)<br> a.numerator = 9<br> a.denominator = 28</p>
-</blockquote>
+<p> import fractions<br> fractions.Fraction(5, 30) = Fraction(1, 6)<br> fractions.Fraction(0.75) = Fraction(3, 4)<br> a = fractions.Fraction(9, 28)<br> a.numerator = 9<br> a.denominator = 28</p>
 </li>
 <li><p>해결 4 : math 모듈</p>
-<blockquote>
-<p>import math<br> math.ceil(4.3) = 5</p>
-</blockquote>
+<p> import math<br> math.ceil(4.3) = 5</p>
 </li>
 </ul>
 </li>
@@ -149,9 +139,7 @@
 </ul>
 </li>
 </ul>
-<blockquote>
 <p>bin(0b10101 &amp; 0b11100) = 0b10100<br>0b10101 &amp; 0b11100 = 28 &amp; 21 = 20</p>
-</blockquote>
 <p>bin(0b10101 | 0b11100) = 0b11101<br>0b10101 | 0b11100 = 28 | 21 = 29</p>
 <p>bin(0b10101 ^ 0b11100) = 0b1001<br>0b10101 ^ 0b11100 = 28 ^ 21 = 9</p>
 <p>bin(~0b10101) = -0b10110<br>~0b10101 = -22<br>~28 = -29</p>
