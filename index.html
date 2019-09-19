@@ -75,6 +75,108 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2019/09/19/03-conditions/" title="03_conditions" itemprop="url">03_conditions</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Lahongkkito" target="_blank" itemprop="author">Lahongkkito</a>
+		
+  <p class="article-time">
+    <time datetime="2019-09-19T06:57:42.000Z" itemprop="datePublished"> Published 2019-09-19</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h3 id="조건문"><a href="#조건문" class="headerlink" title="조건문"></a>조건문</h3><ul>
+<li>if, elif, else</li>
+<li>indentation(들여쓰기) 사용</li>
+<li>nesting(반복 중첩) 가능 (비권장)</li>
+<li>boolean으로 표현<ul>
+<li>논리식 AND, OR, NOT 사용 가능 <ul>
+<li>우선순위 NOT &gt; AND &gt; OR</li>
+</ul>
+</li>
+<li>예외 : 기본 타입 사용 가능<ul>
+<li>False 간주 값 (각 타입 기본값)<ul>
+<li>None, 0, 0.0, “, (), [], {}, set()</li>
+<li>이 외 모두 True</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<p>Q. 숫자를 입력받아 아래 조건에 맞게 결과를 출력하세요.</p>
+<ul>
+<li>3의 배수이면 fizz</li>
+<li>5의 배수이면 buzz</li>
+<li>15의 배수이면 fizzbuzz</li>
+<li>이 외의 경우 입력받은 숫자</li>
+</ul>
+<p>A.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">num = int(input(<span class="string">"Insert number: "</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> num % <span class="number">15</span> ==<span class="number">0</span> :</span><br><span class="line">    print(<span class="string">"fizzbuzz"</span>)</span><br><span class="line"><span class="keyword">elif</span> num % <span class="number">5</span> ==<span class="number">0</span> :</span><br><span class="line">    print(<span class="string">"buzz"</span>)</span><br><span class="line"><span class="keyword">elif</span> num % <span class="number">3</span> ==<span class="number">0</span> :</span><br><span class="line">    print(<span class="string">"fizz"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(num)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> num % <span class="number">3</span> ==<span class="number">0</span> :</span><br><span class="line">    print(<span class="string">"fizz"</span>, end=<span class="string">""</span>)</span><br><span class="line"><span class="keyword">elif</span> num % <span class="number">5</span> ==<span class="number">0</span> :</span><br><span class="line">    print(<span class="string">"buzz"</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span>((num % <span class="number">3</span> ==<span class="number">0</span>) <span class="keyword">or</span> (num % <span class="number">5</span> ==<span class="number">0</span>)):</span><br><span class="line">    print(num)</span><br></pre></td></tr></table></figure>
+
+<h3 id="삼항연산"><a href="#삼항연산" class="headerlink" title="삼항연산"></a>삼항연산</h3><ul>
+<li><p>condition이 True이면 A를 리터, False니면 B를 리턴</p>
+<p>  <code>A if (condition) else B</code></p>
+</li>
+</ul>
+<p>Q. 숫자를 입력받아 짝수이면 “even”, 홀수이면 “odd”를 출력하세요.</p>
+<p>A. </p>
+<pre><code class="python">num = int(input(<span class="string">"Insert number: "</span>))
+<span class="string">"even"</span> <span class="keyword">if</span> num % <span class="number">2</span> == <span class="number">0</span> <span class="keyword">else</span> <span class="string">"odd"</span></code></pre>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/python/">python</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/if/">if</a><a href="/tags/삼항연산/">삼항연산</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2019/09/17/02-operators/" title="02_operators" itemprop="url">02_operators</a>
   </h1>
   <p class="article-author">By
@@ -563,7 +665,7 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/python/" title="python">python<sup>3</sup></a></li>
+			<li><a href="/categories/python/" title="python">python<sup>4</sup></a></li>
 		  
 		
 		</ul>
@@ -576,11 +678,11 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/연산자/" title="연산자">연산자<sup>1</sup></a></li>
+				<li><a href="/tags/PEP/" title="PEP">PEP<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/PEP/" title="PEP">PEP<sup>1</sup></a></li>
+				<li><a href="/tags/연산자/" title="연산자">연산자<sup>1</sup></a></li>
 			
 		
 			
@@ -601,6 +703,14 @@
 		
 			
 				<li><a href="/tags/set/" title="set">set<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/if/" title="if">if<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/삼항연산/" title="삼항연산">삼항연산<sup>1</sup></a></li>
 			
 		
 		</ul>

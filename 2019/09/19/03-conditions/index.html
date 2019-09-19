@@ -4,25 +4,25 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
   
-    <title>02_operators | MJ&#39;s Study Note blog</title>
+    <title>03_conditions | MJ&#39;s Study Note blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Lahongkkito">
     
 
     
-    <meta name="description" content="연산자   산술연산자+, -, *, /, //, %, **  부동소수점   0.1 + 0.2 = 0.30000000000000004  해결 1 유효숫자 지정 (반올림)    round(2.2) = 2  round(-3.8) = -4  해결 2 고정소수점 연산 : 십진법 연산 모듈, str 객체 생성, int 연산 가능   from decimal import">
-<meta name="keywords" content="연산자">
+    <meta name="description" content="조건문 if, elif, else indentation(들여쓰기) 사용 nesting(반복 중첩) 가능 (비권장) boolean으로 표현 논리식 AND, OR, NOT 사용 가능  우선순위 NOT &amp;gt; AND &amp;gt; OR   예외 : 기본 타입 사용 가능 False 간주 값 (각 타입 기본값) None, 0, 0.0, “, (), [], {}, set">
+<meta name="keywords" content="if,삼항연산">
 <meta property="og:type" content="article">
-<meta property="og:title" content="02_operators">
-<meta property="og:url" content="https://Lahongkkito.github.io/2019/09/17/02-operators/index.html">
+<meta property="og:title" content="03_conditions">
+<meta property="og:url" content="https://Lahongkkito.github.io/2019/09/19/03-conditions/index.html">
 <meta property="og:site_name" content="MJ&#39;s Study Note blog">
-<meta property="og:description" content="연산자   산술연산자+, -, *, /, //, %, **  부동소수점   0.1 + 0.2 = 0.30000000000000004  해결 1 유효숫자 지정 (반올림)    round(2.2) = 2  round(-3.8) = -4  해결 2 고정소수점 연산 : 십진법 연산 모듈, str 객체 생성, int 연산 가능   from decimal import">
+<meta property="og:description" content="조건문 if, elif, else indentation(들여쓰기) 사용 nesting(반복 중첩) 가능 (비권장) boolean으로 표현 논리식 AND, OR, NOT 사용 가능  우선순위 NOT &amp;gt; AND &amp;gt; OR   예외 : 기본 타입 사용 가능 False 간주 값 (각 타입 기본값) None, 0, 0.0, “, (), [], {}, set">
 <meta property="og:locale" content="KOR">
-<meta property="og:updated_time" content="2019-09-17T06:57:06.227Z">
+<meta property="og:updated_time" content="2019-09-19T06:58:50.296Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="02_operators">
-<meta name="twitter:description" content="연산자   산술연산자+, -, *, /, //, %, **  부동소수점   0.1 + 0.2 = 0.30000000000000004  해결 1 유효숫자 지정 (반올림)    round(2.2) = 2  round(-3.8) = -4  해결 2 고정소수점 연산 : 십진법 연산 모듈, str 객체 생성, int 연산 가능   from decimal import">
+<meta name="twitter:title" content="03_conditions">
+<meta name="twitter:description" content="조건문 if, elif, else indentation(들여쓰기) 사용 nesting(반복 중첩) 가능 (비권장) boolean으로 표현 논리식 AND, OR, NOT 사용 가능  우선순위 NOT &amp;gt; AND &amp;gt; OR   예외 : 기본 타입 사용 가능 False 간주 값 (각 타입 기본값) None, 0, 0.0, “, (), [], {}, set">
 
     
     
@@ -78,14 +78,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/09/17/02-operators/" title="02_operators" itemprop="url">02_operators</a>
+      <a href="/2019/09/19/03-conditions/" title="03_conditions" itemprop="url">03_conditions</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Lahongkkito" target="_blank" itemprop="author">Lahongkkito</a>
 		
   <p class="article-time">
-    <time datetime="2019-09-17T05:51:58.000Z" itemprop="datePublished"> Published 2019-09-17</time>
+    <time datetime="2019-09-19T06:57:42.000Z" itemprop="datePublished"> Published 2019-09-19</time>
     
   </p>
 </header>
@@ -94,84 +94,53 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#연산자"><span class="toc-number">1.</span> <span class="toc-text">연산자</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#산술연산자"><span class="toc-number">1.1.</span> <span class="toc-text">산술연산자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#비교연산자"><span class="toc-number">1.2.</span> <span class="toc-text">비교연산자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#할당연산자"><span class="toc-number">1.3.</span> <span class="toc-text">할당연산자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#비트연산자"><span class="toc-number">1.4.</span> <span class="toc-text">비트연산자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#논리연산자"><span class="toc-number">1.5.</span> <span class="toc-text">논리연산자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#멤버연산자"><span class="toc-number">1.6.</span> <span class="toc-text">멤버연산자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#식별연산자"><span class="toc-number">1.7.</span> <span class="toc-text">식별연산자</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#조건문"><span class="toc-number">1.</span> <span class="toc-text">조건문</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#삼항연산"><span class="toc-number">2.</span> <span class="toc-text">삼항연산</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="연산자"><a href="#연산자" class="headerlink" title="연산자"></a>연산자</h2><br>
+		<h3 id="조건문"><a href="#조건문" class="headerlink" title="조건문"></a>조건문</h3><ul>
+<li>if, elif, else</li>
+<li>indentation(들여쓰기) 사용</li>
+<li>nesting(반복 중첩) 가능 (비권장)</li>
+<li>boolean으로 표현<ul>
+<li>논리식 AND, OR, NOT 사용 가능 <ul>
+<li>우선순위 NOT &gt; AND &gt; OR</li>
+</ul>
+</li>
+<li>예외 : 기본 타입 사용 가능<ul>
+<li>False 간주 값 (각 타입 기본값)<ul>
+<li>None, 0, 0.0, “, (), [], {}, set()</li>
+<li>이 외 모두 True</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <br>
 
-<h3 id="산술연산자"><a href="#산술연산자" class="headerlink" title="산술연산자"></a>산술연산자</h3><p><code>+, -, *, /, //, %, **</code></p>
+<p>Q. 숫자를 입력받아 아래 조건에 맞게 결과를 출력하세요.</p>
 <ul>
-<li><p>부동소수점</p>
-<p>  0.1 + 0.2 = 0.30000000000000004</p>
-<ul>
-<li><p>해결 1 유효숫자 지정 (반올림) </p>
-<p>  round(2.2) = 2<br>  round(-3.8) = -4</p>
-</li>
-<li><p>해결 2 고정소수점 연산 : 십진법 연산 모듈, str 객체 생성, int 연산 가능</p>
-<p>  from decimal import Decimal<br>  float(Decimal(‘0.1’) + Decimal(‘0.2’)) = 0.3</p>
-</li>
-<li><p>해결 3 : fraction (분자, 분모) int/float 연산 가능</p>
-<p> import fractions<br> fractions.Fraction(5, 30) = Fraction(1, 6)<br> fractions.Fraction(0.75) = Fraction(3, 4)<br> a = fractions.Fraction(9, 28)<br> a.numerator = 9<br> a.denominator = 28</p>
-</li>
-<li><p>해결 4 : math 모듈</p>
-<p> import math<br> math.ceil(4.3) = 5</p>
-</li>
+<li>3의 배수이면 fizz</li>
+<li>5의 배수이면 buzz</li>
+<li>15의 배수이면 fizzbuzz</li>
+<li>이 외의 경우 입력받은 숫자</li>
 </ul>
-</li>
-</ul>
-<br>
+<p>A.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">num = int(input(<span class="string">"Insert number: "</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> num % <span class="number">15</span> ==<span class="number">0</span> :</span><br><span class="line">    print(<span class="string">"fizzbuzz"</span>)</span><br><span class="line"><span class="keyword">elif</span> num % <span class="number">5</span> ==<span class="number">0</span> :</span><br><span class="line">    print(<span class="string">"buzz"</span>)</span><br><span class="line"><span class="keyword">elif</span> num % <span class="number">3</span> ==<span class="number">0</span> :</span><br><span class="line">    print(<span class="string">"fizz"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(num)</span><br></pre></td></tr></table></figure>
 
-<h3 id="비교연산자"><a href="#비교연산자" class="headerlink" title="비교연산자"></a>비교연산자</h3><p><code>==, !=, &gt;, &lt;, &lt;=, &gt;=</code></p>
-<br>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> num % <span class="number">3</span> ==<span class="number">0</span> :</span><br><span class="line">    print(<span class="string">"fizz"</span>, end=<span class="string">""</span>)</span><br><span class="line"><span class="keyword">elif</span> num % <span class="number">5</span> ==<span class="number">0</span> :</span><br><span class="line">    print(<span class="string">"buzz"</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span>((num % <span class="number">3</span> ==<span class="number">0</span>) <span class="keyword">or</span> (num % <span class="number">5</span> ==<span class="number">0</span>)):</span><br><span class="line">    print(num)</span><br></pre></td></tr></table></figure>
 
-<h3 id="할당연산자"><a href="#할당연산자" class="headerlink" title="할당연산자"></a>할당연산자</h3><p><code>=, +=, -=, *=, /=, //=, %=, **=</code><br><br></p>
-<h3 id="비트연산자"><a href="#비트연산자" class="headerlink" title="비트연산자"></a>비트연산자</h3><ul>
-<li><p>2진수 연산 방식</p>
-</li>
-<li><p>bin() : 이진수 문자열로 변환</p>
-<p>  bin(5) = 0b101<br>  0b10110 = 22<br>  int(‘11101’, 2) = 29</p>
-</li>
-<li><p>&amp; : bit 단위로 and 연산</p>
-</li>
-<li><p>| : bit 단위로 or 연산</p>
-</li>
-<li><p>^ : bit 단위로 xor 연산</p>
-</li>
-<li><p>~ : bit 단위로 not 연산 (1의 보수)</p>
-</li>
-<li><p>&lt;&lt;/&gt;&gt;</p>
-<ul>
-<li>bit 단위로 왼/오른쪽 비트단위 밀기 연산</li>
-<li>양수는 0, 음수는 1 채워짐</li>
-<li>왼쪽/오른쪽 shift 마다 2^n 곱한/나눈 효과</li>
-</ul>
+<h3 id="삼항연산"><a href="#삼항연산" class="headerlink" title="삼항연산"></a>삼항연산</h3><ul>
+<li><p>condition이 True이면 A를 리터, False니면 B를 리턴</p>
+<p>  <code>A if (condition) else B</code></p>
 </li>
 </ul>
-<p>bin(0b10101 &amp; 0b11100) = 0b10100<br>0b10101 &amp; 0b11100 = 28 &amp; 21 = 20</p>
-<p>bin(0b10101 | 0b11100) = 0b11101<br>0b10101 | 0b11100 = 28 | 21 = 29</p>
-<p>bin(0b10101 ^ 0b11100) = 0b1001<br>0b10101 ^ 0b11100 = 28 ^ 21 = 9</p>
-<p>bin(~0b10101) = -0b10110<br>~0b10101 = -22<br>~28 = -29</p>
-<br>
-
-<h3 id="논리연산자"><a href="#논리연산자" class="headerlink" title="논리연산자"></a>논리연산자</h3><ul>
-<li>and : 둘 다 참일 때 참</li>
-<li>or : 둘 중 하나 참일 때 참</li>
-<li>not : 참이면 거짓, 거짓이면 참</li>
-</ul>
-<br>
-
-<h3 id="멤버연산자"><a href="#멤버연산자" class="headerlink" title="멤버연산자"></a>멤버연산자</h3><ul>
-<li>in : list 내에 포함되어 있으면 참</li>
-<li>not in : list 내에 포함되어 있지 않으면 참</li>
-</ul>
-<br>
-
-<h3 id="식별연산자"><a href="#식별연산자" class="headerlink" title="식별연산자"></a>식별연산자</h3><ul>
-<li>is : 개체메모리 위치나 값이 같으면 참</li>
-<li>is not :  개체메모리 위치나 값지 않으면 참</li>
-</ul>
+<p>Q. 숫자를 입력받아 짝수이면 “even”, 홀수이면 “odd”를 출력하세요.</p>
+<p>A. </p>
+<pre><code class="python">num = int(input(<span class="string">"Insert number: "</span>))
+<span class="string">"even"</span> <span class="keyword">if</span> num % <span class="number">2</span> == <span class="number">0</span> <span class="keyword">else</span> <span class="string">"odd"</span></code></pre>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -185,7 +154,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/연산자/">연산자</a>
+  <span></span> <a href="/tags/if/">if</a><a href="/tags/삼항연산/">삼항연산</a>
   </div>
 
 </div>
@@ -194,7 +163,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="https://Lahongkkito.github.io/2019/09/17/02-operators/" data-title="02_operators | MJ&#39;s Study Note blog" data-tsina="" class="share clearfix">
+	  <div data-url="https://Lahongkkito.github.io/2019/09/19/03-conditions/" data-title="03_conditions | MJ&#39;s Study Note blog" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -207,19 +176,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2019/09/19/03-conditions/" title="03_conditions">
-  <strong>上一篇：</strong><br/>
-  <span>
-  03_conditions</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2019/09/16/01-datatype/"  title="01_datatype">
+<a href="/2019/09/17/02-operators/"  title="02_operators">
  <strong>下一篇：</strong><br/> 
- <span>01_datatype
+ <span>02_operators
 </span>
 </a>
 </div>
@@ -236,7 +197,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#연산자"><span class="toc-number">1.</span> <span class="toc-text">연산자</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#산술연산자"><span class="toc-number">1.1.</span> <span class="toc-text">산술연산자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#비교연산자"><span class="toc-number">1.2.</span> <span class="toc-text">비교연산자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#할당연산자"><span class="toc-number">1.3.</span> <span class="toc-text">할당연산자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#비트연산자"><span class="toc-number">1.4.</span> <span class="toc-text">비트연산자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#논리연산자"><span class="toc-number">1.5.</span> <span class="toc-text">논리연산자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#멤버연산자"><span class="toc-number">1.6.</span> <span class="toc-text">멤버연산자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#식별연산자"><span class="toc-number">1.7.</span> <span class="toc-text">식별연산자</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#조건문"><span class="toc-number">1.</span> <span class="toc-text">조건문</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#삼항연산"><span class="toc-number">2.</span> <span class="toc-text">삼항연산</span></a></li></ol>
  
   </div>
 
