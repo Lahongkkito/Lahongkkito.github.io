@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="MJ&#39;s Study Note blog">
 <meta property="og:description" content="조건문 if, elif, else indentation(들여쓰기) 사용 nesting(반복 중첩) 가능 (비권장) boolean으로 표현 논리식 AND, OR, NOT 사용 가능  우선순위 NOT &amp;gt; AND &amp;gt; OR   예외 : 기본 타입 사용 가능 False 간주 값 (각 타입 기본값) None, 0, 0.0, “, (), [], {}, set">
 <meta property="og:locale" content="KOR">
-<meta property="og:updated_time" content="2019-09-19T06:58:50.296Z">
+<meta property="og:updated_time" content="2019-09-19T15:38:15.506Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="03_conditions">
 <meta name="twitter:description" content="조건문 if, elif, else indentation(들여쓰기) 사용 nesting(반복 중첩) 가능 (비권장) boolean으로 표현 논리식 AND, OR, NOT 사용 가능  우선순위 NOT &amp;gt; AND &amp;gt; OR   예외 : 기본 타입 사용 가능 False 간주 값 (각 타입 기본값) None, 0, 0.0, “, (), [], {}, set">
@@ -119,6 +119,7 @@
 </li>
 </ul>
 <br>
+<br>
 
 <p>Q. 숫자를 입력받아 아래 조건에 맞게 결과를 출력하세요.</p>
 <ul>
@@ -131,6 +132,8 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">num = int(input(<span class="string">"Insert number: "</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> num % <span class="number">15</span> ==<span class="number">0</span> :</span><br><span class="line">    print(<span class="string">"fizzbuzz"</span>)</span><br><span class="line"><span class="keyword">elif</span> num % <span class="number">5</span> ==<span class="number">0</span> :</span><br><span class="line">    print(<span class="string">"buzz"</span>)</span><br><span class="line"><span class="keyword">elif</span> num % <span class="number">3</span> ==<span class="number">0</span> :</span><br><span class="line">    print(<span class="string">"fizz"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(num)</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> num % <span class="number">3</span> ==<span class="number">0</span> :</span><br><span class="line">    print(<span class="string">"fizz"</span>, end=<span class="string">""</span>)</span><br><span class="line"><span class="keyword">elif</span> num % <span class="number">5</span> ==<span class="number">0</span> :</span><br><span class="line">    print(<span class="string">"buzz"</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span>((num % <span class="number">3</span> ==<span class="number">0</span>) <span class="keyword">or</span> (num % <span class="number">5</span> ==<span class="number">0</span>)):</span><br><span class="line">    print(num)</span><br></pre></td></tr></table></figure>
+
+<br>
 
 <h3 id="삼항연산"><a href="#삼항연산" class="headerlink" title="삼항연산"></a>삼항연산</h3><ul>
 <li><p>condition이 True이면 A를 리터, False니면 B를 리턴</p>
