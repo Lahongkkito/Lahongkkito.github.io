@@ -4,25 +4,24 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
   
-    <title>02_operators | MJ&#39;s Study Note blog</title>
+    <title>06_module | MJ&#39;s Study Note blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Lahongkkito">
     
 
     
-    <meta name="description" content="연산자   산술연산자+, -, *, /, //, %, **  부동소수점   0.1 + 0.2 = 0.30000000000000004  해결 1 유효숫자 지정 (반올림)    round(2.2) = 2  round(-3.8) = -4  해결 2 고정소수점 연산 : 십진법 연산 모듈, str 객체 생성, int 연산 가능   from decimal import">
-<meta name="keywords" content="연산자">
+    <meta name="description" content="Module 변수, 함수, 클래스를 모아 놓은 하나의 파이썬 파일 (.py) 파일 단위로 코드 분리해서 관리 식별자 사용 규칙 짧은 소문자 사용 합성어 사용시 snake_case, CamelCase 구분 사용 모듈 명 가장 앞에 _ 붙은 경우 C, C++ 언어로 작성된 코드   예 : requests, numpy, pandas, math    모듈 호출 해">
 <meta property="og:type" content="article">
-<meta property="og:title" content="02_operators">
-<meta property="og:url" content="https://Lahongkkito.github.io/2019/09/17/02-operators/index.html">
+<meta property="og:title" content="06_module">
+<meta property="og:url" content="https://Lahongkkito.github.io/2019/09/22/06-module/index.html">
 <meta property="og:site_name" content="MJ&#39;s Study Note blog">
-<meta property="og:description" content="연산자   산술연산자+, -, *, /, //, %, **  부동소수점   0.1 + 0.2 = 0.30000000000000004  해결 1 유효숫자 지정 (반올림)    round(2.2) = 2  round(-3.8) = -4  해결 2 고정소수점 연산 : 십진법 연산 모듈, str 객체 생성, int 연산 가능   from decimal import">
+<meta property="og:description" content="Module 변수, 함수, 클래스를 모아 놓은 하나의 파이썬 파일 (.py) 파일 단위로 코드 분리해서 관리 식별자 사용 규칙 짧은 소문자 사용 합성어 사용시 snake_case, CamelCase 구분 사용 모듈 명 가장 앞에 _ 붙은 경우 C, C++ 언어로 작성된 코드   예 : requests, numpy, pandas, math    모듈 호출 해">
 <meta property="og:locale" content="KOR">
-<meta property="og:updated_time" content="2019-09-19T15:38:44.744Z">
+<meta property="og:updated_time" content="2019-09-21T16:47:07.118Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="02_operators">
-<meta name="twitter:description" content="연산자   산술연산자+, -, *, /, //, %, **  부동소수점   0.1 + 0.2 = 0.30000000000000004  해결 1 유효숫자 지정 (반올림)    round(2.2) = 2  round(-3.8) = -4  해결 2 고정소수점 연산 : 십진법 연산 모듈, str 객체 생성, int 연산 가능   from decimal import">
+<meta name="twitter:title" content="06_module">
+<meta name="twitter:description" content="Module 변수, 함수, 클래스를 모아 놓은 하나의 파이썬 파일 (.py) 파일 단위로 코드 분리해서 관리 식별자 사용 규칙 짧은 소문자 사용 합성어 사용시 snake_case, CamelCase 구분 사용 모듈 명 가장 앞에 _ 붙은 경우 C, C++ 언어로 작성된 코드   예 : requests, numpy, pandas, math    모듈 호출 해">
 
     
     
@@ -78,14 +77,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/09/17/02-operators/" title="02_operators" itemprop="url">02_operators</a>
+      <a href="/2019/09/22/06-module/" title="06_module" itemprop="url">06_module</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Lahongkkito" target="_blank" itemprop="author">Lahongkkito</a>
 		
   <p class="article-time">
-    <time datetime="2019-09-17T05:51:58.000Z" itemprop="datePublished"> Published 2019-09-17</time>
+    <time datetime="2019-09-21T16:43:00.000Z" itemprop="datePublished"> Published 2019-09-22</time>
     
   </p>
 </header>
@@ -94,85 +93,60 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#연산자"><span class="toc-number">1.</span> <span class="toc-text">연산자</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#산술연산자"><span class="toc-number">1.1.</span> <span class="toc-text">산술연산자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#비교연산자"><span class="toc-number">1.2.</span> <span class="toc-text">비교연산자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#할당연산자"><span class="toc-number">1.3.</span> <span class="toc-text">할당연산자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#비트연산자"><span class="toc-number">1.4.</span> <span class="toc-text">비트연산자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#논리연산자"><span class="toc-number">1.5.</span> <span class="toc-text">논리연산자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#멤버연산자"><span class="toc-number">1.6.</span> <span class="toc-text">멤버연산자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#식별연산자"><span class="toc-number">1.7.</span> <span class="toc-text">식별연산자</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Module"><span class="toc-number">1.</span> <span class="toc-text">Module</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#모듈-호출"><span class="toc-number">1.1.</span> <span class="toc-text">모듈 호출</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Package"><span class="toc-number">2.</span> <span class="toc-text">Package</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="연산자"><a href="#연산자" class="headerlink" title="연산자"></a>연산자</h2><br>
+		<h2 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h2><ul>
+<li>변수, 함수, 클래스를 모아 놓은 하나의 파이썬 파일 (.py)</li>
+<li>파일 단위로 코드 분리해서 관리</li>
+<li>식별자 사용 규칙<ul>
+<li>짧은 소문자 사용</li>
+<li>합성어 사용시 snake_case, CamelCase 구분 사용</li>
+<li>모듈 명 가장 앞에 <code>_</code> 붙은 경우 C, C++ 언어로 작성된 코드</li>
+</ul>
+</li>
+<li>예 : requests, numpy, pandas, math</li>
+</ul>
 <br>
 
-<h3 id="산술연산자"><a href="#산술연산자" class="headerlink" title="산술연산자"></a>산술연산자</h3><p><code>+, -, *, /, //, %, **</code></p>
+<h3 id="모듈-호출"><a href="#모듈-호출" class="headerlink" title="모듈 호출"></a>모듈 호출</h3><ul>
+<li>해당 모듈 전체 import</li>
+<li>from : 해당 모듈에서 특정한 타입만 import</li>
+<li>* : 해당 모듈 내 정의된 모든 것 import (비권장)</li>
+<li>as : alias 지정</li>
+</ul>
+<br>
+<br>
+
+<h2 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h2><ul>
+<li><p>디렉토리와 모듈로 구성</p>
+</li>
+<li><p><code>__init__</code> 파일 필요</p>
+</li>
+<li><p>디렉토리 생성</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!mkdir -p study/drawing</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>init 파일 추가</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!touch study/drawing/__init__.py</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>모듈 작성</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%%writefile study/drawing/lahong.py</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>호출</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> study.drawing.lahong <span class="keyword">as</span> lh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>설치</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">%%writefile study/setup.py</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> setuptools <span class="keyword">import</span> setup, find_packages</span><br><span class="line"></span><br><span class="line">setup(</span><br><span class="line">    name=<span class="string">'learn'</span>,</span><br><span class="line">    packages=find_packages(),</span><br><span class="line">    include_package_data=<span class="literal">True</span>,</span><br><span class="line">    version=<span class="string">'0.0.1'</span>,</span><br><span class="line">    author=<span class="string">'Lahongkkito'</span>,</span><br><span class="line">    author_email=<span class="string">'lahongkkito@gmail.com'</span>,</span><br><span class="line">    zip_safe=<span class="literal">False</span>,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li><p>부동소수점</p>
-<p>  0.1 + 0.2 = 0.30000000000000004</p>
-<ul>
-<li><p>해결 1 유효숫자 지정 (반올림) </p>
-<p>  round(2.2) = 2<br>  round(-3.8) = -4</p>
-</li>
-<li><p>해결 2 고정소수점 연산 : 십진법 연산 모듈, str 객체 생성, int 연산 가능</p>
-<p>  from decimal import Decimal<br>  float(Decimal(‘0.1’) + Decimal(‘0.2’)) = 0.3</p>
-</li>
-<li><p>해결 3 : fraction (분자, 분모) int/float 연산 가능</p>
-<p> import fractions<br> fractions.Fraction(5, 30) = Fraction(1, 6)<br> fractions.Fraction(0.75) = Fraction(3, 4)<br> a = fractions.Fraction(9, 28)<br> a.numerator = 9<br> a.denominator = 28</p>
-</li>
-<li><p>해결 4 : math 모듈</p>
-<p> import math<br> math.ceil(4.3) = 5</p>
-</li>
+<li>study $ python setup.py develop<ul>
+<li>develop (개발자 모드) : 코드 수정시 설치된 패키지도 수정된 내용이 적용</li>
+<li>build (일반 모드) : 코드 수정시 설치된 패키지가 수정되지 않습니다.</li>
 </ul>
 </li>
 </ul>
-<br>
-
-<h3 id="비교연산자"><a href="#비교연산자" class="headerlink" title="비교연산자"></a>비교연산자</h3><p><code>==, !=, &gt;, &lt;, &lt;=, &gt;=</code></p>
-<br>
-
-<h3 id="할당연산자"><a href="#할당연산자" class="headerlink" title="할당연산자"></a>할당연산자</h3><p><code>=, +=, -=, *=, /=, //=, %=, **=</code><br><br></p>
-<h3 id="비트연산자"><a href="#비트연산자" class="headerlink" title="비트연산자"></a>비트연산자</h3><ul>
-<li><p>2진수 연산 방식</p>
 </li>
-<li><p>bin() : 이진수 문자열로 변환</p>
-<p>  bin(5) = 0b101<br>  0b10110 = 22<br>  int(‘11101’, 2) = 29</p>
-</li>
-<li><p>&amp; : bit 단위로 and 연산</p>
-</li>
-<li><p>| : bit 단위로 or 연산</p>
-</li>
-<li><p>^ : bit 단위로 xor 연산</p>
-</li>
-<li><p>~ : bit 단위로 not 연산 (1의 보수)</p>
-</li>
-<li><p>&lt;&lt;/&gt;&gt;</p>
-<ul>
-<li>bit 단위로 왼/오른쪽 비트단위 밀기 연산</li>
-<li>양수는 0, 음수는 1 채워짐</li>
-<li>왼쪽/오른쪽 shift 마다 2^n 곱한/나눈 효과</li>
-</ul>
-</li>
-</ul>
-<br>    
-
-<p>bin(0b10101 &amp; 0b11100) = 0b10100<br>0b10101 &amp; 0b11100 = 28 &amp; 21 = 20</p>
-<p>bin(0b10101 | 0b11100) = 0b11101<br>0b10101 | 0b11100 = 28 | 21 = 29</p>
-<p>bin(0b10101 ^ 0b11100) = 0b1001<br>0b10101 ^ 0b11100 = 28 ^ 21 = 9</p>
-<p>bin(~0b10101) = -0b10110<br>~0b10101 = -22<br>~28 = -29</p>
-<br>
-
-<h3 id="논리연산자"><a href="#논리연산자" class="headerlink" title="논리연산자"></a>논리연산자</h3><ul>
-<li>and : 둘 다 참일 때 참</li>
-<li>or : 둘 중 하나 참일 때 참</li>
-<li>not : 참이면 거짓, 거짓이면 참</li>
-</ul>
-<br>
-
-<h3 id="멤버연산자"><a href="#멤버연산자" class="headerlink" title="멤버연산자"></a>멤버연산자</h3><ul>
-<li>in : list 내에 포함되어 있으면 참</li>
-<li>not in : list 내에 포함되어 있지 않으면 참</li>
-</ul>
-<br>
-
-<h3 id="식별연산자"><a href="#식별연산자" class="headerlink" title="식별연산자"></a>식별연산자</h3><ul>
-<li>is : 개체메모리 위치나 값이 같으면 참</li>
-<li>is not :  개체메모리 위치나 값지 않으면 참</li>
 </ul>
   
 	</div>
@@ -181,14 +155,9 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/python/">python</a>
+  <a class="article-category-link" href="/categories/pytton/">pytton</a>
 </div>
 
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/연산자/">연산자</a>
-  </div>
 
 </div>
 
@@ -196,7 +165,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="https://Lahongkkito.github.io/2019/09/17/02-operators/" data-title="02_operators | MJ&#39;s Study Note blog" data-tsina="" class="share clearfix">
+	  <div data-url="https://Lahongkkito.github.io/2019/09/22/06-module/" data-title="06_module | MJ&#39;s Study Note blog" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -209,19 +178,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2019/09/19/03-conditions/" title="03_conditions">
-  <strong>上一篇：</strong><br/>
-  <span>
-  03_conditions</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2019/09/16/01-datatype/"  title="01_datatype">
+<a href="/2019/09/21/05-function/"  title="05_function">
  <strong>下一篇：</strong><br/> 
- <span>01_datatype
+ <span>05_function
 </span>
 </a>
 </div>
@@ -238,7 +199,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#연산자"><span class="toc-number">1.</span> <span class="toc-text">연산자</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#산술연산자"><span class="toc-number">1.1.</span> <span class="toc-text">산술연산자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#비교연산자"><span class="toc-number">1.2.</span> <span class="toc-text">비교연산자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#할당연산자"><span class="toc-number">1.3.</span> <span class="toc-text">할당연산자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#비트연산자"><span class="toc-number">1.4.</span> <span class="toc-text">비트연산자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#논리연산자"><span class="toc-number">1.5.</span> <span class="toc-text">논리연산자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#멤버연산자"><span class="toc-number">1.6.</span> <span class="toc-text">멤버연산자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#식별연산자"><span class="toc-number">1.7.</span> <span class="toc-text">식별연산자</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Module"><span class="toc-number">1.</span> <span class="toc-text">Module</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#모듈-호출"><span class="toc-number">1.1.</span> <span class="toc-text">모듈 호출</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Package"><span class="toc-number">2.</span> <span class="toc-text">Package</span></a></li></ol>
  
   </div>
 
