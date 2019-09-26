@@ -75,6 +75,141 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2019/09/17/02-operators/" title="02_operators" itemprop="url">02_operators</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Lahongkkito" target="_blank" itemprop="author">Lahongkkito</a>
+		
+  <p class="article-time">
+    <time datetime="2019-09-17T05:51:58.000Z" itemprop="datePublished"> Published 2019-09-17</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="연산자"><a href="#연산자" class="headerlink" title="연산자"></a>연산자</h2><br>
+<br>
+
+<h3 id="산술연산자"><a href="#산술연산자" class="headerlink" title="산술연산자"></a>산술연산자</h3><p><code>+, -, *, /, //, %, **</code></p>
+<ul>
+<li><p>부동소수점</p>
+<p>  0.1 + 0.2 = 0.30000000000000004</p>
+<ul>
+<li><p>해결 1 유효숫자 지정 (반올림) </p>
+<p>  round(2.2) = 2<br>  round(-3.8) = -4</p>
+</li>
+<li><p>해결 2 고정소수점 연산 : 십진법 연산 모듈, str 객체 생성, int 연산 가능</p>
+<p>  from decimal import Decimal<br>  float(Decimal(‘0.1’) + Decimal(‘0.2’)) = 0.3</p>
+</li>
+<li><p>해결 3 : fraction (분자, 분모) int/float 연산 가능</p>
+<p> import fractions<br> fractions.Fraction(5, 30) = Fraction(1, 6)<br> fractions.Fraction(0.75) = Fraction(3, 4)<br> a = fractions.Fraction(9, 28)<br> a.numerator = 9<br> a.denominator = 28</p>
+</li>
+<li><p>해결 4 : math 모듈</p>
+<p> import math<br> math.ceil(4.3) = 5</p>
+</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<h3 id="비교연산자"><a href="#비교연산자" class="headerlink" title="비교연산자"></a>비교연산자</h3><p><code>==, !=, &gt;, &lt;, &lt;=, &gt;=</code></p>
+<br>
+
+<h3 id="할당연산자"><a href="#할당연산자" class="headerlink" title="할당연산자"></a>할당연산자</h3><p><code>=, +=, -=, *=, /=, //=, %=, **=</code><br><br></p>
+<h3 id="비트연산자"><a href="#비트연산자" class="headerlink" title="비트연산자"></a>비트연산자</h3><ul>
+<li><p>2진수 연산 방식</p>
+</li>
+<li><p>bin() : 이진수 문자열로 변환</p>
+<p>  bin(5) = 0b101<br>  0b10110 = 22<br>  int(‘11101’, 2) = 29</p>
+</li>
+<li><p>&amp; : bit 단위로 and 연산</p>
+</li>
+<li><p>| : bit 단위로 or 연산</p>
+</li>
+<li><p>^ : bit 단위로 xor 연산</p>
+</li>
+<li><p>~ : bit 단위로 not 연산 (1의 보수)</p>
+</li>
+<li><p>&lt;&lt;/&gt;&gt;</p>
+<ul>
+<li>bit 단위로 왼/오른쪽 비트단위 밀기 연산</li>
+<li>양수는 0, 음수는 1 채워짐</li>
+<li>왼쪽/오른쪽 shift 마다 2^n 곱한/나눈 효과</li>
+</ul>
+</li>
+</ul>
+<br>    
+
+<p>bin(0b10101 &amp; 0b11100) = 0b10100<br>0b10101 &amp; 0b11100 = 28 &amp; 21 = 20</p>
+<p>bin(0b10101 | 0b11100) = 0b11101<br>0b10101 | 0b11100 = 28 | 21 = 29</p>
+<p>bin(0b10101 ^ 0b11100) = 0b1001<br>0b10101 ^ 0b11100 = 28 ^ 21 = 9</p>
+<p>bin(~0b10101) = -0b10110<br>~0b10101 = -22<br>~28 = -29</p>
+<br>
+
+<h3 id="논리연산자"><a href="#논리연산자" class="headerlink" title="논리연산자"></a>논리연산자</h3><ul>
+<li>and : 둘 다 참일 때 참</li>
+<li>or : 둘 중 하나 참일 때 참</li>
+<li>not : 참이면 거짓, 거짓이면 참</li>
+</ul>
+<br>
+
+<h3 id="멤버연산자"><a href="#멤버연산자" class="headerlink" title="멤버연산자"></a>멤버연산자</h3><ul>
+<li>in : list 내에 포함되어 있으면 참</li>
+<li>not in : list 내에 포함되어 있지 않으면 참</li>
+</ul>
+<br>
+
+<h3 id="식별연산자"><a href="#식별연산자" class="headerlink" title="식별연산자"></a>식별연산자</h3><ul>
+<li>is : 개체메모리 위치나 값이 같으면 참</li>
+<li>is not :  개체메모리 위치나 값지 않으면 참</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/python/">python</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/연산자/">연산자</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2019/09/16/01-datatype/" title="01_datatype" itemprop="url">01_datatype</a>
   </h1>
   <p class="article-author">By
@@ -434,11 +569,9 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/python/" title="python">python<sup>6</sup></a></li>
+			<li><a href="/categories/python/" title="python">python<sup>8</sup></a></li>
 		  
 		
-		  
-			<li><a href="/categories/pytton/" title="pytton">pytton<sup>1</sup></a></li>
 		  
 		
 		</ul>
@@ -451,11 +584,15 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/exception/" title="exception">exception<sup>1</sup></a></li>
+				<li><a href="/tags/while/" title="while">while<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/datatype/" title="datatype">datatype<sup>1</sup></a></li>
+				<li><a href="/tags/PEP/" title="PEP">PEP<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/string/" title="string">string<sup>1</sup></a></li>
 			
 		
 			
@@ -471,10 +608,6 @@
 			
 		
 			
-				<li><a href="/tags/PEP/" title="PEP">PEP<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/if/" title="if">if<sup>1</sup></a></li>
 			
 		
@@ -483,11 +616,11 @@
 			
 		
 			
-				<li><a href="/tags/string/" title="string">string<sup>1</sup></a></li>
+				<li><a href="/tags/try/" title="try">try<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/연산자/" title="연산자">연산자<sup>1</sup></a></li>
+				<li><a href="/tags/exception/" title="exception">exception<sup>1</sup></a></li>
 			
 		
 			
@@ -495,7 +628,7 @@
 			
 		
 			
-				<li><a href="/tags/while/" title="while">while<sup>1</sup></a></li>
+				<li><a href="/tags/datatype/" title="datatype">datatype<sup>1</sup></a></li>
 			
 		
 			
@@ -507,11 +640,27 @@
 			
 		
 			
+				<li><a href="/tags/연산자/" title="연산자">연산자<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/lambda/" title="lambda">lambda<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/try/" title="try">try<sup>1</sup></a></li>
+				<li><a href="/tags/class/" title="class">class<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/객체지향/" title="객체지향">객체지향<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/decorator/" title="decorator">decorator<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/module/" title="module">module<sup>1</sup></a></li>
 			
 		
 		</ul>
