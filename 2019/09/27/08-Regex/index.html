@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="MJ&#39;s Study Note blog">
 <meta property="og:description" content="정규표현식 regular expression 특정 패턴과 일치하는 문자열을 검색, 치환, 제거하는 기능 지원 raw string 문자열 앞에 r이 붙으면 구성된 그대로 문자열로 변환    12345a = &apos;abcdef\n&apos; # escapce 문자열print(a)b = r&apos;abcdef\n&apos;print(b)  12abcdefabcdef\n  pattern 기본">
 <meta property="og:locale" content="KOR">
-<meta property="og:updated_time" content="2019-09-26T23:35:59.471Z">
+<meta property="og:updated_time" content="2019-09-26T23:41:53.788Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="08_Regex">
 <meta name="twitter:description" content="정규표현식 regular expression 특정 패턴과 일치하는 문자열을 검색, 치환, 제거하는 기능 지원 raw string 문자열 앞에 r이 붙으면 구성된 그대로 문자열로 변환    12345a = &apos;abcdef\n&apos; # escapce 문자열print(a)b = r&apos;abcdef\n&apos;print(b)  12abcdefabcdef\n  pattern 기본">
@@ -151,9 +151,7 @@
 </li>
 <li><p><code>{m}</code> : m회</p>
 </li>
-<li><p><code>{m, n}</code></p>
-</li>
-<li><p>{m,n}의 경우 m번 에서 n번 반복하나 greedy하게 동작</p>
+<li><p><code>{m, n}</code> : m~n회 반복</p>
 <ul>
 <li>{m,n}?로 사용하면 non-greedy하게 동작. 즉, 최소 m번만 매칭하면 만족</li>
 </ul>
