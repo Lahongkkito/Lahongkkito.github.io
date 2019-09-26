@@ -88,14 +88,8 @@
 </header>
     <div class="article-content">
         
-        <h2 id="객체지향"><a href="#객체지향" class="headerlink" title="객체지향"></a>객체지향</h2><ul>
+        <h2 id="클래스"><a href="#클래스" class="headerlink" title="클래스"></a>클래스</h2><ul>
 <li>실제 세계를 모델링하여 공통적인 기능을 묶어 개발</li>
-</ul>
-<br>
-<br>
-
-
-<h2 id="클래스"><a href="#클래스" class="headerlink" title="클래스"></a>클래스</h2><ul>
 <li>객체(인스턴스)<ul>
 <li>식별성, 타입, 값을 지님</li>
 <li>자신만의 함수를 가짐</li>
@@ -114,12 +108,21 @@
 <h3 id="self"><a href="#self" class="headerlink" title="self"></a>self</h3><ul>
 <li>객체 자신을 의미</li>
 <li>클래스 내부의 함수 선언시 첫번째 parameter</li>
+<li>현재 해당 메소드가 호출되는 객체 자신을 가리킴</li>
+<li>C++/C#, Java의 this에 ㄷ해당</li>
 <li>클래스 정의 후 객체, 함수 등을 추가</li>
 </ul>
 <br>
 
+<h3 id="object"><a href="#object" class="headerlink" title="object"></a>object</h3><ul>
+<li>클래스로 생성되어 구체화된 객체 (인스턴스)</li>
+<li>실제로 클래스가 인스천스화 되어 메모리에 상주하는 상태 의미</li>
+</ul>
+<br>
+
 <h3 id="생성자"><a href="#생성자" class="headerlink" title="생성자"></a>생성자</h3><ul>
-<li>클레스가 객체로 만들어질 때 초기값을 설정하는 기능</li>
+<li>클래스가 다루는 데이터를 정의 (member variable, attribute)</li>
+<li>클래스가 객체로 만들어질 때 초기값을 설정하는 기능</li>
 <li><code>__init__</code>으로 선언</li>
 <li>필수 변수가 있어야 객체 생성</li>
 </ul>
@@ -129,9 +132,52 @@
 
 <br>
 
+<h3 id="클래스-메서드"><a href="#클래스-메서드" class="headerlink" title="클래스 메서드"></a>클래스 메서드</h3><ul>
+<li>객체 레벨에서 호출</li>
+<li>해당 객체의 속성에 대한 연산 수행</li>
+<li>{obj}.{method}() 형태로 호출</li>
+</ul>
+<h4 id="instance-method"><a href="#instance-method" class="headerlink" title="instance method"></a>instance method</h4><pre><code>- 인스턴스를 통해 호출해서 사용
+- 호출한 객체에만 영향을 미침
+- self 파라미터 사용
+- self 객체를 받음</code></pre><h4 id="class-method"><a href="#class-method" class="headerlink" title="class method"></a>class method</h4><pre><code>- 클래스를 통해서 사용
+- 클래스 멤버 변수만 변경 가능
+- cls 파라미터 사용
+- cls 클래스를 받음</code></pre><h4 id="static-method"><a href="#static-method" class="headerlink" title="static method"></a>static method</h4><pre><code>- 클래스 안에서 선언되는 일반 함수</code></pre><br>
+
+<h4 id="magic-special-method"><a href="#magic-special-method" class="headerlink" title="magic(special) method"></a>magic(special) method</h4><ul>
+<li>클래스에서 객체로 만들어질 떄, 자동 생성 함수</li>
+<li>객체 사이의 연산자 사용과 같은 코드 정의 </li>
+<li>파이썬 내장 함수나 연산자 적용 가능 </li>
+<li>compare<ul>
+<li><code>__eq__</code> : == </li>
+<li><code>__ne__</code> : !=</li>
+<li><code>__lt__</code> : &lt;</li>
+<li><code>__gt__</code> : &gt;</li>
+<li><code>__le__</code> : &lt;=</li>
+<li><code>__ge__</code> : &gt;=</li>
+</ul>
+</li>
+<li>calculate<ul>
+<li><code>__add__</code> : +</li>
+<li><code>__sub__</code> : -</li>
+<li><code>__mul__</code> : *</li>
+<li><code>__truediv__</code> : /</li>
+<li><code>__floordiv__</code> : //</li>
+<li><code>__mod__</code> : %</li>
+<li><code>__pow__</code> : **</li>
+</ul>
+</li>
+<li><code>__repr__</code></li>
+<li><code>__str__</code></li>
+<li><code>__len__</code></li>
+</ul>
+<br>
+
 <h3 id="상속"><a href="#상속" class="headerlink" title="상속"></a>상속</h3><ul>
-<li>기존 클래스에 새로운 변수나 함수를 추가/수정</li>
-<li>부모/자식 클래스</li>
+<li>기존에 정의한 클래스이 기능을 그대로 물려받아 새로운 변수나 함수를 추가/수정 가능</li>
+<li>부모 클래스 (Parent, Super, Base class) : 상속 받고자 하는 기존 클래스</li>
+<li>자식 클래스 (Child, Sub, Derived class) : 상속 받는 새로운 클래스</li>
 <li>is a : A is a B와 같은 의미로 상속 사용해서 클래스 선언</li>
 <li>has a : B has a A 클래스의 변수를 객체로 받아 객체 생성</li>
 </ul>
@@ -185,52 +231,6 @@
 </ul>
 <br>
 
-<h3 id="클래스-메서드"><a href="#클래스-메서드" class="headerlink" title="클래스 메서드"></a>클래스 메서드</h3><ul>
-<li>instance method<ul>
-<li>인스턴스를 통해 호출해서 사용</li>
-<li>self 파라미터 사용</li>
-<li>self 객체를 받음</li>
-</ul>
-</li>
-<li>class method<ul>
-<li>클래스를 통해서 사용</li>
-<li>cls 파라미터 사용</li>
-<li>cls 클래스를 받음</li>
-</ul>
-</li>
-<li>static method<ul>
-<li>클래스 안에서 선언되는 일반 함수</li>
-</ul>
-</li>
-</ul>
-<br>
-
-<h4 id="magic-special-method"><a href="#magic-special-method" class="headerlink" title="magic(special) method"></a>magic(special) method</h4><ul>
-<li>클래스에서 객체로 만들어질 떄, 자동 생성 함수</li>
-<li>객체 사이의 연산자 사용과 같은 코드 정의 </li>
-<li>compare<ul>
-<li><code>__eq__</code> : == </li>
-<li><code>__ne__</code> : !=</li>
-<li><code>__lt__</code> : &lt;</li>
-<li><code>__gt__</code> : &gt;</li>
-<li><code>__le__</code> : &lt;=</li>
-<li><code>__ge__</code> : &gt;=</li>
-</ul>
-</li>
-<li>calculate<ul>
-<li><code>__add__</code> : +</li>
-<li><code>__sub__</code> : -</li>
-<li><code>__mul__</code> : *</li>
-<li><code>__truediv__</code> : /</li>
-<li><code>__floordiv__</code> : //</li>
-<li><code>__mod__</code> : %</li>
-<li><code>__pow__</code> : **</li>
-</ul>
-</li>
-<li><code>__repr__</code></li>
-<li><code>__str__</code></li>
-<li><code>__len__</code></li>
-</ul>
 
         
         
