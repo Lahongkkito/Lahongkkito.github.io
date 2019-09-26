@@ -142,10 +142,7 @@
 </li>
 <li><p><code>{m}</code> : m회</p>
 </li>
-<li><p><code>{m, n}</code> : m~n회 반복</p>
-<ul>
-<li>{m,n}?로 사용하면 non-greedy하게 동작. 즉, 최소 m번만 매칭하면 만족</li>
-</ul>
+<li><p><code>{m, n}</code> : m~n회 반복(<code>{m,n}?</code>로 사용하면 최소 m번만 매칭하면 만족)</p>
 </li>
 <li><p><code>()</code> : 그룹핑</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">m = re.search(<span class="string">r'(\w+)@(.+)'</span>, <span class="string">'test@gmail.com'</span>)</span><br><span class="line">print(m.group(<span class="number">1</span>))</span><br><span class="line">print(m.group(<span class="number">2</span>))</span><br><span class="line">print(m.group(<span class="number">0</span>))</span><br></pre></td></tr></table></figure>
