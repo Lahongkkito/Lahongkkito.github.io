@@ -75,6 +75,145 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2019/09/30/09-InputOutput/" title="09_InputOutput" itemprop="url">09_InputOutput</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Lahongkkito" target="_blank" itemprop="author">Lahongkkito</a>
+		
+  <p class="article-time">
+    <time datetime="2019-09-30T05:35:09.000Z" itemprop="datePublished"> Published 2019-09-30</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="File"><a href="#File" class="headerlink" title="File"></a>File</h2><br>
+
+<h4 id="파일을-통한-입출력-방법"><a href="#파일을-통한-입출력-방법" class="headerlink" title="파일을 통한 입출력 방법"></a>파일을 통한 입출력 방법</h4><ul>
+<li><p>파일 생성<br><code>파일 객체 = open(폴더/파일명, 열기 모드)</code></p>
+</li>
+<li><p>파일 읽기, 쓰기</p>
+<ul>
+<li>x : 파일 쓰기 (존재하지 않을 때만 생성)</li>
+<li>w : 파일 쓰기 (덮어쓰기)</li>
+<li>r : 파일 읽기</li>
+<li>a : 파일 마지막에 새로운 내용 추가</li>
+</ul>
+</li>
+<li><p>파일 타입</p>
+<ul>
+<li>t : 텍스트 타입</li>
+<li>b : 이진 타입</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<ul>
+<li><p>텍스트 파일 작성</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">text1 = <span class="string">"""Autumn...</span></span><br><span class="line"><span class="string">the year's last, loveliest smile."""</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>텍스트 파일 쓰기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"sample1.txt"</span>, <span class="string">"wt"</span>)</span><br><span class="line">f.write(text1)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>텍스트 파일 읽기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"sample1.txt"</span>, <span class="string">"rt"</span>)</span><br><span class="line">s1 = f.read()</span><br><span class="line">f.close()</span><br><span class="line">print(s1)</span><br></pre></td></tr></table></figure>
+
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Autumn...</span><br><span class="line">the year&apos;s last, loveliest smile.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>바이너리 파일 작성</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin1 = bytes(range(<span class="number">6</span>, <span class="number">10</span>))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>바이너리 파일 쓰기 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"sample2.b"</span>, <span class="string">"wb"</span>)</span><br><span class="line">f.write(bin1)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>바이너리 파일 읽기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"sample2.b"</span>, <span class="string">"rb"</span>)</span><br><span class="line">s2 = f.read()</span><br><span class="line">f.close()</span><br><span class="line">print(list(s2))</span><br></pre></td></tr></table></figure>
+
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[6, 7, 8, 9]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h4 id="readline-s-함수"><a href="#readline-s-함수" class="headerlink" title="readline(s) 함수"></a>readline(s) 함수</h4><ul>
+<li>readline() : 파일.txt의 가장 첫 번째 줄이 화면에 출력</li>
+<li>readlines() : 파일의 모든 줄을 읽어서 각각의 줄을 요소로 갖는 리스트로 출력</li>
+<li>read() : 파일의 내용 전체를 문자열로 출력</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"test/sample1.txt"</span>, <span class="string">"rt"</span>)</span><br><span class="line">line = f.readline()</span><br><span class="line"><span class="comment">#lines = f.readlines()</span></span><br><span class="line">f.close()</span><br><span class="line">print(line)</span><br><span class="line"><span class="comment">#print(lines)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Autumn...</span><br><span class="line"><span class="comment">#['Autumn...\n', "the year's last, loveliest smile."]</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="with문"><a href="#with문" class="headerlink" title="with문"></a>with문</h4><ul>
+<li>with 블록을 벗어나는 순감 열린 파일 객체 자동 close</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">"test/sample3.txt"</span>, <span class="string">"w"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(<span class="string">"Autumn is a second spring when every leaf a flower."</span>)</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+
+<h2 id="Pickle"><a href="#Pickle" class="headerlink" title="Pickle"></a>Pickle</h2><ul>
+<li>데이터가 아닌 파이썬 객체 자체를 파일로 저장/로딩</li>
+<li>리스트, 클래스 등의 비텍스트 자료형 저장에 이용</li>
+<li>바이너리로 저장되어 저용량</li>
+<li>한 개 파일에 dump 함수를 여러번 실행하여 여러 객체 저장<br><code>dump(object, file, protocol)</code></li>
+<li>여러 객체가 저장된 pkl파일에 load를 여러번 실행하여 객체 로딩<br><code>load(file)</code></li>
+</ul>
+<br>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"><span class="keyword">import</span> gzip   <span class="comment"># 압축 및 해제 프로그램  </span></span><br><span class="line"></span><br><span class="line">data = &#123;</span><br><span class="line">    <span class="string">'a'</span>: [<span class="string">'cucumber'</span>, <span class="string">'daikon'</span>, <span class="string">'onion'</span>],</span><br><span class="line">    <span class="string">'b'</span>: &#123;<span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">None</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># save and compress.</span></span><br><span class="line"><span class="keyword">with</span> gzip.open(<span class="string">'test/PickleFile.pkl'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    pickle.dump(data, f)</span><br><span class="line"></span><br><span class="line"><span class="comment"># load and uncompress.</span></span><br><span class="line"><span class="keyword">with</span> gzip.open(<span class="string">'test/PickleFile.pkl'</span>,<span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    data = pickle.load(f)</span><br></pre></td></tr></table></figure>
+
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/python/">python</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/pickle/">pickle</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2019/09/27/08-Regex/" title="08_Regex" itemprop="url">08_Regex</a>
   </h1>
   <p class="article-author">By
@@ -718,146 +857,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2019/09/20/04-loops/" title="04_loops" itemprop="url">04_loops</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Lahongkkito" target="_blank" itemprop="author">Lahongkkito</a>
-		
-  <p class="article-time">
-    <time datetime="2019-09-19T15:01:02.000Z" itemprop="datePublished"> Published 2019-09-20</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="반복문"><a href="#반복문" class="headerlink" title="반복문"></a>반복문</h2><ul>
-<li>반복적 작업을 위한 도구로 코드 작업에서 가장 많이 사용하는 구문 중 하나</li>
-<li>특정 조건을 만족하는 경우 수행 (while)</li>
-<li>리스트, 문자열, 튜플 등 컬렉션 타입의 아이템을 하나씩 순회하면서 사용 (for)</li>
-<li>break : 특정 조건일때 종료<ul>
-<li>주의 : while을 사용할 경우, 반복을 멈추게 하는 장치가 필요</li>
-<li>반복문 중단 이후 코드 수행</li>
-</ul>
-</li>
-<li>continue : 해당 아이템 건너 뛰고 다음 반복 실행</li>
-<li>중첩 사용 가능 (외부 루트 수행 횟수 만큼 내부 루프 반복 수행)</li>
-</ul>
-<br>
-<br>
-
-<h3 id="for"><a href="#for" class="headerlink" title="for"></a>for</h3><ul>
-<li>iterable한 집합의 아이템(데이터)을 value 변수에 차례로 대입 후 for 구문 코드 실행</li>
-<li>모든 아이템이 순회되면 for 블록 종료</li>
-<li>문자열의 경우 리스트와 유사하게 순회</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> &lt;iterable&gt; :</span><br><span class="line">    &lt;code : value&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>dict 아이템 출력 가능</p>
-<ul>
-<li><p>keys(), values(), items() </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="string">'korea'</span>: <span class="string">'seoul'</span>, <span class="string">'japan'</span>: <span class="string">'tokyo'</span>, <span class="string">'canada'</span>: <span class="string">'ottawa'</span>&#125;</span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> a.items():</span><br><span class="line">print(key, value)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">korea seoul</span><br><span class="line">japan tokyo</span><br><span class="line">canada ottawa</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-</li>
-</ul>
-<br>
-
-<h3 id="range"><a href="#range" class="headerlink" title="range"></a>range</h3><ul>
-<li>iterable 숫자로 구성된 리스트 데이터를 만드는 함수<ul>
-<li>range(end)</li>
-<li>range(start, end)</li>
-<li>range(start, end, stride)</li>
-</ul>
-</li>
-</ul>
-<br>
-
-<h3 id="enumerate"><a href="#enumerate" class="headerlink" title="enumerate"></a>enumerate</h3><ul>
-<li>index와 value 값을 동시에 사용 (<code>tuple 형태로 반환</code>)</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">subjects = [<span class="string">"math"</span>, <span class="string">"english"</span>, <span class="string">"science"</span>,]</span><br><span class="line"><span class="keyword">for</span> number, value <span class="keyword">in</span> enumerate(subjects):</span><br><span class="line">    print(number + <span class="number">1</span>, value)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">((0, &apos;math&apos;), (1, &apos;english&apos;), (2, &apos;science&apos;))</span><br></pre></td></tr></table></figure>
-
-<br>
-
-<h3 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h3><ul>
-<li>리스트를 같은 index끼리 묶어주는 함수</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">subjects = [<span class="string">"math"</span>, <span class="string">"english"</span>, <span class="string">"science"</span>,]</span><br><span class="line">points = [<span class="number">80</span>, <span class="number">90</span>, <span class="number">70</span>]</span><br><span class="line">grades = [<span class="string">"B"</span>, <span class="string">"A"</span>, <span class="string">"C"</span>]</span><br><span class="line">list(zip(subjects, points, grades))</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[(&apos;math&apos;, 80, &apos;B&apos;), (&apos;english&apos;, 90, &apos;A&apos;), (&apos;science&apos;, 100, &apos;A&apos;)]</span><br></pre></td></tr></table></figure>
-
-<br>
-
-<h3 id="list-comprehension"><a href="#list-comprehension" class="headerlink" title="list comprehension"></a>list comprehension</h3><ul>
-<li>반복문의 결과를 바로 리스트로 만듦으로써 for문 보다 속도가 빠르다.</li>
-<li>조건문, 삼항연산 등과 함께 사용 가능</li>
-</ul>
-<p><code>ls = [&lt;value&gt; for &lt;value&gt; in &lt;list&gt;]</code><br><code>ls = [&lt;value&gt; for &lt;value&gt; in &lt;list&gt; if &lt;condition&gt;]</code></p>
-<p>Q. 삼항연산으로 1~10의 숫자와 홀/짝수 구분을 출력하세요.<br>A.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls = [</span><br><span class="line">    str(num) + <span class="string">":even"</span> <span class="keyword">if</span> num % <span class="number">2</span> == <span class="number">0</span> <span class="keyword">else</span> str(num) + <span class="string">":odd"</span></span><br><span class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">11</span>)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<br>
-
-<h3 id="while"><a href="#while" class="headerlink" title="while"></a>while</h3><ul>
-<li>condition이 False가 될 때까지 구문 실행</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="string">'q'</span>]</span><br><span class="line">idx = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    data = a[idx]</span><br><span class="line">    idx += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> data == <span class="string">'q'</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">elif</span> data % <span class="number">2</span> == <span class="number">0</span> :</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    </span><br><span class="line">    print(data)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure>
-
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/python/">python</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/for/">for</a><a href="/tags/while/">while</a><a href="/tags/break/">break</a><a href="/tags/list-comprehension/">list comprehension</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
@@ -885,7 +884,7 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/python/" title="python">python<sup>9</sup></a></li>
+			<li><a href="/categories/python/" title="python">python<sup>10</sup></a></li>
 		  
 		
 		</ul>
@@ -898,15 +897,11 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/lambda/" title="lambda">lambda<sup>1</sup></a></li>
+				<li><a href="/tags/for/" title="for">for<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/PEP/" title="PEP">PEP<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/string/" title="string">string<sup>1</sup></a></li>
+				<li><a href="/tags/datatype/" title="datatype">datatype<sup>1</sup></a></li>
 			
 		
 			
@@ -922,7 +917,7 @@
 			
 		
 			
-				<li><a href="/tags/연산자/" title="연산자">연산자<sup>1</sup></a></li>
+				<li><a href="/tags/PEP/" title="PEP">PEP<sup>1</sup></a></li>
 			
 		
 			
@@ -942,11 +937,11 @@
 			
 		
 			
-				<li><a href="/tags/datatype/" title="datatype">datatype<sup>1</sup></a></li>
+				<li><a href="/tags/연산자/" title="연산자">연산자<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/for/" title="for">for<sup>1</sup></a></li>
+				<li><a href="/tags/string/" title="string">string<sup>1</sup></a></li>
 			
 		
 			
@@ -959,6 +954,10 @@
 		
 			
 				<li><a href="/tags/list-comprehension/" title="list comprehension">list comprehension<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/lambda/" title="lambda">lambda<sup>1</sup></a></li>
 			
 		
 			

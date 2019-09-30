@@ -1,0 +1,599 @@
+
+ <!DOCTYPE HTML>
+<html lang="KOR">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  
+    <title>09_InputOutput | MJ&#39;s Study Note blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Lahongkkito">
+    
+
+    
+    <meta name="description" content="File  파일을 통한 입출력 방법 파일 생성파일 객체 = open(폴더/파일명, 열기 모드)  파일 읽기, 쓰기  x : 파일 쓰기 (존재하지 않을 때만 생성) w : 파일 쓰기 (덮어쓰기) r : 파일 읽기 a : 파일 마지막에 새로운 내용 추가   파일 타입  t : 텍스트 타입 b : 이진 타입       텍스트 파일 작성   12text1 = &quot;&quot;">
+<meta name="keywords" content="pickle">
+<meta property="og:type" content="article">
+<meta property="og:title" content="09_InputOutput">
+<meta property="og:url" content="https://Lahongkkito.github.io/2019/09/30/09-InputOutput/index.html">
+<meta property="og:site_name" content="MJ&#39;s Study Note blog">
+<meta property="og:description" content="File  파일을 통한 입출력 방법 파일 생성파일 객체 = open(폴더/파일명, 열기 모드)  파일 읽기, 쓰기  x : 파일 쓰기 (존재하지 않을 때만 생성) w : 파일 쓰기 (덮어쓰기) r : 파일 읽기 a : 파일 마지막에 새로운 내용 추가   파일 타입  t : 텍스트 타입 b : 이진 타입       텍스트 파일 작성   12text1 = &quot;&quot;">
+<meta property="og:locale" content="KOR">
+<meta property="og:updated_time" content="2019-09-30T05:52:59.530Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="09_InputOutput">
+<meta name="twitter:description" content="File  파일을 통한 입출력 방법 파일 생성파일 객체 = open(폴더/파일명, 열기 모드)  파일 읽기, 쓰기  x : 파일 쓰기 (존재하지 않을 때만 생성) w : 파일 쓰기 (덮어쓰기) r : 파일 읽기 a : 파일 마지막에 새로운 내용 추가   파일 타입  t : 텍스트 타입 b : 이진 타입       텍스트 파일 작성   12text1 = &quot;&quot;">
+
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="MJ&#39;s Study Note blog" title="MJ&#39;s Study Note blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="MJ&#39;s Study Note blog">MJ&#39;s Study Note blog</a></h1>
+				<h2 class="blog-motto">Python &amp; Machine Learning study blog</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:Lahongkkito.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2019/09/30/09-InputOutput/" title="09_InputOutput" itemprop="url">09_InputOutput</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Lahongkkito" target="_blank" itemprop="author">Lahongkkito</a>
+		
+  <p class="article-time">
+    <time datetime="2019-09-30T05:35:09.000Z" itemprop="datePublished"> Published 2019-09-30</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#File"><span class="toc-number">1.</span> <span class="toc-text">File</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#파일을-통한-입출력-방법"><span class="toc-number">1.0.1.</span> <span class="toc-text">파일을 통한 입출력 방법</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#readline-s-함수"><span class="toc-number">1.0.2.</span> <span class="toc-text">readline(s) 함수</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#with문"><span class="toc-number">1.0.3.</span> <span class="toc-text">with문</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pickle"><span class="toc-number">2.</span> <span class="toc-text">Pickle</span></a></li></ol>
+		
+		</div>
+		
+		<h2 id="File"><a href="#File" class="headerlink" title="File"></a>File</h2><br>
+
+<h4 id="파일을-통한-입출력-방법"><a href="#파일을-통한-입출력-방법" class="headerlink" title="파일을 통한 입출력 방법"></a>파일을 통한 입출력 방법</h4><ul>
+<li><p>파일 생성<br><code>파일 객체 = open(폴더/파일명, 열기 모드)</code></p>
+</li>
+<li><p>파일 읽기, 쓰기</p>
+<ul>
+<li>x : 파일 쓰기 (존재하지 않을 때만 생성)</li>
+<li>w : 파일 쓰기 (덮어쓰기)</li>
+<li>r : 파일 읽기</li>
+<li>a : 파일 마지막에 새로운 내용 추가</li>
+</ul>
+</li>
+<li><p>파일 타입</p>
+<ul>
+<li>t : 텍스트 타입</li>
+<li>b : 이진 타입</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<ul>
+<li><p>텍스트 파일 작성</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">text1 = <span class="string">"""Autumn...</span></span><br><span class="line"><span class="string">the year's last, loveliest smile."""</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>텍스트 파일 쓰기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"sample1.txt"</span>, <span class="string">"wt"</span>)</span><br><span class="line">f.write(text1)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>텍스트 파일 읽기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"sample1.txt"</span>, <span class="string">"rt"</span>)</span><br><span class="line">s1 = f.read()</span><br><span class="line">f.close()</span><br><span class="line">print(s1)</span><br></pre></td></tr></table></figure>
+
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Autumn...</span><br><span class="line">the year&apos;s last, loveliest smile.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>바이너리 파일 작성</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin1 = bytes(range(<span class="number">6</span>, <span class="number">10</span>))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>바이너리 파일 쓰기 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"sample2.b"</span>, <span class="string">"wb"</span>)</span><br><span class="line">f.write(bin1)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>바이너리 파일 읽기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"sample2.b"</span>, <span class="string">"rb"</span>)</span><br><span class="line">s2 = f.read()</span><br><span class="line">f.close()</span><br><span class="line">print(list(s2))</span><br></pre></td></tr></table></figure>
+
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[6, 7, 8, 9]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h4 id="readline-s-함수"><a href="#readline-s-함수" class="headerlink" title="readline(s) 함수"></a>readline(s) 함수</h4><ul>
+<li>readline() : 파일.txt의 가장 첫 번째 줄이 화면에 출력</li>
+<li>readlines() : 파일의 모든 줄을 읽어서 각각의 줄을 요소로 갖는 리스트로 출력</li>
+<li>read() : 파일의 내용 전체를 문자열로 출력</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"test/sample1.txt"</span>, <span class="string">"rt"</span>)</span><br><span class="line">line = f.readline()</span><br><span class="line"><span class="comment">#lines = f.readlines()</span></span><br><span class="line">f.close()</span><br><span class="line">print(line)</span><br><span class="line"><span class="comment">#print(lines)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Autumn...</span><br><span class="line"><span class="comment">#['Autumn...\n', "the year's last, loveliest smile."]</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="with문"><a href="#with문" class="headerlink" title="with문"></a>with문</h4><ul>
+<li>with 블록을 벗어나는 순감 열린 파일 객체 자동 close</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">"test/sample3.txt"</span>, <span class="string">"w"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(<span class="string">"Autumn is a second spring when every leaf a flower."</span>)</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+
+<h2 id="Pickle"><a href="#Pickle" class="headerlink" title="Pickle"></a>Pickle</h2><ul>
+<li>데이터가 아닌 파이썬 객체 자체를 파일로 저장/로딩</li>
+<li>리스트, 클래스 등의 비텍스트 자료형 저장에 이용</li>
+<li>바이너리로 저장되어 저용량</li>
+<li>한 개 파일에 dump 함수를 여러번 실행하여 여러 객체 저장<br><code>dump(object, file, protocol)</code></li>
+<li>여러 객체가 저장된 pkl파일에 load를 여러번 실행하여 객체 로딩<br><code>load(file)</code></li>
+</ul>
+<br>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"><span class="keyword">import</span> gzip   <span class="comment"># 압축 및 해제 프로그램  </span></span><br><span class="line"></span><br><span class="line">data = &#123;</span><br><span class="line">    <span class="string">'a'</span>: [<span class="string">'cucumber'</span>, <span class="string">'daikon'</span>, <span class="string">'onion'</span>],</span><br><span class="line">    <span class="string">'b'</span>: &#123;<span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">None</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># save and compress.</span></span><br><span class="line"><span class="keyword">with</span> gzip.open(<span class="string">'test/PickleFile.pkl'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    pickle.dump(data, f)</span><br><span class="line"></span><br><span class="line"><span class="comment"># load and uncompress.</span></span><br><span class="line"><span class="keyword">with</span> gzip.open(<span class="string">'test/PickleFile.pkl'</span>,<span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    data = pickle.load(f)</span><br></pre></td></tr></table></figure>
+
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/python/">python</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/pickle/">pickle</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="https://Lahongkkito.github.io/2019/09/30/09-InputOutput/" data-title="09_InputOutput | MJ&#39;s Study Note blog" data-tsina="" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2019/09/27/08-Regex/"  title="08_Regex">
+ <strong>下一篇：</strong><br/> 
+ <span>08_Regex
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#File"><span class="toc-number">1.</span> <span class="toc-text">File</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#파일을-통한-입출력-방법"><span class="toc-number">1.0.1.</span> <span class="toc-text">파일을 통한 입출력 방법</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#readline-s-함수"><span class="toc-number">1.0.2.</span> <span class="toc-text">readline(s) 함수</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#with문"><span class="toc-number">1.0.3.</span> <span class="toc-text">with문</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pickle"><span class="toc-number">2.</span> <span class="toc-text">Pickle</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="github-card">
+<p class="asidetitle">Github Card</p>
+<div class="github-card" data-github="e.g. Lahongkkito for https://github.com/Lahongkkito" data-theme="medium"></div>
+<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
+</div>
+
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/python/" title="python">python<sup>10</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/for/" title="for">for<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/datatype/" title="datatype">datatype<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/list/" title="list">list<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/tuple/" title="tuple">tuple<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/set/" title="set">set<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/PEP/" title="PEP">PEP<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/if/" title="if">if<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/삼항연산/" title="삼항연산">삼항연산<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/try/" title="try">try<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/exception/" title="exception">exception<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/연산자/" title="연산자">연산자<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/string/" title="string">string<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/while/" title="while">while<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/break/" title="break">break<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/list-comprehension/" title="list comprehension">list comprehension<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/lambda/" title="lambda">lambda<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/module/" title="module">module<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/writefile/" title="writefile">writefile<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/import/" title="import">import<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/class/" title="class">class<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello, I&#39;m MJ. <br/>
+			This is my first blog, believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		<a href="https://github.com/e.g. Lahongkkito for https://github.com/Lahongkkito" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:e.g. lahongkkito@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2019 
+		
+		<a href="/about" target="_blank" title="Lahongkkito">Lahongkkito</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
