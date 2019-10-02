@@ -4,25 +4,25 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
   
-    <title>06_module | MJ&#39;s Study Note blog</title>
+    <title>06-2_Operating System | MJ&#39;s Study Note blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Lahongkkito">
     
 
     
-    <meta name="description" content="Module 변수, 함수, 클래스를 모아 놓은 하나의 파이썬 파일 (.py) 파일 단위로 코드 분리해서 관리 식별자 사용 규칙 짧은 소문자 사용 합성어 사용시 snake_case, CamelCase 구분 사용 모듈 명 가장 앞에 _ 붙은 경우 C, C++ 언어로 작성된 코드   예 : requests, numpy, pandas, math    모듈 호출 해">
-<meta name="keywords" content="module,writefile,import">
+    <meta name="description" content="OS/Shutil Module OS: 운영체제와 관련된 함수와 클래스를 제공하는 라이브러리 shutil: 파일, 폴더와 관련된 함수와 클래스를 제공하는 라이브러리  12import osimport shutil     디렉토리 만들기os.makedirs(&amp;#39;폴더명&amp;#39;)  디렉토리내 파일 리스트 불러오기os.listdir(&amp;#39;폴더명&amp;#39;)">
+<meta name="keywords" content="os,rwx,shutil">
 <meta property="og:type" content="article">
-<meta property="og:title" content="06_module">
-<meta property="og:url" content="https://Lahongkkito.github.io/2019/09/22/06-module/index.html">
+<meta property="og:title" content="06-2_Operating System">
+<meta property="og:url" content="https://Lahongkkito.github.io/2019/10/02/06-2-Operating-System/index.html">
 <meta property="og:site_name" content="MJ&#39;s Study Note blog">
-<meta property="og:description" content="Module 변수, 함수, 클래스를 모아 놓은 하나의 파이썬 파일 (.py) 파일 단위로 코드 분리해서 관리 식별자 사용 규칙 짧은 소문자 사용 합성어 사용시 snake_case, CamelCase 구분 사용 모듈 명 가장 앞에 _ 붙은 경우 C, C++ 언어로 작성된 코드   예 : requests, numpy, pandas, math    모듈 호출 해">
+<meta property="og:description" content="OS/Shutil Module OS: 운영체제와 관련된 함수와 클래스를 제공하는 라이브러리 shutil: 파일, 폴더와 관련된 함수와 클래스를 제공하는 라이브러리  12import osimport shutil     디렉토리 만들기os.makedirs(&amp;#39;폴더명&amp;#39;)  디렉토리내 파일 리스트 불러오기os.listdir(&amp;#39;폴더명&amp;#39;)">
 <meta property="og:locale" content="KOR">
-<meta property="og:updated_time" content="2019-09-26T12:42:08.811Z">
+<meta property="og:updated_time" content="2019-10-02T11:43:21.237Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="06_module">
-<meta name="twitter:description" content="Module 변수, 함수, 클래스를 모아 놓은 하나의 파이썬 파일 (.py) 파일 단위로 코드 분리해서 관리 식별자 사용 규칙 짧은 소문자 사용 합성어 사용시 snake_case, CamelCase 구분 사용 모듈 명 가장 앞에 _ 붙은 경우 C, C++ 언어로 작성된 코드   예 : requests, numpy, pandas, math    모듈 호출 해">
+<meta name="twitter:title" content="06-2_Operating System">
+<meta name="twitter:description" content="OS/Shutil Module OS: 운영체제와 관련된 함수와 클래스를 제공하는 라이브러리 shutil: 파일, 폴더와 관련된 함수와 클래스를 제공하는 라이브러리  12import osimport shutil     디렉토리 만들기os.makedirs(&amp;#39;폴더명&amp;#39;)  디렉토리내 파일 리스트 불러오기os.listdir(&amp;#39;폴더명&amp;#39;)">
 
     
     
@@ -78,14 +78,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/09/22/06-module/" title="06_module" itemprop="url">06_module</a>
+      <a href="/2019/10/02/06-2-Operating-System/" title="06-2_Operating System" itemprop="url">06-2_Operating System</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Lahongkkito" target="_blank" itemprop="author">Lahongkkito</a>
 		
   <p class="article-time">
-    <time datetime="2019-09-21T16:43:00.000Z" itemprop="datePublished"> Published 2019-09-22</time>
+    <time datetime="2019-10-02T11:37:30.000Z" itemprop="datePublished"> Published 2019-10-02</time>
     
   </p>
 </header>
@@ -94,61 +94,87 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Module"><span class="toc-number">1.</span> <span class="toc-text">Module</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#모듈-호출"><span class="toc-number">1.1.</span> <span class="toc-text">모듈 호출</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Package"><span class="toc-number">2.</span> <span class="toc-text">Package</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#OS-Shutil-Module"><span class="toc-number">1.</span> <span class="toc-text">OS/Shutil Module</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#권한설정"><span class="toc-number">1.1.</span> <span class="toc-text">권한설정</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<h2 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h2><ul>
-<li>변수, 함수, 클래스를 모아 놓은 하나의 파이썬 파일 (.py)</li>
-<li>파일 단위로 코드 분리해서 관리</li>
-<li>식별자 사용 규칙<ul>
-<li>짧은 소문자 사용</li>
-<li>합성어 사용시 snake_case, CamelCase 구분 사용</li>
-<li>모듈 명 가장 앞에 <code>_</code> 붙은 경우 C, C++ 언어로 작성된 코드</li>
+		<h2 id="OS-Shutil-Module"><a href="#OS-Shutil-Module" class="headerlink" title="OS/Shutil Module"></a>OS/Shutil Module</h2><ul>
+<li>OS: 운영체제와 관련된 함수와 클래스를 제공하는 라이브러리</li>
+<li>shutil: 파일, 폴더와 관련된 함수와 클래스를 제공하는 라이브러리</li>
 </ul>
-</li>
-<li>예 : requests, numpy, pandas, math</li>
-</ul>
-<br>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> shutil</span><br></pre></td></tr></table></figure>
 
-<h3 id="모듈-호출"><a href="#모듈-호출" class="headerlink" title="모듈 호출"></a>모듈 호출</h3><ul>
-<li>해당 모듈 전체 import</li>
-<li>from : 해당 모듈에서 특정한 타입만 import</li>
-<li>* : 해당 모듈 내 정의된 모든 것 import (비권장)</li>
-<li>as : alias 지정</li>
-</ul>
 <br>
-<br>
-
-<h2 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h2><ul>
-<li><p>디렉토리와 모듈로 구성</p>
-</li>
-<li><p><code>__init__</code> 파일 필요</p>
-</li>
-<li><p>디렉토리 생성</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!mkdir -p study/drawing</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>init 파일 추가</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!touch study/drawing/__init__.py</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>모듈 작성</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%%writefile study/drawing/lahong.py</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>호출</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> study.drawing.lahong <span class="keyword">as</span> lh</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>설치</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">%%writefile study/setup.py</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> setuptools <span class="keyword">import</span> setup, find_packages</span><br><span class="line"></span><br><span class="line">setup(</span><br><span class="line">    name=<span class="string">'learn'</span>,</span><br><span class="line">    packages=find_packages(),</span><br><span class="line">    include_package_data=<span class="literal">True</span>,</span><br><span class="line">    version=<span class="string">'0.0.1'</span>,</span><br><span class="line">    author=<span class="string">'Lahongkkito'</span>,</span><br><span class="line">    author_email=<span class="string">'lahongkkito@gmail.com'</span>,</span><br><span class="line">    zip_safe=<span class="literal">False</span>,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>study $ python setup.py develop<ul>
-<li>develop (개발자 모드) : 코드 수정시 설치된 패키지도 수정된 내용이 적용</li>
-<li>build (일반 모드) : 코드 수정시 설치된 패키지가 수정되지 않습니다.</li>
+<li><p>디렉토리 만들기<br><code>os.makedirs(&#39;폴더명&#39;)</code></p>
+</li>
+<li><p>디렉토리내 파일 리스트 불러오기<br><code>os.listdir(&#39;폴더명&#39;)</code></p>
+</li>
+<li><p>파일 삭제<br><code>os.remove(&#39;폴더명/파일명&#39;)</code></p>
+</li>
+<li><p>디렉토리 삭제 (파일이 존재하지 않는 경우에만)<br><code>os.removedirs(&#39;폴더명&#39;)</code></p>
+</li>
+<li><p>파일과 디렉토리 삭제<br><code>shutil.rmtree(&#39;폴더명&#39;)</code></p>
+</li>
+<li><p>파일(폴더) 존재 확인<br><code>os.path.exists(&#39;폴더명/파일명&#39;)</code></p>
+</li>
+<li><p>디렉토리 타입 확인<br><code>os.path.isdir(&#39;폴더명/파일명&#39;)</code></p>
+</li>
+<li><p>현재 디렉토리 확인<br><code>os.curdir</code></p>
+</li>
+<li><p>부모 디렉토리 확인<br><code>os.pardir</code></p>
+</li>
+<li><p>복사<br><code>shutil.copy(&#39;폴더명/파일명&#39;)</code></p>
+</li>
+<li><p>파일명 바꾸기<br><code>os.rename(&#39;폴더명/기존파일명&#39;, &#39;폴더명/새파일명&#39;)</code></p>
+</li>
+</ul>
+<br>
+<br>
+
+
+<h3 id="권한설정"><a href="#권한설정" class="headerlink" title="권한설정"></a>권한설정</h3><ul>
+<li>-rwxr–r– : 10개의 문자로 이루어진 파일 권한에 관한 정보<ul>
+<li>[0] : 타입</li>
+<li>[1:4] : 소유자에 대한 파일의 권한</li>
+<li>[4:7] : 그룹에 대한 파일의 권한</li>
+<li>[7:] : 모든 사용자에 대한 파일의 권한</li>
 </ul>
 </li>
 </ul>
+<br>
+
+<ul>
+<li>권한 : rwx<ul>
+<li>r : 읽기 권한</li>
+<li>w : 쓰기 권한</li>
+<li>x : 실행 권한</li>
+</ul>
 </li>
 </ul>
+<br>
+
+<ul>
+<li>권한 설정 : 2진수(권한 있으면 1, 없으면 0), 8진수<ul>
+<li>chmod 명령 이용<br><code>os.chmod(&#39;폴더명/파일명&#39;, 권한)</code></li>
+<li>7(8) : 111(2) : rwx</li>
+<li>5(8) : 101(2) : r-x</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<ul>
+<li>권한 확인<ul>
+<li>os.F_OK : 파일 자체가 존재하는 지 확인</li>
+<li>os.R_OK : 읽기 권한이 있는 지 확인</li>
+<li>os.W_OK : 쓰기 권한이 있는 지 확인</li>
+<li>os.R_OK : 실행 권한이 있는 지 확인</li>
+</ul>
+</li>
+</ul>
+<p><code>os.access(&#39;폴더명/파일명&#39;, 권한)</code></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -162,7 +188,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/module/">module</a><a href="/tags/writefile/">writefile</a><a href="/tags/import/">import</a>
+  <span></span> <a href="/tags/os/">os</a><a href="/tags/rwx/">rwx</a><a href="/tags/shutil/">shutil</a>
   </div>
 
 </div>
@@ -171,7 +197,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="https://Lahongkkito.github.io/2019/09/22/06-module/" data-title="06_module | MJ&#39;s Study Note blog" data-tsina="" class="share clearfix">
+	  <div data-url="https://Lahongkkito.github.io/2019/10/02/06-2-Operating-System/" data-title="06-2_Operating System | MJ&#39;s Study Note blog" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -184,19 +210,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2019/09/26/07-class/" title="07_Class">
-  <strong>上一篇：</strong><br/>
-  <span>
-  07_Class</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2019/09/21/05-function/"  title="05_function">
+<a href="/2019/09/30/09-InputOutput/"  title="09_InputOutput">
  <strong>下一篇：</strong><br/> 
- <span>05_function
+ <span>09_InputOutput
 </span>
 </a>
 </div>
@@ -213,7 +231,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Module"><span class="toc-number">1.</span> <span class="toc-text">Module</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#모듈-호출"><span class="toc-number">1.1.</span> <span class="toc-text">모듈 호출</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Package"><span class="toc-number">2.</span> <span class="toc-text">Package</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#OS-Shutil-Module"><span class="toc-number">1.</span> <span class="toc-text">OS/Shutil Module</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#권한설정"><span class="toc-number">1.1.</span> <span class="toc-text">권한설정</span></a></li></ol></li></ol>
  
   </div>
 
