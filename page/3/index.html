@@ -75,6 +75,246 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2019/09/16/01-datatype/" title="01_datatype" itemprop="url">01_datatype</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Lahongkkito" target="_blank" itemprop="author">Lahongkkito</a>
+		
+  <p class="article-time">
+    <time datetime="2019-09-16T08:15:28.000Z" itemprop="datePublished"> Published 2019-09-16</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="종류"><a href="#종류" class="headerlink" title="종류"></a>종류</h2><br>
+
+<h3 id="Numbers"><a href="#Numbers" class="headerlink" title="Numbers"></a>Numbers</h3><ul>
+<li>정수형 : int</li>
+<li>실수형(소수) : float</li>
+<li>복소수 : complex (2+3j)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a, b, c, d, e, f = <span class="number">5</span>, <span class="number">0.12</span>, <span class="number">-6.0</span>, <span class="number">-6</span>, <span class="number">0</span>, <span class="number">0.0</span></span><br><span class="line">type(a), type(b), type(c), type(d), type(e), type(f)</span><br><span class="line">(int, float, float, int, int, float)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+<h3 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h3><ul>
+<li>True/False</li>
+<li>0을 제외한 <strong>숫자 True, 문자 True</strong></li>
+</ul>
+<br>
+
+<h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">"AaBb ccc DD "</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>문자열</p>
+</li>
+<li><p><code>&quot;</code>, <code>&#39;</code> 구분없이 사용</p>
+</li>
+<li><p><code>&quot;&quot;&quot;</code>, <code>&#39;&#39;&#39;</code> 세 개 사용으로 멀티라인 </p>
+</li>
+<li><p>escape string</p>
+<ul>
+<li><code>\n</code>: new line</li>
+<li><code>\t</code>: tap</li>
+</ul>
+</li>
+<li><p>대문자/소문자 변환 함수</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s.upper()  = <span class="string">'AABB CCC DD '</span></span><br><span class="line">s.lower() = <span class="string">'aabb ccc dd '</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>해당 값의 위치 찾기</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s.find(<span class="string">"ccc"</span>) = <span class="number">5</span>    <span class="comment"># 중복될 경우 가장 처음, 없을 경우 -1 반환</span></span><br><span class="line">s.index(<span class="string">"b"</span>) = <span class="number">3</span>  <span class="comment"># 없을 경우 error</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>포함된 개수 리턴</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s.count(<span class="string">"x"</span>) = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>공백 제거</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s.lstrip() = <span class="string">'AaBb ccc DD '</span> <span class="comment"># 왼쪽 공백 제거</span></span><br><span class="line">s.rstrip() = <span class="string">'AaBb ccc DD'</span> <span class="comment"># 오른쪽 공백 제거</span></span><br><span class="line">s.strip() = <span class="string">'AaBb ccc DD'</span> <span class="comment"># 양쪽 공백 제거</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>문자열 변환</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s.replace(<span class="string">"c"</span>, <span class="string">"k"</span>) = <span class="string">'AaBb kkk DD '</span></span><br><span class="line">s.replace(<span class="string">" "</span>, <span class="string">""</span>) = s.replace(<span class="string">" "</span>, <span class="string">""</span>) <span class="comment"># 중간 공백 제거 가능</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>체이닝</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">"this is a peach!!"</span></span><br><span class="line">s.endswith(<span class="string">"peach!!"</span>) = <span class="literal">True</span></span><br><span class="line">s.endswith(<span class="string">"peach"</span>) = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>string format</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a, b = <span class="number">123</span>, <span class="string">"python"</span></span><br><span class="line"><span class="string">"&#123;&#125;,&#123;&#125;"</span>.format(a, b)) = <span class="string">'123, python'</span></span><br><span class="line"><span class="string">"&#123;str_&#125;, &#123;num&#125;"</span>.format(num=a, str_=b)) = <span class="string">'python, 123'</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="string">'a'</span>, <span class="number">100</span>, [<span class="number">1</span>, <span class="string">"k"</span>]]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>iterable</p>
+</li>
+<li><p>여러 자료형 함께 저장 가능</p>
+</li>
+<li><p>수열 리스트</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list(range(<span class="number">5</span>)) = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">list(range(<span class="number">3</span>, <span class="number">10</span>, <span class="number">2</span>)) = [<span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>자료 수정</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls[<span class="number">1</span>] = <span class="number">50</span></span><br><span class="line">ls = [<span class="string">'a'</span>, <span class="number">50</span>, [<span class="number">1</span>, <span class="string">"k"</span>]]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>자료 추가</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls.append(<span class="string">"plus"</span>) = [<span class="string">'a'</span>, <span class="number">100</span>, [<span class="number">1</span>, <span class="string">'k'</span>], <span class="string">'plus'</span>]</span><br><span class="line"></span><br><span class="line">ls.insert(<span class="number">0</span>, <span class="string">"insert"</span>) = [<span class="string">'insert'</span>, <span class="string">'a'</span>, <span class="number">100</span>, [<span class="number">1</span>, <span class="string">'k'</span>], <span class="string">'plus'</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>자료 삭제</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls.pop() = <span class="string">'plus'</span></span><br><span class="line">ls.remove(<span class="string">'a'</span>) = [<span class="number">100</span>, [<span class="number">1</span>, <span class="string">'k'</span>]]  <span class="comment"># index 값이 가장 작은 데이터 한개만 삭제</span></span><br><span class="line"><span class="keyword">del</span> ls[<span class="number">2</span>]  =  [<span class="string">'a'</span>, <span class="number">100</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>졍렬</p>
+<ul>
+<li>ls.sort()  # 동일한 타입의 경우만 가능</li>
+<li>ls.sort(key=len)</li>
+<li>ls.reverse()</li>
+</ul>
+</li>
+<li><p>offset 인덱스/슬라이싱</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">slic =  <span class="string">"I want some TTEOKBOKKI!"</span>`</span><br><span class="line"></span><br><span class="line">slic[<span class="number">7</span>:<span class="number">11</span>] = <span class="string">'some'</span></span><br><span class="line">slic[<span class="number">3</span>:<span class="number">15</span>:<span class="number">2</span>] = <span class="string">'atsm TOBK'</span></span><br><span class="line">slic[::<span class="number">2</span>] = <span class="string">'Iwn oeTEKOK!'</span></span><br><span class="line">slic[::<span class="number">-1</span>] = <span class="string">'!IKKOBKOETT emos tnaw I'</span></span><br><span class="line">slic.split(<span class="string">"O"</span>) = [<span class="string">'I want some TTE'</span>, <span class="string">'KB'</span>, <span class="string">'KKI!'</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>복사</p>
+<ul>
+<li>얕은복사 : 주소값만 복사</li>
+<li>깊은복사 : 메모리 복사</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<h3 id="5-Tuple"><a href="#5-Tuple" class="headerlink" title="5) Tuple"></a>5) Tuple</h3><ul>
+<li>iterable</li>
+<li>데이터 수정 불가능</li>
+<li>리스트보다 적은 메모리 사용<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tp1 = <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span></span><br><span class="line">tp2 = <span class="string">"a"</span>, <span class="string">"b"</span></span><br><span class="line">tp3 = (<span class="number">1</span>, <span class="string">"b"</span>)</span><br><span class="line"></span><br><span class="line">tp1, tp2, tp3, type(tp1)</span><br><span class="line">((<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>), (<span class="string">'a'</span>, <span class="string">'b'</span>), (<span class="number">1</span>, <span class="string">'b'</span>), tuple)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h3 id="6-Dictionary"><a href="#6-Dictionary" class="headerlink" title="6) Dictionary"></a>6) Dictionary</h3><ul>
+<li><p>데이터 순서 없음</p>
+</li>
+<li><p>key</p>
+<ul>
+<li>내부적으로 hash값으로 지정</li>
+<li>str,int만 가능</li>
+</ul>
+</li>
+<li><p>key : value<br>  <code>{key1:value2, key2:value2}</code></p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dic = &#123;</span><br><span class="line">    <span class="number">1</span>: <span class="string">"one"</span>,</span><br><span class="line">    <span class="string">"A"</span>: [<span class="string">"data"</span>, <span class="string">"python"</span>],</span><br><span class="line">    <span class="string">"숫자"</span>: <span class="number">1234</span>,</span><br><span class="line">    <span class="number">2</span>: <span class="string">"two"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>호출</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dic.keys()  = dict_keys([<span class="number">1</span>, <span class="string">'A'</span>, <span class="string">'숫자'</span>, <span class="number">2</span>])</span><br><span class="line">dic.values() = dict_values([<span class="string">'one'</span>, [<span class="string">'data'</span>, <span class="string">'python'</span>], <span class="number">1234</span>, <span class="string">'two'</span>])</span><br><span class="line">dic.items() = dict_items([(<span class="number">1</span>, <span class="string">'one'</span>), (<span class="string">'A'</span>, [<span class="string">'data'</span>, <span class="string">'python'</span>]), (<span class="string">'숫자'</span>, <span class="number">1234</span>), (<span class="number">2</span>, <span class="string">'two'</span>)])</span><br><span class="line">dic.get(<span class="string">"A"</span>) = [<span class="string">'data'</span>, <span class="string">'python'</span>]</span><br><span class="line">dic[<span class="string">"숫자"</span>] = <span class="number">1234</span></span><br><span class="line"><span class="number">2</span> <span class="keyword">in</span> dic = <span class="literal">False</span></span><br><span class="line"><span class="string">"two"</span> <span class="keyword">in</span> dic = <span class="literal">True</span>  <span class="comment"># key값 존재 확인</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>자료 추가</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dic[<span class="string">"key3"</span>] = <span class="number">40</span></span><br><span class="line">dic = &#123;<span class="number">1</span>: <span class="string">'one'</span>, <span class="string">'A'</span>: [<span class="string">'data'</span>, <span class="string">'python'</span>], <span class="string">'숫자'</span>: <span class="number">1234</span>, <span class="number">2</span>: <span class="string">'two'</span>, <span class="string">'key3'</span>: <span class="number">40</span>&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>자료 삭제</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">del</span> dic[<span class="string">"key3"</span>]</span><br><span class="line">dic.clear() = &#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>update (덮어쓰기)</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dic1 = &#123;<span class="number">1</span>: <span class="string">"a"</span>, <span class="number">2</span>: <span class="string">"b"</span>&#125;</span><br><span class="line">dic2 = &#123;<span class="number">3</span>: <span class="string">"d"</span>, <span class="number">2</span>: <span class="string">"c"</span>&#125;</span><br><span class="line">dic1.update(dic2)</span><br><span class="line">dic1 = &#123;<span class="number">1</span>: <span class="string">'a'</span>, <span class="number">2</span>: <span class="string">'c'</span>, <span class="number">3</span>: <span class="string">'d'</span>&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h3 id="7-Set"><a href="#7-Set" class="headerlink" title="7) Set"></a>7) Set</h3><ul>
+<li><p>중복 데이터 없음</p>
+</li>
+<li><p>교집합, 합집합, 차집합 연산 가능</p>
+</li>
+<li><p>수정 불가능(리스트 형변환)</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a_set = set([<span class="string">"A"</span>, <span class="string">"B"</span>, <span class="string">"C"</span>, <span class="string">"D"</span>,])</span><br><span class="line">b_set = set([<span class="string">"C"</span>, <span class="string">"D"</span>, <span class="string">"E"</span>, <span class="string">"F"</span>, <span class="string">"G"</span>,])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>합집합 </p>
+<ul>
+<li>a_set | b_set</li>
+<li>a_set.union(b_set)</li>
+</ul>
+</li>
+<li><p>교집합 </p>
+<ul>
+<li>a_set &amp; b_set</li>
+<li>a_set.intersection(b_set)</li>
+</ul>
+</li>
+<li><p>차집합 </p>
+<ul>
+<li>a_set - b_set</li>
+<li>a_set.difference(b_set)</li>
+</ul>
+</li>
+<li><p>대칭차집합 </p>
+<ul>
+<li>a_set ^ b_set</li>
+</ul>
+</li>
+<li><p>부분집합 </p>
+<ul>
+<li>a_set.issubset(b_set) = False</li>
+</ul>
+</li>
+</ul>
+<br>
+<br>
+
+<h2 id="데이터-타입-변경"><a href="#데이터-타입-변경" class="headerlink" title="데이터 타입 변경"></a>데이터 타입 변경</h2><h3 id="문자-숫자-변환"><a href="#문자-숫자-변환" class="headerlink" title="문자/숫자 변환"></a>문자/숫자 변환</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string = <span class="string">"1234"</span></span><br><span class="line">number = int(string)</span><br></pre></td></tr></table></figure>
+
+<h3 id="boolean형-변환"><a href="#boolean형-변환" class="headerlink" title="boolean형 변환"></a>boolean형 변환</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bool(<span class="string">""</span>), bool(<span class="string">"data"</span>), bool(<span class="number">-1</span>), bool(<span class="number">0</span>), bool(<span class="number">23</span>)</span><br><span class="line">(<span class="literal">False</span>, <span class="literal">True</span>, <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">True</span> )</span><br></pre></td></tr></table></figure>
+
+<h3 id="문자열-리스트-변환"><a href="#문자열-리스트-변환" class="headerlink" title="문자열/리스트 변환"></a>문자열/리스트 변환</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">string = <span class="string">"ABCD"</span></span><br><span class="line">ls = [ <span class="number">3</span>,<span class="string">"f"</span>,<span class="string">"g"</span>,]</span><br><span class="line"></span><br><span class="line">list(string) = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>, <span class="string">'D'</span>]</span><br><span class="line">str(ls) = <span class="string">"[3, 'f', 'g'] </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 문장의 경우 string.split("</span> <span class="string">") 또는 "</span> <span class="string">".join(ls)로 가능</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="튜플-딕셔너리-변환"><a href="#튜플-딕셔너리-변환" class="headerlink" title="튜플/딕셔너리 변환"></a>튜플/딕셔너리 변환</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tp = ((<span class="number">1</span>,<span class="string">"one"</span>),(<span class="number">2</span>,<span class="string">"two"</span>))</span><br><span class="line">dic = &#123;<span class="number">3</span>:<span class="string">"three"</span>, <span class="number">4</span>:<span class="string">"four"</span>&#125;</span><br><span class="line"></span><br><span class="line">dict(tp) = &#123;<span class="number">1</span>: <span class="string">'one'</span>, <span class="number">2</span>: <span class="string">'two'</span>&#125;</span><br><span class="line">tuple(dic) = (<span class="number">3</span>, <span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Python/">Python</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/datatype/">datatype</a><a href="/tags/string/">string</a><a href="/tags/list/">list</a><a href="/tags/tuple/">tuple</a><a href="/tags/set/">set</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2019/09/16/00-basic/" title="00_basic" itemprop="url">00_basic</a>
   </h1>
   <p class="article-author">By
@@ -194,9 +434,11 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/Python/" title="Python">Python<sup>11</sup></a></li>
+			<li><a href="/categories/Python/Numpy/" title="Numpy">Numpy<sup>1</sup></a></li>
 		  
 		
+		  
+			<li><a href="/categories/Python/" title="Python">Python<sup>12</sup></a></li>
 		  
 		
 		</ul>
@@ -209,11 +451,15 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/list-comprehension/" title="list comprehension">list comprehension<sup>1</sup></a></li>
+				<li><a href="/tags/break/" title="break">break<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/datatype/" title="datatype">datatype<sup>1</sup></a></li>
+				<li><a href="/tags/PEP/" title="PEP">PEP<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/string/" title="string">string<sup>1</sup></a></li>
 			
 		
 			
@@ -226,42 +472,6 @@
 		
 			
 				<li><a href="/tags/set/" title="set">set<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/PEP/" title="PEP">PEP<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/객체지향/" title="객체지향">객체지향<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/os/" title="os">os<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/rwx/" title="rwx">rwx<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/shutil/" title="shutil">shutil<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/for/" title="for">for<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/while/" title="while">while<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/break/" title="break">break<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/string/" title="string">string<sup>1</sup></a></li>
 			
 		
 			
@@ -281,11 +491,43 @@
 			
 		
 			
+				<li><a href="/tags/for/" title="for">for<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/while/" title="while">while<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/datatype/" title="datatype">datatype<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/list-comprehension/" title="list comprehension">list comprehension<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/lambda/" title="lambda">lambda<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/pickle/" title="pickle">pickle<sup>1</sup></a></li>
+				<li><a href="/tags/module/" title="module">module<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/writefile/" title="writefile">writefile<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/import/" title="import">import<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/os/" title="os">os<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rwx/" title="rwx">rwx<sup>1</sup></a></li>
 			
 		
 		</ul>

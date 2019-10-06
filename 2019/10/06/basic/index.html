@@ -4,25 +4,24 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
   
-    <title>06_module | MJ&#39;s Study Note blog</title>
+    <title>basic | MJ&#39;s Study Note blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Lahongkkito">
     
 
     
-    <meta name="description" content="Module 변수, 함수, 클래스를 모아 놓은 하나의 파이썬 파일 (.py) 파일 단위로 코드 분리해서 관리 식별자 사용 규칙 짧은 소문자 사용 합성어 사용시 snake_case, CamelCase 구분 사용 모듈 명 가장 앞에 _ 붙은 경우 C, C++ 언어로 작성된 코드   예 : requests, numpy, pandas, math    모듈 호출 해">
-<meta name="keywords" content="module,writefile,import">
+    <meta name="description" content="Numpy N차원 배열 객체 파이썬으로 수치해석, 통계 관련 기능 구현시 가장 기본이 되는 모듈 유용한 선형 대수학, 푸리에 변환 및 난수 기능 등을 빠르게 계산하기 위한 패키지 (대부분의 데이터는 행렬 형태) 범용적 데이터 처리에 사용 가능한 다차원 컨테이너 C,C++,Fortran로 작성되어 실행 속도 빠름 Scipy, Pandas, matplotlib">
 <meta property="og:type" content="article">
-<meta property="og:title" content="06_module">
-<meta property="og:url" content="https://Lahongkkito.github.io/2019/09/22/06-module/index.html">
+<meta property="og:title" content="basic">
+<meta property="og:url" content="https://Lahongkkito.github.io/2019/10/06/basic/index.html">
 <meta property="og:site_name" content="MJ&#39;s Study Note blog">
-<meta property="og:description" content="Module 변수, 함수, 클래스를 모아 놓은 하나의 파이썬 파일 (.py) 파일 단위로 코드 분리해서 관리 식별자 사용 규칙 짧은 소문자 사용 합성어 사용시 snake_case, CamelCase 구분 사용 모듈 명 가장 앞에 _ 붙은 경우 C, C++ 언어로 작성된 코드   예 : requests, numpy, pandas, math    모듈 호출 해">
+<meta property="og:description" content="Numpy N차원 배열 객체 파이썬으로 수치해석, 통계 관련 기능 구현시 가장 기본이 되는 모듈 유용한 선형 대수학, 푸리에 변환 및 난수 기능 등을 빠르게 계산하기 위한 패키지 (대부분의 데이터는 행렬 형태) 범용적 데이터 처리에 사용 가능한 다차원 컨테이너 C,C++,Fortran로 작성되어 실행 속도 빠름 Scipy, Pandas, matplotlib">
 <meta property="og:locale" content="KOR">
-<meta property="og:updated_time" content="2019-10-06T03:40:50.053Z">
+<meta property="og:updated_time" content="2019-10-06T12:46:00.536Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="06_module">
-<meta name="twitter:description" content="Module 변수, 함수, 클래스를 모아 놓은 하나의 파이썬 파일 (.py) 파일 단위로 코드 분리해서 관리 식별자 사용 규칙 짧은 소문자 사용 합성어 사용시 snake_case, CamelCase 구분 사용 모듈 명 가장 앞에 _ 붙은 경우 C, C++ 언어로 작성된 코드   예 : requests, numpy, pandas, math    모듈 호출 해">
+<meta name="twitter:title" content="basic">
+<meta name="twitter:description" content="Numpy N차원 배열 객체 파이썬으로 수치해석, 통계 관련 기능 구현시 가장 기본이 되는 모듈 유용한 선형 대수학, 푸리에 변환 및 난수 기능 등을 빠르게 계산하기 위한 패키지 (대부분의 데이터는 행렬 형태) 범용적 데이터 처리에 사용 가능한 다차원 컨테이너 C,C++,Fortran로 작성되어 실행 속도 빠름 Scipy, Pandas, matplotlib">
 
     
     
@@ -78,14 +77,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/09/22/06-module/" title="06_module" itemprop="url">06_module</a>
+      <a href="/2019/10/06/basic/" title="basic" itemprop="url">basic</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Lahongkkito" target="_blank" itemprop="author">Lahongkkito</a>
 		
   <p class="article-time">
-    <time datetime="2019-09-21T16:43:00.000Z" itemprop="datePublished"> Published 2019-09-22</time>
+    <time datetime="2019-10-06T12:43:22.000Z" itemprop="datePublished"> Published 2019-10-06</time>
     
   </p>
 </header>
@@ -94,59 +93,23 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Module"><span class="toc-number">1.</span> <span class="toc-text">Module</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#모듈-호출"><span class="toc-number">1.1.</span> <span class="toc-text">모듈 호출</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Package"><span class="toc-number">2.</span> <span class="toc-text">Package</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Numpy"><span class="toc-number">1.</span> <span class="toc-text">Numpy</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h2><ul>
-<li>변수, 함수, 클래스를 모아 놓은 하나의 파이썬 파일 (.py)</li>
-<li>파일 단위로 코드 분리해서 관리</li>
-<li>식별자 사용 규칙<ul>
-<li>짧은 소문자 사용</li>
-<li>합성어 사용시 snake_case, CamelCase 구분 사용</li>
-<li>모듈 명 가장 앞에 <code>_</code> 붙은 경우 C, C++ 언어로 작성된 코드</li>
-</ul>
-</li>
-<li>예 : requests, numpy, pandas, math</li>
+		<h2 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h2><ul>
+<li>N차원 배열 객체</li>
+<li>파이썬으로 수치해석, 통계 관련 기능 구현시 가장 기본이 되는 모듈</li>
+<li>유용한 선형 대수학, 푸리에 변환 및 난수 기능 등을 빠르게 계산하기 위한 패키지 (대부분의 데이터는 행렬 형태)</li>
+<li>범용적 데이터 처리에 사용 가능한 다차원 컨테이너</li>
+<li>C,C++,Fortran로 작성되어 실행 속도 빠름</li>
+<li>Scipy, Pandas, matplotlib 등의 기반으로 사용</li>
 </ul>
 <br>
-
-<h3 id="모듈-호출"><a href="#모듈-호출" class="headerlink" title="모듈 호출"></a>모듈 호출</h3><ul>
-<li>해당 모듈 전체 import</li>
-<li>from : 해당 모듈에서 특정한 타입만 import</li>
-<li>* : 해당 모듈 내 정의된 모든 것 import (비권장)</li>
-<li>as : alias 지정</li>
-</ul>
-<br>
-<br>
-
-<h2 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h2><ul>
-<li><p>디렉토리와 모듈로 구성</p>
-</li>
-<li><p><code>__init__</code> 파일 필요</p>
-</li>
-<li><p>디렉토리 생성</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!mkdir -p study/drawing</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>init 파일 추가</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!touch study/drawing/__init__.py</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>모듈 작성</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%%writefile study/drawing/lahong.py</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>호출</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> study.drawing.lahong <span class="keyword">as</span> lh</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>설치</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">%%writefile study/setup.py</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> setuptools <span class="keyword">import</span> setup, find_packages</span><br><span class="line"></span><br><span class="line">setup(</span><br><span class="line">    name=<span class="string">'learn'</span>,</span><br><span class="line">    packages=find_packages(),</span><br><span class="line">    include_package_data=<span class="literal">True</span>,</span><br><span class="line">    version=<span class="string">'0.0.1'</span>,</span><br><span class="line">    author=<span class="string">'Lahongkkito'</span>,</span><br><span class="line">    author_email=<span class="string">'lahongkkito@gmail.com'</span>,</span><br><span class="line">    zip_safe=<span class="literal">False</span>,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>study $ python setup.py develop<ul>
-<li>develop (개발자 모드) : 코드 수정시 설치된 패키지도 수정된 내용이 적용</li>
-<li>build (일반 모드) : 코드 수정시 설치된 패키지가 수정되지 않습니다.</li>
-</ul>
-</li>
-</ul>
+<li>사용<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
   
@@ -156,14 +119,9 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Python/">Python</a>
+  <a class="article-category-link" href="/categories/Python/">Python</a>►<a class="article-category-link" href="/categories/Python/Numpy/">Numpy</a>
 </div>
 
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/module/">module</a><a href="/tags/writefile/">writefile</a><a href="/tags/import/">import</a>
-  </div>
 
 </div>
 
@@ -171,7 +129,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="https://Lahongkkito.github.io/2019/09/22/06-module/" data-title="06_module | MJ&#39;s Study Note blog" data-tsina="" class="share clearfix">
+	  <div data-url="https://Lahongkkito.github.io/2019/10/06/basic/" data-title="basic | MJ&#39;s Study Note blog" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -184,19 +142,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2019/09/26/07-class/" title="07_Class">
-  <strong>上一篇：</strong><br/>
-  <span>
-  07_Class</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2019/09/21/05-function/"  title="05_function">
+<a href="/2019/10/02/06-2-Operating-System/"  title="06-2_Operating System">
  <strong>下一篇：</strong><br/> 
- <span>05_function
+ <span>06-2_Operating System
 </span>
 </a>
 </div>
@@ -213,7 +163,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Module"><span class="toc-number">1.</span> <span class="toc-text">Module</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#모듈-호출"><span class="toc-number">1.1.</span> <span class="toc-text">모듈 호출</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Package"><span class="toc-number">2.</span> <span class="toc-text">Package</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Numpy"><span class="toc-number">1.</span> <span class="toc-text">Numpy</span></a></li></ol>
  
   </div>
 
