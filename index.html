@@ -75,6 +75,154 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2019/10/06/creation/" title="creation" itemprop="url">creation</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Lahongkkito" target="_blank" itemprop="author">Lahongkkito</a>
+		
+  <p class="article-time">
+    <time datetime="2019-10-06T13:26:31.000Z" itemprop="datePublished"> Published 2019-10-06</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h3 id="array"><a href="#array" class="headerlink" title=".array"></a>.array</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line">y = np.array([[<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>]])</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="arange"><a href="#arange" class="headerlink" title=".arange"></a>.arange</h3><p><code>np.arange([start,] stop[, step,])</code></p>
+<ul>
+<li>범위내에서 간격을 기준 균등 간격의 배열</li>
+<li>요소의 객수가 아닌 데이터의 간격을 기준으로 배열 생성</li>
+</ul>
+<br>
+
+<h3 id="linspace"><a href="#linspace" class="headerlink" title=".linspace"></a>.linspace</h3><p><code>np.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)</code></p>
+<ul>
+<li>start부터 stop의 범위에서 num개를 균일한 간격으로 데이터를 생성하고 배열을 만듦</li>
+<li>요소 개수를 기준으로 균등 간격의 배열을 생성</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.linspace(<span class="number">1</span>, <span class="number">10</span>, <span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array([ 1.,  4.,  7., 10.])</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="logspace"><a href="#logspace" class="headerlink" title=".logspace"></a>.logspace</h3><p><code>np.logspace(start, stop, num=50, endpoint=True, base=10.0, dtype=None)</code></p>
+<ul>
+<li>로그 스케일의 linspace 함수</li>
+<li>로그 스케일로 지정된 범위에서 num 개수만큼 균등 간격으로 데이터 생성한 후 배열 만듦</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.logspace(<span class="number">0.1</span>, <span class="number">1</span>, <span class="number">5</span>, endpoint=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array([ 1.25892541,  2.11348904,  3.54813389,  5.95662144, 10.        ])</span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+<h3 id="ones"><a href="#ones" class="headerlink" title=".ones"></a>.ones</h3><p><code>np.ones(shape, dtype=None, order=&#39;C&#39;)</code></p>
+<ul>
+<li>지정된 shape의 배열을 생성하고, 모든 요소를 1로 초기화</li>
+</ul>
+<br>
+
+
+<h3 id="zeros"><a href="#zeros" class="headerlink" title=".zeros"></a>.zeros</h3><p><code>np.zeros(shape, dtype=float, order=&#39;C&#39;)</code></p>
+<ul>
+<li>지정된 shape의 배열을 생성하고, 모든 요소를 0으로 초기화</li>
+</ul>
+<br>
+
+<h3 id="empty"><a href="#empty" class="headerlink" title=".empty"></a>.empty</h3><p><code>np.empty(shape, dtype=float, order=&#39;C&#39;)</code></p>
+<ul>
+<li>지정된 shape의 배열 생성</li>
+<li>요소의 초기화 과정에 없고, 기존 메모리값을 그대로 사용</li>
+<li>배열 생성비용이 가장 저렴하고 빠름</li>
+<li>배열 사용 시 주의가 필요(초기화를 고려)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.empty((<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">array([[[0.30478803, 0.13136692, 0.14360697, 0.6637217 ],</span><br><span class="line">        [1.01872639, 0.17378054, 1.34104331, 1.12459434],</span><br><span class="line">        [0.17369924, 0.78854114, 0.16261466, 0.80795099]],</span><br><span class="line"></span><br><span class="line">       [[3.09358871, 1.85343424, 0.63535341, 1.75559233],</span><br><span class="line">        [1.6292534 , 0.20653655, 0.24904475, 1.57862548],</span><br><span class="line">        [0.52869262, 1.42407474, 0.85843783, 0.59465702]]])</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="full"><a href="#full" class="headerlink" title=".full"></a>.full</h3><p><code>np.full(shape, fill_value, dtype=None, order=&#39;C&#39;)</code></p>
+<ul>
+<li>지정된 shape의 배열을 생성하고, 모든 요소를 지정한 “fill_value”로 초기화</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.full((<span class="number">2</span>,<span class="number">3</span>),<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">array([[5, 5, 5],</span><br><span class="line">       [5, 5, 5]])</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="eye"><a href="#eye" class="headerlink" title=".eye"></a>.eye</h3><p><code>np.eye(N, M=None, k=0, dtype=&lt;class &#39;float&#39;&gt;)</code></p>
+<ul>
+<li>(N, N) shape의 단위 행렬(Unit Matrix) 생성</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.eye(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">array([[1., 0., 0.],</span><br><span class="line">       [0., 1., 0.],</span><br><span class="line">       [0., 0., 1.]])</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="like"><a href="#like" class="headerlink" title="like"></a>like</h3><ul>
+<li>지정된 배열과 shape이 같은 행렬 생성<ul>
+<li>np.zeros_like</li>
+<li>np.ones_like</li>
+<li>np.full_like</li>
+<li>np.enpty_like</li>
+</ul>
+</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Python/">Python</a>►<a class="article-category-link" href="/categories/Python/Numpy/">Numpy</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/array/">array</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2019/10/06/basic/" title="basic" itemprop="url">basic</a>
   </h1>
   <p class="article-author">By
@@ -639,217 +787,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2019/09/26/07-class/" title="07_Class" itemprop="url">07_Class</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Lahongkkito" target="_blank" itemprop="author">Lahongkkito</a>
-		
-  <p class="article-time">
-    <time datetime="2019-09-26T12:38:41.000Z" itemprop="datePublished"> Published 2019-09-26</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="클래스"><a href="#클래스" class="headerlink" title="클래스"></a>클래스</h2><ul>
-<li>실제 세계를 모델링하여 공통적인 기능을 묶어 개발</li>
-<li>객체(인스턴스)<ul>
-<li>식별성, 타입, 값을 지님</li>
-<li>자신만의 함수를 가짐</li>
-</ul>
-</li>
-<li>확장성이 높아지는 장점(의존성은 낮아짐) </li>
-<li>특성<ul>
-<li>다형성 : 같은 이름으로 함수를 실행할 때 아규먼트의 차이에 따라 다른 코드가 실행되게 하는 기능 (method overloading)</li>
-<li>캡슐화 (은닉화) : 외부에 변수나 함수를 감춰 내용을 알지 못해도 기능 사용 가능 (nonpublic) </li>
-<li>추상화 : 여러가지 요소를 하나로 통합해 사용자가 코드를 몰라도 사용 가능</li>
-</ul>
-</li>
-</ul>
-<br>
-
-<h3 id="self"><a href="#self" class="headerlink" title="self"></a>self</h3><ul>
-<li>객체 자신을 의미</li>
-<li>클래스 내부의 함수 선언시 첫번째 parameter</li>
-<li>현재 해당 메소드가 호출되는 객체 자신을 가리킴</li>
-<li>C++/C#, Java의 this에 ㄷ해당</li>
-<li>클래스 정의 후 객체, 함수 등을 추가</li>
-</ul>
-<br>
-
-<h3 id="object"><a href="#object" class="headerlink" title="object"></a>object</h3><ul>
-<li>클래스로 생성되어 구체화된 객체 (인스턴스)</li>
-<li>실제로 클래스가 인스천스화 되어 메모리에 상주하는 상태 의미</li>
-</ul>
-<br>
-
-<h3 id="생성자"><a href="#생성자" class="headerlink" title="생성자"></a>생성자</h3><ul>
-<li>클래스가 다루는 데이터를 정의 (member variable, attribute)</li>
-<li>클래스가 객체로 만들어질 때 초기값을 설정하는 기능</li>
-<li><code>__init__</code>으로 선언</li>
-<li>필수 변수가 있어야 객체 생성</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 계산기 클래스</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Calulator</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">        self.total = sum(args)</span><br><span class="line">        self.plus = func</span><br><span class="line">        self.num1 = kwargs[<span class="string">"num1"</span>]</span><br><span class="line">        self.num2 = kwargs[<span class="string">"num2"</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_data</span><span class="params">(self, num1, num2)</span>:</span></span><br><span class="line">        self.num1 = num1</span><br><span class="line">        self.num2 = num2</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.plus(self.num1 + self.num2)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">c1 = calculator(<span class="keyword">lambda</span> *args: sum(args), <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, num1=<span class="number">10</span>, num=<span class="number">20</span>)</span><br><span class="line">c1.total</span><br><span class="line">c1.add()</span><br></pre></td></tr></table></figure>
-
-<br>
-
-<h3 id="클래스-메서드"><a href="#클래스-메서드" class="headerlink" title="클래스 메서드"></a>클래스 메서드</h3><ul>
-<li>객체 레벨에서 호출</li>
-<li>해당 객체의 속성에 대한 연산 수행</li>
-<li>{obj}.{method}() 형태로 호출</li>
-</ul>
-<h4 id="instance-method"><a href="#instance-method" class="headerlink" title="instance method"></a>instance method</h4><ul>
-<li>인스턴스를 통해 호출해서 사용</li>
-<li>호출한 객체에만 영향을 미침</li>
-<li>self 파라미터 사용</li>
-<li>self 객체를 받음</li>
-</ul>
-<h4 id="class-method"><a href="#class-method" class="headerlink" title="class method"></a>class method</h4><ul>
-<li>클래스를 통해서 사용</li>
-<li>클래스 멤버 변수만 변경 가능</li>
-<li>cls 파라미터 사용</li>
-<li>cls 클래스를 받음</li>
-</ul>
-<h4 id="static-method"><a href="#static-method" class="headerlink" title="static method"></a>static method</h4><ul>
-<li>클래스 안에서 선언되는 일반 함수</li>
-</ul>
-<br>
-
-<h4 id="magic-special-method"><a href="#magic-special-method" class="headerlink" title="magic(special) method"></a>magic(special) method</h4><ul>
-<li>클래스에서 객체로 만들어질 떄, 자동 생성 함수</li>
-<li>객체 사이의 연산자 사용과 같은 코드 정의 </li>
-<li>파이썬 내장 함수나 연산자 적용 가능 </li>
-<li>compare<ul>
-<li><code>__eq__</code> : == </li>
-<li><code>__ne__</code> : !=</li>
-<li><code>__lt__</code> : &lt;</li>
-<li><code>__gt__</code> : &gt;</li>
-<li><code>__le__</code> : &lt;=</li>
-<li><code>__ge__</code> : &gt;=</li>
-</ul>
-</li>
-<li>calculate<ul>
-<li><code>__add__</code> : +</li>
-<li><code>__sub__</code> : -</li>
-<li><code>__mul__</code> : *</li>
-<li><code>__truediv__</code> : /</li>
-<li><code>__floordiv__</code> : //</li>
-<li><code>__mod__</code> : %</li>
-<li><code>__pow__</code> : **</li>
-</ul>
-</li>
-<li><code>__repr__</code></li>
-<li><code>__str__</code></li>
-<li><code>__len__</code></li>
-</ul>
-<br>
-
-<h3 id="상속"><a href="#상속" class="headerlink" title="상속"></a>상속</h3><ul>
-<li>기존에 정의한 클래스이 기능을 그대로 물려받아 새로운 변수나 함수를 추가/수정 가능</li>
-<li>부모 클래스 (Parent, Super, Base class) : 상속 받고자 하는 기존 클래스</li>
-<li>자식 클래스 (Child, Sub, Derived class) : 상속 받는 새로운 클래스</li>
-<li>is a : A is a B와 같은 의미로 상속 사용해서 클래스 선언</li>
-<li>has a : B has a A 클래스의 변수를 객체로 받아 객체 생성</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ImprovedCalculator</span><span class="params">(Calculator)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pow_func</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.num1 ** self.num2</span><br><span class="line"></span><br><span class="line">ic = ImprovedCalculator(<span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">ic.add(), ic.pow_func()</span><br></pre></td></tr></table></figure>
-
-<br>
-
-<h4 id="다중상속"><a href="#다중상속" class="headerlink" title="다중상속"></a>다중상속</h4><ul>
-<li>super<ul>
-<li>부모클래스의 변수나 함수를 받아올 때 사용</li>
-<li>부모클래스의 생성자를 다시 선언시 사용</li>
-<li>다이아몬드 상속시 중복 생성자 상속 방지</li>
-</ul>
-</li>
-<li>overiding<ul>
-<li>부모클래스가 가지고 있던 함수를 다시 정의해서 사용</li>
-</ul>
-</li>
-<li>overloading<ul>
-<li>함수의 이름은 같으나 argument의 갯수 차이로 다른 코드 실행</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Human</span>:</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.health = <span class="number">40</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_health</span><span class="params">(self, var)</span>:</span></span><br><span class="line">        self.health += var</span><br><span class="line">        <span class="keyword">if</span> self.health &gt; <span class="number">40</span>:</span><br><span class="line">            self.health = <span class="number">40</span></span><br><span class="line">        <span class="keyword">elif</span> self.health &lt; <span class="number">0</span>:</span><br><span class="line">            self.health = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Marin</span><span class="params">(Human)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, attack_pow=<span class="number">5</span>, kill=<span class="number">0</span>)</span>:</span></span><br><span class="line">        super(Marin, self).__init__()</span><br><span class="line">        self.attack_pow = attack_pow</span><br><span class="line">        self.kill = kill</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">attack</span><span class="params">(self, obj)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> obj.health == <span class="number">0</span>:</span><br><span class="line">            print(<span class="string">"already die"</span>)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        obj.set_health(-self.attack_pow)</span><br><span class="line">        <span class="keyword">if</span> obj.health &lt;= <span class="number">0</span>:</span><br><span class="line">            self.kill +=<span class="number">1</span></span><br><span class="line">            print(<span class="string">"kill"</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Medic</span><span class="params">(Human)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, heal_pow=<span class="number">6</span>)</span>:</span></span><br><span class="line">        super(Medic, self).__init__()</span><br><span class="line">        self.heal_pow = heal_pow</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">heal</span><span class="params">(self, obj)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> obj.health == <span class="number">0</span>:</span><br><span class="line">            print(<span class="string">"already die"</span>)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        obj.set_health(self.heal_pow)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">marin1 = Marin()</span><br><span class="line">marin2 = Marin()</span><br><span class="line">medic1 = Medic()</span><br><span class="line">marin1.attack(marin2)</span><br><span class="line">medic.heal(marin1)</span><br></pre></td></tr></table></figure>
-
-<br>
-
-<h4 id="Getter-amp-Setter"><a href="#Getter-amp-Setter" class="headerlink" title="Getter &amp; Setter"></a>Getter &amp; Setter</h4><ul>
-<li>객체 내부 변수에 접근할 때 특정 로직을 거쳐 접근할 수 있도록 하는 방법</li>
-<li>getter : 속성 값을 가져오는 메서드</li>
-<li>setter : 값을 저장하는 메서드</li>
-<li>메서드를 속성처럼 사용할 수 있음</li>
-</ul>
-<br>
-
-<h5 id="property"><a href="#property" class="headerlink" title="property"></a>property</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person1</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.__age = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_age</span><span class="params">(self)</span>:</span>  <span class="comment"># getter</span></span><br><span class="line">        <span class="keyword">return</span> self.__age</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_age</span><span class="params">(self)</span>:</span>  <span class="comment"># setter</span></span><br><span class="line">        self.__age = value</span><br><span class="line"></span><br><span class="line">jason = Person1()</span><br><span class="line">jason.set_age(<span class="number">15</span>)</span><br><span class="line">print(jason.get_age())</span><br></pre></td></tr></table></figure>
-
-<br>
-
-<h5 id="decolator"><a href="#decolator" class="headerlink" title="decolator"></a>decolator</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person2</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.__age = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">age</span><span class="params">(self)</span>:</span>  <span class="comment"># getter</span></span><br><span class="line">        <span class="keyword">return</span> self.__age</span><br><span class="line"> </span><br><span class="line"><span class="meta">    @age.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">age</span><span class="params">(self, value)</span>:</span>   <span class="comment"># setter</span></span><br><span class="line">        self.__age = value</span><br><span class="line"></span><br><span class="line">sumi = Person2()</span><br><span class="line">sumi.age = <span class="number">23</span></span><br><span class="line">print(sumi.age)</span><br></pre></td></tr></table></figure>
-
-<br>
-
-<h5 id="non-public-private"><a href="#non-public-private" class="headerlink" title="non public (private)"></a>non public (private)</h5><ul>
-<li>magling 방법으로 구현</li>
-<li>class 내부 변수에 직접 접근 불가</li>
-<li><code>__</code>를 붙여 변수 선언</li>
-<li>(객체명)._(클래스명)(변수명)으로 접근 가능</li>
-</ul>
-<br>
-
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Python/">Python</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/class/">class</a><a href="/tags/객체지향/">객체지향</a><a href="/tags/decorator/">decorator</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
@@ -877,11 +814,11 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/Python/Numpy/" title="Numpy">Numpy<sup>1</sup></a></li>
+			<li><a href="/categories/Python/Numpy/" title="Numpy">Numpy<sup>2</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/Python/" title="Python">Python<sup>12</sup></a></li>
+			<li><a href="/categories/Python/" title="Python">Python<sup>13</sup></a></li>
 		  
 		
 		</ul>
@@ -894,7 +831,7 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/break/" title="break">break<sup>1</sup></a></li>
+				<li><a href="/tags/list-comprehension/" title="list comprehension">list comprehension<sup>1</sup></a></li>
 			
 		
 			
@@ -942,27 +879,15 @@
 			
 		
 			
+				<li><a href="/tags/break/" title="break">break<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/datatype/" title="datatype">datatype<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/list-comprehension/" title="list comprehension">list comprehension<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/lambda/" title="lambda">lambda<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/module/" title="module">module<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/writefile/" title="writefile">writefile<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/import/" title="import">import<sup>1</sup></a></li>
 			
 		
 			
@@ -971,6 +896,18 @@
 		
 			
 				<li><a href="/tags/rwx/" title="rwx">rwx<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/shutil/" title="shutil">shutil<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/module/" title="module">module<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/writefile/" title="writefile">writefile<sup>1</sup></a></li>
 			
 		
 		</ul>
