@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="MJ&#39;s Study Note blog">
 <meta property="og:description" content=".size 차원 정보 없이 원소의 개수 출력    .reshape array의 shape을 다른 차원으로 변경  reshape한 후의 결과의 전체 원소 개수와 이전 개수가 같아야 가능  이미지 데이터 벡터화에 사용 (2차원 혹은 3차원(RGB)을 트레이닝을 위해 1차원으로 변경)   123456x = np.arange(24)y = x.reshape(4, 6">
 <meta property="og:locale" content="KOR">
-<meta property="og:updated_time" content="2019-10-07T12:44:45.301Z">
+<meta property="og:updated_time" content="2019-10-07T13:12:39.567Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shape">
 <meta name="twitter:description" content=".size 차원 정보 없이 원소의 개수 출력    .reshape array의 shape을 다른 차원으로 변경  reshape한 후의 결과의 전체 원소 개수와 이전 개수가 같아야 가능  이미지 데이터 벡터화에 사용 (2차원 혹은 3차원(RGB)을 트레이닝을 위해 1차원으로 변경)   123456x = np.arange(24)y = x.reshape(4, 6">
@@ -94,7 +94,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#size"><span class="toc-number">1.</span> <span class="toc-text">.size</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reshape"><span class="toc-number">2.</span> <span class="toc-text">.reshape</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ravel"><span class="toc-number">3.</span> <span class="toc-text">.ravel</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flatten"><span class="toc-number">4.</span> <span class="toc-text">.flatten</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#인덱싱"><span class="toc-number">5.</span> <span class="toc-text">인덱싱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#슬라이싱"><span class="toc-number">6.</span> <span class="toc-text">슬라이싱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#concatenate"><span class="toc-number">7.</span> <span class="toc-text">.concatenate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#벡터데이터-결합"><span class="toc-number">8.</span> <span class="toc-text">벡터데이터 결합</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#split"><span class="toc-number">9.</span> <span class="toc-text">split</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#size"><span class="toc-number">1.</span> <span class="toc-text">.size</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reshape"><span class="toc-number">2.</span> <span class="toc-text">.reshape</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ravel"><span class="toc-number">3.</span> <span class="toc-text">.ravel</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flatten"><span class="toc-number">4.</span> <span class="toc-text">.flatten</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#T"><span class="toc-number">5.</span> <span class="toc-text">.T</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#인덱싱"><span class="toc-number">6.</span> <span class="toc-text">인덱싱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#슬라이싱"><span class="toc-number">7.</span> <span class="toc-text">슬라이싱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#concatenate"><span class="toc-number">8.</span> <span class="toc-text">.concatenate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#벡터데이터-결합"><span class="toc-number">9.</span> <span class="toc-text">벡터데이터 결합</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#split"><span class="toc-number">10.</span> <span class="toc-text">split</span></a></li></ol>
 		
 		</div>
 		
@@ -138,6 +138,11 @@
 
 <h3 id="flatten"><a href="#flatten" class="headerlink" title=".flatten"></a>.flatten</h3><ul>
 <li>ravel과 동일한 기능이지만 copy를 생성하여 변경</li>
+</ul>
+<br>
+
+<h3 id="T"><a href="#T" class="headerlink" title=".T"></a>.T</h3><ul>
+<li>벡터의 transpose</li>
 </ul>
 <br>
 <br>
@@ -242,7 +247,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#size"><span class="toc-number">1.</span> <span class="toc-text">.size</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reshape"><span class="toc-number">2.</span> <span class="toc-text">.reshape</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ravel"><span class="toc-number">3.</span> <span class="toc-text">.ravel</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flatten"><span class="toc-number">4.</span> <span class="toc-text">.flatten</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#인덱싱"><span class="toc-number">5.</span> <span class="toc-text">인덱싱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#슬라이싱"><span class="toc-number">6.</span> <span class="toc-text">슬라이싱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#concatenate"><span class="toc-number">7.</span> <span class="toc-text">.concatenate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#벡터데이터-결합"><span class="toc-number">8.</span> <span class="toc-text">벡터데이터 결합</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#split"><span class="toc-number">9.</span> <span class="toc-text">split</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#size"><span class="toc-number">1.</span> <span class="toc-text">.size</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reshape"><span class="toc-number">2.</span> <span class="toc-text">.reshape</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ravel"><span class="toc-number">3.</span> <span class="toc-text">.ravel</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flatten"><span class="toc-number">4.</span> <span class="toc-text">.flatten</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#T"><span class="toc-number">5.</span> <span class="toc-text">.T</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#인덱싱"><span class="toc-number">6.</span> <span class="toc-text">인덱싱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#슬라이싱"><span class="toc-number">7.</span> <span class="toc-text">슬라이싱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#concatenate"><span class="toc-number">8.</span> <span class="toc-text">.concatenate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#벡터데이터-결합"><span class="toc-number">9.</span> <span class="toc-text">벡터데이터 결합</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#split"><span class="toc-number">10.</span> <span class="toc-text">split</span></a></li></ol>
  
   </div>
 
