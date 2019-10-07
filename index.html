@@ -75,6 +75,155 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2019/10/07/method/" title="method" itemprop="url">method</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Lahongkkito" target="_blank" itemprop="author">Lahongkkito</a>
+		
+  <p class="article-time">
+    <time datetime="2019-10-07T13:28:19.000Z" itemprop="datePublished"> Published 2019-10-07</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h3 id="broadcasting"><a href="#broadcasting" class="headerlink" title="broadcasting"></a>broadcasting</h3><ul>
+<li>특정한 어떤 조건이 맞을 때 모양이 다른 배열끼리도 연산 가능</li>
+<li>Shape이 같은 두 ndarray에 대한 연산은 각 원소별로 진행</li>
+<li>두 배열 간의 연산에서 최소한 하나의 배열의 차원이 1인 경우 반복 확장되어 연산</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = np.arange(<span class="number">12</span>).reshape(<span class="number">4</span>, <span class="number">3</span>)</span><br><span class="line">b = np.arange(<span class="number">10</span>, <span class="number">13</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a + b</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">array([[10, 12, 14],</span><br><span class="line">       [13, 15, 17],</span><br><span class="line">       [16, 18, 20],</span><br><span class="line">       [19, 21, 23]])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a * b</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">array([[  0,  11,  24],</span><br><span class="line">       [ 30,  44,  60],</span><br><span class="line">       [ 60,  77,  96],</span><br><span class="line">       [ 90, 110, 132]])</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="연산-함수"><a href="#연산-함수" class="headerlink" title="연산 함수"></a>연산 함수</h3><ul>
+<li><p>add, substract, multiply, divide</p>
+</li>
+<li><p>.linalg.inv</p>
+<ul>
+<li>역행렬 구하는 함수</li>
+<li>모든 차원의 값이 같아야 함</li>
+</ul>
+</li>
+<li><p>.linalg.solve</p>
+<ul>
+<li><p>Ax = B 형태의 선형대수식 솔루션 제공</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">A = np.array([[<span class="number">2</span>, <span class="number">6</span>], [<span class="number">5</span>, <span class="number">3</span>]])</span><br><span class="line">B = np.array([<span class="number">44</span>, <span class="number">62</span>])</span><br><span class="line"></span><br><span class="line">x = np.linalg.solve(A, B)</span><br><span class="line">print(x)</span><br><span class="line"></span><br><span class="line">np.allclose(A@x, B)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[10.  4.]</span><br><span class="line">True</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<br>
+
+
+<h3 id="통계-함수"><a href="#통계-함수" class="headerlink" title="통계 함수"></a>통계 함수</h3><ul>
+<li>mean, var, std, median</li>
+<li>max, min, argmax, argmin</li>
+<li>sum, cunsum</li>
+</ul>
+<br>
+
+<h3 id="any-all-함수"><a href="#any-all-함수" class="headerlink" title="any, all 함수"></a>any, all 함수</h3><ul>
+<li>any: 특정 조건을 만족하는 것이 적어도 하나 있으면 True, 아니면 False</li>
+<li>all: 모든 원소가 특정 조건을 만족하면 True, 아니면 False</li>
+</ul>
+<br>
+
+<h3 id="where-함수"><a href="#where-함수" class="headerlink" title="where 함수"></a>where 함수</h3><p><code>np.where(condition, [x, y])</code></p>
+<br>
+
+<h3 id="지수-로그-함수"><a href="#지수-로그-함수" class="headerlink" title="지수/로그 함수"></a>지수/로그 함수</h3><ul>
+<li>np.exp()</li>
+<li>np.log()</li>
+</ul>
+<br>
+
+<h3 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h3><p><code>a.sort(axis=-1, kind=None, order=None)</code></p>
+<br>
+<br>
+
+<h3 id="boolean-indexing"><a href="#boolean-indexing" class="headerlink" title="boolean indexing"></a>boolean indexing</h3><ul>
+<li><p>ndarry 인덱싱 시, bool 리스트를 전달하여 True인 경우만 필터링</p>
+</li>
+<li><p>브로드캐스팅을 활용하여 ndarray로 부터 bool list 얻음</p>
+</li>
+<li><p>다중조건 사용</p>
+<ul>
+<li><p>파이썬 논리 연산자 and, or, not 키워드 사용 불가</p>
+</li>
+<li><p>&amp; - AND</p>
+</li>
+<li><p>| - OR</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = np.random.randint(<span class="number">1</span>, <span class="number">100</span>, size=<span class="number">10</span>)</span><br><span class="line">print(x)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[19 30 15 50 84 79 36 11 75 21]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x[x &gt; <span class="number">30</span>]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array([50, 84, 79, 36, 75])</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Python/">Python</a>►<a class="article-category-link" href="/categories/Python/Numpy/">Numpy</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/broadcasting/">broadcasting</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2019/10/07/shape/" title="shape" itemprop="url">shape</a>
   </h1>
   <p class="article-author">By
@@ -598,144 +747,9 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2019/10/02/06-2-Operating-System/" title="06-2_Operating System" itemprop="url">06-2_Operating System</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Lahongkkito" target="_blank" itemprop="author">Lahongkkito</a>
-		
-  <p class="article-time">
-    <time datetime="2019-10-02T11:37:30.000Z" itemprop="datePublished"> Published 2019-10-02</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="OS-Shutil-Module"><a href="#OS-Shutil-Module" class="headerlink" title="OS/Shutil Module"></a>OS/Shutil Module</h2><ul>
-<li>OS: 운영체제와 관련된 함수와 클래스를 제공하는 라이브러리</li>
-<li>shutil: 파일, 폴더와 관련된 함수와 클래스를 제공하는 라이브러리</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> shutil</span><br></pre></td></tr></table></figure>
-
-<br>
-
-<ul>
-<li><p>디렉토리 만들기<br><code>os.makedirs(&#39;폴더명&#39;)</code></p>
-</li>
-<li><p>디렉토리내 파일 리스트 불러오기<br><code>os.listdir(&#39;폴더명&#39;)</code></p>
-</li>
-<li><p>파일 삭제<br><code>os.remove(&#39;폴더명/파일명&#39;)</code></p>
-</li>
-<li><p>디렉토리 삭제 (파일이 존재하지 않는 경우에만)<br><code>os.removedirs(&#39;폴더명&#39;)</code></p>
-</li>
-<li><p>파일과 디렉토리 삭제<br><code>shutil.rmtree(&#39;폴더명&#39;)</code></p>
-</li>
-<li><p>파일(폴더) 존재 확인<br><code>os.path.exists(&#39;폴더명/파일명&#39;)</code></p>
-</li>
-<li><p>디렉토리 타입 확인<br><code>os.path.isdir(&#39;폴더명/파일명&#39;)</code></p>
-</li>
-<li><p>현재 디렉토리 확인<br><code>os.curdir</code></p>
-</li>
-<li><p>부모 디렉토리 확인<br><code>os.pardir</code></p>
-</li>
-<li><p>복사<br><code>shutil.copy(&#39;폴더명/파일명&#39;)</code></p>
-</li>
-<li><p>파일명 바꾸기<br><code>os.rename(&#39;폴더명/기존파일명&#39;, &#39;폴더명/새파일명&#39;)</code></p>
-</li>
-</ul>
-<br>
-<br>
-
-
-<h3 id="권한설정"><a href="#권한설정" class="headerlink" title="권한설정"></a>권한설정</h3><ul>
-<li>-rwxr–r– : 10개의 문자로 이루어진 파일 권한에 관한 정보<ul>
-<li>[0] : 타입</li>
-<li>[1:4] : 소유자에 대한 파일의 권한</li>
-<li>[4:7] : 그룹에 대한 파일의 권한</li>
-<li>[7:] : 모든 사용자에 대한 파일의 권한</li>
-</ul>
-</li>
-</ul>
-<br>
-
-<ul>
-<li>권한 : rwx<ul>
-<li>r : 읽기 권한</li>
-<li>w : 쓰기 권한</li>
-<li>x : 실행 권한</li>
-</ul>
-</li>
-</ul>
-<br>
-
-<ul>
-<li>권한 설정 : 2진수(권한 있으면 1, 없으면 0), 8진수<ul>
-<li>chmod 명령 이용<br><code>os.chmod(&#39;폴더명/파일명&#39;, 권한)</code></li>
-<li>7(8) : 111(2) : rwx</li>
-<li>5(8) : 101(2) : r-x</li>
-</ul>
-</li>
-</ul>
-<br>
-
-<ul>
-<li>권한 확인<br>  <code>os.access(&#39;폴더명/파일명&#39;, 권한)</code><ul>
-<li>os.F_OK : 파일 자체가 존재하는 지 확인</li>
-<li>os.R_OK : 읽기 권한이 있는 지 확인</li>
-<li>os.W_OK : 쓰기 권한이 있는 지 확인</li>
-<li>os.R_OK : 실행 권한이 있는 지 확인</li>
-</ul>
-</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Python/">Python</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/os/">os</a><a href="/tags/rwx/">rwx</a><a href="/tags/shutil/">shutil</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
   </nav>
 
 </div>
@@ -760,11 +774,11 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/Python/Numpy/" title="Numpy">Numpy<sup>4</sup></a></li>
+			<li><a href="/categories/Python/Numpy/" title="Numpy">Numpy<sup>5</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/Python/" title="Python">Python<sup>15</sup></a></li>
+			<li><a href="/categories/Python/" title="Python">Python<sup>16</sup></a></li>
 		  
 		
 		</ul>
@@ -777,7 +791,7 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/os/" title="os">os<sup>1</sup></a></li>
+				<li><a href="/tags/rwx/" title="rwx">rwx<sup>1</sup></a></li>
 			
 		
 			
@@ -837,11 +851,11 @@
 			
 		
 			
-				<li><a href="/tags/datatype/" title="datatype">datatype<sup>1</sup></a></li>
+				<li><a href="/tags/os/" title="os">os<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/rwx/" title="rwx">rwx<sup>1</sup></a></li>
+				<li><a href="/tags/datatype/" title="datatype">datatype<sup>1</sup></a></li>
 			
 		
 			
