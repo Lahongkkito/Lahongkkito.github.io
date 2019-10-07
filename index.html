@@ -154,6 +154,28 @@
 
 </li>
 </ul>
+<br>
+
+<h3 id="concatenate"><a href="#concatenate" class="headerlink" title=".concatenate"></a>.concatenate</h3><p><code>np.concatenate((a1, a2, ...), out=None)</code></p>
+<ul>
+<li>가로 결합 : axis = 0 (default)</li>
+<li>세로 결합  : axis =1</li>
+</ul>
+<br>
+
+<h3 id="벡터데이터-결합"><a href="#벡터데이터-결합" class="headerlink" title="벡터데이터 결합"></a>벡터데이터 결합</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data1 = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line">data2 = np.array([<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.c_[data1, data2]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">array([[1, 4],</span><br><span class="line">       [2, 5],</span><br><span class="line">       [3, 6]])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.r_[data1, data2]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array([1, 2, 3, 4, 5, 6])</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="split"><a href="#split" class="headerlink" title="split"></a>split</h3><p><code>np.split(ary, indices_or_sections, axis=0)</code><br><code>np.vsplit(ary, indices_or_sections)</code><br><code>np.hsplit(ary, indices_or_sections</code></p>
 
         
         
@@ -172,7 +194,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/reshape/">reshape</a>
+  <span></span> <a href="/tags/reshape/">reshape</a><a href="/tags/split/">split</a><a href="/tags/concatenate/">concatenate</a>
   </div>
 
 </div>
@@ -750,7 +772,7 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/lambda/" title="lambda">lambda<sup>1</sup></a></li>
+				<li><a href="/tags/os/" title="os">os<sup>1</sup></a></li>
 			
 		
 			
@@ -806,11 +828,11 @@
 			
 		
 			
-				<li><a href="/tags/datatype/" title="datatype">datatype<sup>1</sup></a></li>
+				<li><a href="/tags/lambda/" title="lambda">lambda<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/os/" title="os">os<sup>1</sup></a></li>
+				<li><a href="/tags/datatype/" title="datatype">datatype<sup>1</sup></a></li>
 			
 		
 			
