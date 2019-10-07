@@ -4,24 +4,25 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
   
-    <title>basic | MJ&#39;s Study Note blog</title>
+    <title>random | MJ&#39;s Study Note blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Lahongkkito">
     
 
     
-    <meta name="description" content="Numpy N차원 배열 객체 파이썬으로 수치해석, 통계 관련 기능 구현시 가장 기본이 되는 모듈 유용한 선형 대수학, 푸리에 변환 및 난수 기능 등을 빠르게 계산하기 위한 패키지 (대부분의 데이터는 행렬 형태) 범용적 데이터 처리에 사용 가능한 다차원 컨테이너 C,C++,Fortran로 작성되어 실행 속도 빠름 Scipy, Pandas, matplotlib">
+    <meta name="description" content=".randnp.random.rand(d0, d1, ..., dn)  (d0, d1, …, dn) shape 배열 [0. 1)의 균등 분포(Uniform Distribution) 형상으로 표본 추출 Gaussina normal    .randnnp.random.randn(d0, d1, ..., dn)  (d0, d1, …, dn) shape 배열 표준 정규">
+<meta name="keywords" content="random,seed">
 <meta property="og:type" content="article">
-<meta property="og:title" content="basic">
-<meta property="og:url" content="https://Lahongkkito.github.io/2019/10/06/basic/index.html">
+<meta property="og:title" content="random">
+<meta property="og:url" content="https://Lahongkkito.github.io/2019/10/07/random/index.html">
 <meta property="og:site_name" content="MJ&#39;s Study Note blog">
-<meta property="og:description" content="Numpy N차원 배열 객체 파이썬으로 수치해석, 통계 관련 기능 구현시 가장 기본이 되는 모듈 유용한 선형 대수학, 푸리에 변환 및 난수 기능 등을 빠르게 계산하기 위한 패키지 (대부분의 데이터는 행렬 형태) 범용적 데이터 처리에 사용 가능한 다차원 컨테이너 C,C++,Fortran로 작성되어 실행 속도 빠름 Scipy, Pandas, matplotlib">
+<meta property="og:description" content=".randnp.random.rand(d0, d1, ..., dn)  (d0, d1, …, dn) shape 배열 [0. 1)의 균등 분포(Uniform Distribution) 형상으로 표본 추출 Gaussina normal    .randnnp.random.randn(d0, d1, ..., dn)  (d0, d1, …, dn) shape 배열 표준 정규">
 <meta property="og:locale" content="KOR">
-<meta property="og:updated_time" content="2019-10-06T13:07:58.041Z">
+<meta property="og:updated_time" content="2019-10-07T11:16:05.702Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="basic">
-<meta name="twitter:description" content="Numpy N차원 배열 객체 파이썬으로 수치해석, 통계 관련 기능 구현시 가장 기본이 되는 모듈 유용한 선형 대수학, 푸리에 변환 및 난수 기능 등을 빠르게 계산하기 위한 패키지 (대부분의 데이터는 행렬 형태) 범용적 데이터 처리에 사용 가능한 다차원 컨테이너 C,C++,Fortran로 작성되어 실행 속도 빠름 Scipy, Pandas, matplotlib">
+<meta name="twitter:title" content="random">
+<meta name="twitter:description" content=".randnp.random.rand(d0, d1, ..., dn)  (d0, d1, …, dn) shape 배열 [0. 1)의 균등 분포(Uniform Distribution) 형상으로 표본 추출 Gaussina normal    .randnnp.random.randn(d0, d1, ..., dn)  (d0, d1, …, dn) shape 배열 표준 정규">
 
     
     
@@ -77,14 +78,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/10/06/basic/" title="basic" itemprop="url">basic</a>
+      <a href="/2019/10/07/random/" title="random" itemprop="url">random</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Lahongkkito" target="_blank" itemprop="author">Lahongkkito</a>
 		
   <p class="article-time">
-    <time datetime="2019-10-06T12:43:22.000Z" itemprop="datePublished"> Published 2019-10-06</time>
+    <time datetime="2019-10-07T11:12:18.000Z" itemprop="datePublished"> Published 2019-10-07</time>
     
   </p>
 </header>
@@ -93,58 +94,76 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Numpy"><span class="toc-number">1.</span> <span class="toc-text">Numpy</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#입출력"><span class="toc-number">1.1.</span> <span class="toc-text">입출력</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Numpy-데이터-타입"><span class="toc-number">1.2.</span> <span class="toc-text">Numpy 데이터 타입</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#도움말"><span class="toc-number">1.3.</span> <span class="toc-text">도움말</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#rand"><span class="toc-number">1.</span> <span class="toc-text">.rand</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#randn"><span class="toc-number">2.</span> <span class="toc-text">.randn</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#randint"><span class="toc-number">3.</span> <span class="toc-text">.randint</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#random"><span class="toc-number">4.</span> <span class="toc-text">.random</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#choice"><span class="toc-number">5.</span> <span class="toc-text">.choice</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#discrete-probability-distribution"><span class="toc-number">6.</span> <span class="toc-text">discrete probability distribution</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#continuous-probability-distribution"><span class="toc-number">7.</span> <span class="toc-text">continuous probability distribution</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#seed"><span class="toc-number">8.</span> <span class="toc-text">seed</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h2><ul>
-<li>N차원 배열 객체</li>
-<li>파이썬으로 수치해석, 통계 관련 기능 구현시 가장 기본이 되는 모듈</li>
-<li>유용한 선형 대수학, 푸리에 변환 및 난수 기능 등을 빠르게 계산하기 위한 패키지 (대부분의 데이터는 행렬 형태)</li>
-<li>범용적 데이터 처리에 사용 가능한 다차원 컨테이너</li>
-<li>C,C++,Fortran로 작성되어 실행 속도 빠름</li>
-<li>Scipy, Pandas, matplotlib 등의 기반으로 사용</li>
-</ul>
-<br>
-
+		<h3 id="rand"><a href="#rand" class="headerlink" title=".rand"></a>.rand</h3><p><code>np.random.rand(d0, d1, ..., dn)</code></p>
 <ul>
-<li>사용<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
+<li>(d0, d1, …, dn) shape 배열</li>
+<li>[0. 1)의 균등 분포(Uniform Distribution) 형상으로 표본 추출</li>
+<li>Gaussina normal</li>
+</ul>
+<br>
+
+<h3 id="randn"><a href="#randn" class="headerlink" title=".randn"></a>.randn</h3><p><code>np.random.randn(d0, d1, ..., dn)</code></p>
+<ul>
+<li>(d0, d1, …, dn) shape 배열</li>
+<li>표준 정규 분포(standard normal distribution)에서 표본 추출</li>
+</ul>
+<br>
+
+<h3 id="randint"><a href="#randint" class="headerlink" title=".randint"></a>.randint</h3><p><code>np.random.randint(low, high=None, size=None, dtype=&#39;l&#39;)</code></p>
+<ul>
+<li>low 부터 high 미만의 범위에서 정수 표본 추출</li>
+</ul>
+<br>
+
+
+<h3 id="random"><a href="#random" class="headerlink" title=".random"></a>.random</h3><p><code>np.random.random(size=None)</code></p>
+<ul>
+<li>[0., 1.)의 균등 분포(Uniform Distribution)에서 표본 추출</li>
+</ul>
+<br>
+
+
+<h3 id="choice"><a href="#choice" class="headerlink" title=".choice"></a>.choice</h3><p><code>np.random.choice(a, size=None, replace=True, p=None)</code></p>
+<ul>
+<li><p>주어진 1차원 ndarray로 부터 랜덤으로 샘플링</p>
+</li>
+<li><p>정수가 주어진 경우, np.arange(해당숫자)로 간주</p>
+</li>
+<li><p>replace : 비중복</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = np.array([<span class="number">-1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">7.5</span>, <span class="number">-2.6</span>, <span class="number">0.8</span>])</span><br><span class="line">np.random.choice(x, size=(<span class="number">2</span>, <span class="number">2</span>), replace=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">array([[-1. ,  7.5],</span><br><span class="line">    [ 4. , -2.6]])</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
 <br>
 
-<h3 id="입출력"><a href="#입출력" class="headerlink" title="입출력"></a>입출력</h3><ul>
-<li>배열 객체를 바이너리 파일 혹은 텍스트 파일에 저장, 로딩 기능 제공<br></li>
-<li>np.save(): NumPy 배열 객체 1개를 파일에 저장, 확장자: npy</li>
-<li>np.savez(): NumPy 배열 객체 복수개를 1게 파일에 저장, 확장자: pnz</li>
-<li>np.load() : NumPy 배열 저장 파일로 부터 객체 로딩</li>
-<li>np.loadtxt() : 텍스트 파일로 부터 배열 로딩<ul>
-<li>fname: 파일명</li>
-<li>dtype: 데이터 타입</li>
-<li>comments: comment 시작 부호</li>
-<li>delimiter: 구분자</li>
-<li>skiprows: 제외 라인 수(header 제거용)</li>
-<li>텍스트를 포함한 파일이 경우 dtyped으로 컬럼 명과 데이터 타입을 설정해야 합니다.</li>
-</ul>
-</li>
-<li>np.savetxt() : 텍스트 파일에 NumPy 배열 객체 저장</li>
+
+<h3 id="discrete-probability-distribution"><a href="#discrete-probability-distribution" class="headerlink" title="discrete probability distribution"></a>discrete probability distribution</h3><ul>
+<li>이항분포<br><code>np.random.normal(loc=0.0, scale=1.0, size=None)</code></li>
+<li>초기하분포<br><code>np.random.uniform(low=0.0, high=1.0, size=None)</code></li>
+<li>포아송분포<br><code>np.random.lognormal(mean=0.0, sigma=1.0, size=None)</code></li>
 </ul>
 <br>
 
-<h3 id="Numpy-데이터-타입"><a href="#Numpy-데이터-타입" class="headerlink" title="Numpy 데이터 타입"></a>Numpy 데이터 타입</h3><ul>
-<li>np.int64 : 64 비트 정수 타입</li>
-<li>np.float32 : 32 비트 부동 소수 타입</li>
-<li>np.complex : 복소수 (128 float)</li>
-<li>np.bool : 불린 타입 (Trur, False)</li>
-<li>np.object : 파이썬 객체 타입</li>
-<li>np.string_ : 고정자리 스트링 타입</li>
-<li>np.unicode_ : 고정자리 유니코드 타입</li>
+
+<h3 id="continuous-probability-distribution"><a href="#continuous-probability-distribution" class="headerlink" title="continuous probability distribution"></a>continuous probability distribution</h3><ul>
+<li>정규분포<br><code>np.random.normal(loc=0.0, scale=1.0, size=None)</code></li>
+<li>균일분포<br><code>np.random.uniform(low=0.0, high=1.0, size=None)</code></li>
+<li>로그정규분포<br><code>np.random.lognormal(mean=0.0, sigma=1.0, size=None)</code></li>
+<li>라플라스분포<br><code>np.random.laplace(loc=0.0, scale=1.0, size=None)</code></li>
+<li>t-분포<br><code>np.random.standard_t(df, size=None)</code></li>
+<li>F-분포<br><code>np.random.f(dfnum, dfden, size=None)</code></li>
+<li>카이제곱분포<br><code>np.random.chisquare(df, size)</code></li>
 </ul>
 <br>
 
-<h3 id="도움말"><a href="#도움말" class="headerlink" title="도움말"></a>도움말</h3><ul>
-<li>np.info()</li>
+<h3 id="seed"><a href="#seed" class="headerlink" title="seed"></a>seed</h3><ul>
+<li>난수의 시작점을 설정하는 함수로서 랜덤한 값을 동일하게 다시 생성하고자 할때 사용</li>
 </ul>
   
 	</div>
@@ -157,13 +176,18 @@
 </div>
 
 
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/random/">random</a><a href="/tags/seed/">seed</a>
+  </div>
+
 </div>
 
 
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="https://Lahongkkito.github.io/2019/10/06/basic/" data-title="basic | MJ&#39;s Study Note blog" data-tsina="" class="share clearfix">
+	  <div data-url="https://Lahongkkito.github.io/2019/10/07/random/" data-title="random | MJ&#39;s Study Note blog" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -176,19 +200,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2019/10/06/creation/" title="creation">
-  <strong>上一篇：</strong><br/>
-  <span>
-  creation</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2019/10/02/06-2-Operating-System/"  title="06-2_Operating System">
+<a href="/2019/10/06/creation/"  title="creation">
  <strong>下一篇：</strong><br/> 
- <span>06-2_Operating System
+ <span>creation
 </span>
 </a>
 </div>
@@ -205,7 +221,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Numpy"><span class="toc-number">1.</span> <span class="toc-text">Numpy</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#입출력"><span class="toc-number">1.1.</span> <span class="toc-text">입출력</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Numpy-데이터-타입"><span class="toc-number">1.2.</span> <span class="toc-text">Numpy 데이터 타입</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#도움말"><span class="toc-number">1.3.</span> <span class="toc-text">도움말</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#rand"><span class="toc-number">1.</span> <span class="toc-text">.rand</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#randn"><span class="toc-number">2.</span> <span class="toc-text">.randn</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#randint"><span class="toc-number">3.</span> <span class="toc-text">.randint</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#random"><span class="toc-number">4.</span> <span class="toc-text">.random</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#choice"><span class="toc-number">5.</span> <span class="toc-text">.choice</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#discrete-probability-distribution"><span class="toc-number">6.</span> <span class="toc-text">discrete probability distribution</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#continuous-probability-distribution"><span class="toc-number">7.</span> <span class="toc-text">continuous probability distribution</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#seed"><span class="toc-number">8.</span> <span class="toc-text">seed</span></a></li></ol>
  
   </div>
 

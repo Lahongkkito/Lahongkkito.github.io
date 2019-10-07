@@ -75,6 +75,138 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2019/09/19/03-conditions/" title="03_conditions" itemprop="url">03_conditions</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Lahongkkito" target="_blank" itemprop="author">Lahongkkito</a>
+		
+  <p class="article-time">
+    <time datetime="2019-09-19T06:57:42.000Z" itemprop="datePublished"> Published 2019-09-19</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="조건문"><a href="#조건문" class="headerlink" title="조건문"></a>조건문</h2><ul>
+<li>if, elif, else</li>
+<li>indentation(들여쓰기) 사용</li>
+<li>nesting(반복 중첩) 가능 (비권장)</li>
+<li>boolean으로 표현<ul>
+<li>논리식 AND, OR, NOT 사용 가능 <ul>
+<li>우선순위 NOT &gt; AND &gt; OR</li>
+</ul>
+</li>
+<li>예외 : 기본 타입 사용 가능<ul>
+<li>False 간주 값 (각 타입 기본값)<ul>
+<li>None, 0, 0.0, “, (), [], {}, set()</li>
+<li>이 외 모두 True<br>
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Q. 숫자를 입력받아 아래 조건에 맞게 결과를 출력하세요.</p>
+<ul>
+<li>3의 배수이면 fizz</li>
+<li>5의 배수이면 buzz</li>
+<li>15의 배수이면 fizzbuzz</li>
+<li>이 외의 경우 입력받은 숫자</li>
+</ul>
+<p>A.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">num = int(input(<span class="string">"Insert number: "</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> num % <span class="number">15</span> ==<span class="number">0</span> :</span><br><span class="line">    print(<span class="string">"fizzbuzz"</span>)</span><br><span class="line"><span class="keyword">elif</span> num % <span class="number">5</span> ==<span class="number">0</span> :</span><br><span class="line">    print(<span class="string">"buzz"</span>)</span><br><span class="line"><span class="keyword">elif</span> num % <span class="number">3</span> ==<span class="number">0</span> :</span><br><span class="line">    print(<span class="string">"fizz"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(num)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> num % <span class="number">3</span> ==<span class="number">0</span> :</span><br><span class="line">    print(<span class="string">"fizz"</span>, end=<span class="string">""</span>)</span><br><span class="line"><span class="keyword">elif</span> num % <span class="number">5</span> ==<span class="number">0</span> :</span><br><span class="line">    print(<span class="string">"buzz"</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span>((num % <span class="number">3</span> ==<span class="number">0</span>) <span class="keyword">or</span> (num % <span class="number">5</span> ==<span class="number">0</span>)):</span><br><span class="line">    print(num)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="삼항연산"><a href="#삼항연산" class="headerlink" title="삼항연산"></a>삼항연산</h3><ul>
+<li><p>condition이 True이면 A를 리터, False니면 B를 리턴</p>
+<p>  <code>A if (condition) else B</code></p>
+</li>
+</ul>
+<br>
+
+<p>Q. 숫자를 입력받아 짝수이면 “even”, 홀수이면 “odd”를 출력하세요.</p>
+<p>A. </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">num = int(input(<span class="string">"Insert number: "</span>))</span><br><span class="line"><span class="string">"even"</span> <span class="keyword">if</span> num % <span class="number">2</span> == <span class="number">0</span> <span class="keyword">else</span> <span class="string">"odd"</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+<h2 id="예외처리"><a href="#예외처리" class="headerlink" title="예외처리"></a>예외처리</h2><ul>
+<li>try, except</li>
+<li>예외 변수 지정</li>
+<li>모든 예외 검출</li>
+<li>Exception 클래스를 상속</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 5/0</span></span><br><span class="line">    <span class="comment"># ls[4]</span></span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    print(e)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>finally : try-except 구문 완료 후 실행</li>
+<li>raise : 에러를 발생시키는 예약어로 코드 실행이 중단됨</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">5</span>/<span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    print(e)</span><br><span class="line">    <span class="keyword">raise</span>(e)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>Q. 이자율</p>
+<ul>
+<li>이자율 입력시 1.03미만 또는 1.10 초과일 경우 메세지와 에러발생</li>
+<li><code>__str__</code> : 오류 메세지를 print문으로 출력할 때 호출되는 메서드<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LowInter</span><span class="params">(Exception)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"이자율을 1.03이상으로 설정"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HighInter</span><span class="params">(Exception)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"이자율을 1.10이하로 설정"</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Account</span>:</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, interest)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> interest &lt; <span class="number">1.03</span>:</span><br><span class="line">            <span class="keyword">raise</span> LowInter()</span><br><span class="line">        <span class="keyword">elif</span> interest &gt; <span class="number">1.10</span>:</span><br><span class="line">            <span class="keyword">raise</span> HighInter()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.interest = interest</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">disp</span><span class="params">(self)</span>:</span></span><br><span class="line">        interest = round((self.interest - <span class="number">1</span>)*<span class="number">100</span>, <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"계좌 설정 이자율은 &#123;&#125;%"</span>.format(interest)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Python/">Python</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/if/">if</a><a href="/tags/삼항연산/">삼항연산</a><a href="/tags/try/">try</a><a href="/tags/exception/">exception</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2019/09/17/02-operators/" title="02_operators" itemprop="url">02_operators</a>
   </h1>
   <p class="article-author">By
@@ -564,11 +696,11 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/Python/Numpy/" title="Numpy">Numpy<sup>2</sup></a></li>
+			<li><a href="/categories/Python/Numpy/" title="Numpy">Numpy<sup>3</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/Python/" title="Python">Python<sup>13</sup></a></li>
+			<li><a href="/categories/Python/" title="Python">Python<sup>14</sup></a></li>
 		  
 		
 		</ul>
@@ -581,7 +713,7 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/list-comprehension/" title="list comprehension">list comprehension<sup>1</sup></a></li>
+				<li><a href="/tags/lambda/" title="lambda">lambda<sup>1</sup></a></li>
 			
 		
 			
@@ -605,6 +737,22 @@
 			
 		
 			
+				<li><a href="/tags/for/" title="for">for<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/while/" title="while">while<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/break/" title="break">break<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/list-comprehension/" title="list comprehension">list comprehension<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/if/" title="if">if<sup>1</sup></a></li>
 			
 		
@@ -621,23 +769,7 @@
 			
 		
 			
-				<li><a href="/tags/for/" title="for">for<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/while/" title="while">while<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/break/" title="break">break<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/datatype/" title="datatype">datatype<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/lambda/" title="lambda">lambda<sup>1</sup></a></li>
 			
 		
 			
@@ -653,11 +785,11 @@
 			
 		
 			
-				<li><a href="/tags/module/" title="module">module<sup>1</sup></a></li>
+				<li><a href="/tags/pickle/" title="pickle">pickle<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/writefile/" title="writefile">writefile<sup>1</sup></a></li>
+				<li><a href="/tags/module/" title="module">module<sup>1</sup></a></li>
 			
 		
 		</ul>

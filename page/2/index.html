@@ -75,6 +75,198 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2019/09/27/08-Regex/" title="08_Regex" itemprop="url">08_Regex</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Lahongkkito" target="_blank" itemprop="author">Lahongkkito</a>
+		
+  <p class="article-time">
+    <time datetime="2019-09-26T23:28:15.000Z" itemprop="datePublished"> Published 2019-09-27</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="정규표현식"><a href="#정규표현식" class="headerlink" title="정규표현식"></a>정규표현식</h2><ul>
+<li>regular expression</li>
+<li>특정 패턴과 일치하는 문자열을 검색, 치환, 제거하는 기능 지원</li>
+<li>raw string : 문자열 앞에 r이 붙으면 구성된 그대로 문자열로 변환</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">'abcdef\n'</span> <span class="comment"># escapce 문자열</span></span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line">b = <span class="string">r'abcdef\n'</span></span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">abcdef</span><br><span class="line">abcdef\n</span><br></pre></td></tr></table></figure>
+
+<h3 id="pattern"><a href="#pattern" class="headerlink" title="pattern"></a>pattern</h3><ul>
+<li><p>기본 패턴    </p>
+<ul>
+<li><code>\</code>가 붙으면 스페셜한 의미가 없어짐</li>
+<li><code>\d</code> : 숫자 (\D: 숫자 외)</li>
+<li><code>\w</code> : 숫자, 문자, _ (\W : 문자, 숫자, _ 외)</li>
+<li><code>\s</code> : 공백문자 (\S : 공백문자 외)</li>
+<li><code>\t, \n, \r</code> : tab, newline, return</li>
+</ul>
+</li>
+<li><p>metacharacters (지정자)</p>
+<ul>
+<li><code>[]</code> : 문자 묶음, 내부의 메타 캐릭터 자체를 나타냄</li>
+<li>[abck] : a or b or c or k</li>
+<li>[abc.^] : a or b or c or . or ^</li>
+<li><code>[0-9]</code> : 모든 숫자</li>
+<li><code>[a-z]</code> : 모든 소문자</li>
+<li><code>[A-Z]</code> : 모든 대문자</li>
+<li><code>[a-zA-Z0-9]</code> : 모든 알파벳 문자 및 숫자</li>
+</ul>
+</li>
+<li><p>반복패턴</p>
+<ul>
+<li><p>반복 패턴의 경우 greedy하게 검색 함, 즉 가능한 많은 부분이 매칭되도록 함</p>
+</li>
+<li><p><code>^</code> : 문자열의 시작</p>
+</li>
+<li><p><code>$</code> : 문자열의 끝</p>
+</li>
+<li><p><code>-</code> : 범위</p>
+</li>
+<li><p><code>.</code> : 어떤 하나의 문자</p>
+</li>
+<li><p><code>?</code> : 0~1회</p>
+</li>
+<li><p><code>*</code> : 0회 이상</p>
+</li>
+<li><p><code>+</code> : 1회 이상</p>
+</li>
+<li><p><code>{m}</code> : m회</p>
+</li>
+<li><p><code>{m, n}</code> : m~n회 반복(<code>{m,n}?</code>로 사용하면 최소 m번만 매칭하면 만족)</p>
+</li>
+<li><p><code>()</code> : 그룹핑</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">m = re.search(<span class="string">r'(\w+)@(.+)'</span>, <span class="string">'lahongkkito@gmail.com'</span>)</span><br><span class="line">print(m.group(<span class="number">1</span>))</span><br><span class="line">print(m.group(<span class="number">2</span>))</span><br><span class="line">print(m.group(<span class="number">0</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lahongkkito</span><br><span class="line">gmail.com</span><br><span class="line">lahongkkito@gmail.com</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<h3 id="정규표현식-함수"><a href="#정규표현식-함수" class="headerlink" title="정규표현식 함수"></a>정규표현식 함수</h3><ul>
+<li><p>패턴을 찾지 못하면 None 반환</p>
+</li>
+<li><p><code>match</code> </p>
+<ul>
+<li>주어진 문자열의 시작부터 비교하여 패턴이 있는지 확인</li>
+<li>시작부터 해당 패턴이 존재하지 않다면 None 반환</li>
+<li>search와 유사</li>
+</ul>
+</li>
+<li><p><code>search</code> : 문자열에서 일치하는 가장 첫번째 패턴 찾기</p>
+</li>
+<li><p><code>findall</code> : 문자열에서 일치하는 모든 패턴 리스트 형태로 반환</p>
+</li>
+<li><p><code>split</code> : 문자열에서 특정 패턴으로 나누기</p>
+</li>
+<li><p><code>sub</code> </p>
+<ul>
+<li><p>특정패텬에 맞는 문자열 대체하기</p>
+</li>
+<li><p>결과를 문자열로 다시 반환</p>
+</li>
+<li><p>두번째 인자는 특정 문자열 또는 함수</p>
+</li>
+<li><p>count가 0인 경우는 전체를, 1이상이면 해당 숫자만큼 치환</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">re.sub(<span class="string">r'[\w-]+@[\w.]+'</span>, <span class="string">'joy'</span>, <span class="string">'happy@gmail.com great welcome@gmail.com nice thanks@gmail.com'</span>, count =<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;joy great joy nice thanks@gmail.com&apos;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>compile</code></p>
+<ul>
+<li><p>동일한 정규표현식을 매번 다시 쓰기 번거로움을 해결</p>
+</li>
+<li><p>compile로 해당표현식을 re.RegexObject 객체로 저장하여 사용가능</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">email_reg = re.compile(<span class="string">r'[\w-]+@[\w.]+'</span>)</span><br><span class="line">email_reg.search(<span class="string">'lahong lahongkkito@gmail.com lahongkkito'</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;re.Match object; span=(7, 28), match=&apos;lahongkkito@gmail.com&apos;&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<br>
+<br>
+
+<p>Q. 카드 번호 찾기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">comment = <span class="string">"저의 카드 번호는 1234-2331-1123-9485와 7384 1234 5432 1222와 73841234-5432 1222 입니다."</span></span><br></pre></td></tr></table></figure>
+
+<p>A.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">pattern = <span class="string">"([0-9]&#123;4&#125;)[- ]?([0-9]&#123;4&#125;)[- ]?([0-9]&#123;4&#125;)[- ]?([0-9]&#123;4&#125;)"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># print(re.findall(pattern, comment))</span></span><br><span class="line">re.sub(pattern, <span class="string">"\g&lt;1&gt;-\g&lt;2&gt;-\g&lt;3&gt;-****"</span>, comment)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;저의 카드 번호는 1234-2331-1123-****와 7384-1234-5432-****와 7384-1234-5432-**** 입니다.&apos;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>Q. 숫자로 바꾸기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">"안녕하세요, 저의 전화번호는 영일공-48구삼삼7이사 그리고 010사팔구삼삼구삼일 입니다. 둘중에 하나로 연락하세요"</span></span><br></pre></td></tr></table></figure>
+
+<p>A.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">p = <span class="string">"[0-9영공일이둘삼셋사넷오육칠팔구빵oO]&#123;3&#125;[- ]?[0-9영공일이둘삼셋사넷오육칠팔구빵oO]&#123;3,4&#125;[- ]?[0-9영공일이둘삼셋사넷오육칠팔구빵oO]&#123;4&#125;"</span></span><br><span class="line"></span><br><span class="line">dic = &#123;</span><br><span class="line">    <span class="string">"영"</span>:<span class="number">0</span>, <span class="string">"공"</span>:<span class="number">0</span>, <span class="string">"일"</span>:<span class="number">1</span>, <span class="string">"이"</span>:<span class="number">2</span>, <span class="string">"둘"</span>:<span class="number">2</span>, <span class="string">"삼"</span>:<span class="number">3</span>, <span class="string">"셋"</span>:<span class="number">3</span>, <span class="string">"사"</span>:<span class="number">4</span>, <span class="string">"넷"</span>:<span class="number">4</span>, </span><br><span class="line">    <span class="string">"오"</span>:<span class="number">5</span>, <span class="string">"육"</span>:<span class="number">6</span>, <span class="string">"칠"</span>:<span class="number">7</span>, <span class="string">"팔"</span>:<span class="number">8</span>, <span class="string">"구"</span>:<span class="number">9</span>, <span class="string">"빵"</span>:<span class="number">0</span>, <span class="string">"o"</span>:<span class="number">0</span>, <span class="string">"O"</span>:<span class="number">0</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">numbers = re.findall(p, s)</span><br><span class="line">result = []</span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> numbers:</span><br><span class="line">    <span class="keyword">for</span> key, value <span class="keyword">in</span> dic.items():</span><br><span class="line">        num = num.replace(key, str(value))</span><br><span class="line">    num = num.replace(<span class="string">"-"</span>, <span class="string">""</span>)</span><br><span class="line">    result.append(num)</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&apos;0104833724&apos;, &apos;01048952339&apos;]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>Q. 올바른 웹페이지 주소 찾기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">webs = [<span class="string">'http://www.test.co.kr'</span>, </span><br><span class="line">        <span class="string">'https://www.test1.com'</span>, </span><br><span class="line">        <span class="string">'http://www.test.com'</span>, </span><br><span class="line">        <span class="string">'ftp://www.test.com'</span>, </span><br><span class="line">        <span class="string">'http:://www.test.com'</span>,</span><br><span class="line">       <span class="string">'htp://www.test.com'</span>,</span><br><span class="line">       <span class="string">'http://www.google.com'</span>, </span><br><span class="line">       <span class="string">'https://www.homepage.com.'</span>]</span><br></pre></td></tr></table></figure>
+
+<p>A.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">web_reg = re.compile(<span class="string">r'https?://[\w.]+\w+$'</span>)</span><br><span class="line">list(map(<span class="keyword">lambda</span> w:web_reg.search(w) != <span class="literal">None</span>, webs))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[True, True, True, False, False, False, True, False]</span><br></pre></td></tr></table></figure>
+
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Python/">Python</a>
+</div>
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2019/09/26/07-class/" title="07_Class" itemprop="url">07_Class</a>
   </h1>
   <p class="article-author">By
@@ -699,138 +891,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2019/09/19/03-conditions/" title="03_conditions" itemprop="url">03_conditions</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Lahongkkito" target="_blank" itemprop="author">Lahongkkito</a>
-		
-  <p class="article-time">
-    <time datetime="2019-09-19T06:57:42.000Z" itemprop="datePublished"> Published 2019-09-19</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="조건문"><a href="#조건문" class="headerlink" title="조건문"></a>조건문</h2><ul>
-<li>if, elif, else</li>
-<li>indentation(들여쓰기) 사용</li>
-<li>nesting(반복 중첩) 가능 (비권장)</li>
-<li>boolean으로 표현<ul>
-<li>논리식 AND, OR, NOT 사용 가능 <ul>
-<li>우선순위 NOT &gt; AND &gt; OR</li>
-</ul>
-</li>
-<li>예외 : 기본 타입 사용 가능<ul>
-<li>False 간주 값 (각 타입 기본값)<ul>
-<li>None, 0, 0.0, “, (), [], {}, set()</li>
-<li>이 외 모두 True<br>
-
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>Q. 숫자를 입력받아 아래 조건에 맞게 결과를 출력하세요.</p>
-<ul>
-<li>3의 배수이면 fizz</li>
-<li>5의 배수이면 buzz</li>
-<li>15의 배수이면 fizzbuzz</li>
-<li>이 외의 경우 입력받은 숫자</li>
-</ul>
-<p>A.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">num = int(input(<span class="string">"Insert number: "</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> num % <span class="number">15</span> ==<span class="number">0</span> :</span><br><span class="line">    print(<span class="string">"fizzbuzz"</span>)</span><br><span class="line"><span class="keyword">elif</span> num % <span class="number">5</span> ==<span class="number">0</span> :</span><br><span class="line">    print(<span class="string">"buzz"</span>)</span><br><span class="line"><span class="keyword">elif</span> num % <span class="number">3</span> ==<span class="number">0</span> :</span><br><span class="line">    print(<span class="string">"fizz"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(num)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> num % <span class="number">3</span> ==<span class="number">0</span> :</span><br><span class="line">    print(<span class="string">"fizz"</span>, end=<span class="string">""</span>)</span><br><span class="line"><span class="keyword">elif</span> num % <span class="number">5</span> ==<span class="number">0</span> :</span><br><span class="line">    print(<span class="string">"buzz"</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span>((num % <span class="number">3</span> ==<span class="number">0</span>) <span class="keyword">or</span> (num % <span class="number">5</span> ==<span class="number">0</span>)):</span><br><span class="line">    print(num)</span><br></pre></td></tr></table></figure>
-
-<br>
-
-<h3 id="삼항연산"><a href="#삼항연산" class="headerlink" title="삼항연산"></a>삼항연산</h3><ul>
-<li><p>condition이 True이면 A를 리터, False니면 B를 리턴</p>
-<p>  <code>A if (condition) else B</code></p>
-</li>
-</ul>
-<br>
-
-<p>Q. 숫자를 입력받아 짝수이면 “even”, 홀수이면 “odd”를 출력하세요.</p>
-<p>A. </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">num = int(input(<span class="string">"Insert number: "</span>))</span><br><span class="line"><span class="string">"even"</span> <span class="keyword">if</span> num % <span class="number">2</span> == <span class="number">0</span> <span class="keyword">else</span> <span class="string">"odd"</span></span><br></pre></td></tr></table></figure>
-
-<br>
-
-
-<h2 id="예외처리"><a href="#예외처리" class="headerlink" title="예외처리"></a>예외처리</h2><ul>
-<li>try, except</li>
-<li>예외 변수 지정</li>
-<li>모든 예외 검출</li>
-<li>Exception 클래스를 상속</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 5/0</span></span><br><span class="line">    <span class="comment"># ls[4]</span></span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    print(e)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>finally : try-except 구문 완료 후 실행</li>
-<li>raise : 에러를 발생시키는 예약어로 코드 실행이 중단됨</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">5</span>/<span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    print(e)</span><br><span class="line">    <span class="keyword">raise</span>(e)</span><br></pre></td></tr></table></figure>
-
-<br>
-
-<p>Q. 이자율</p>
-<ul>
-<li>이자율 입력시 1.03미만 또는 1.10 초과일 경우 메세지와 에러발생</li>
-<li><code>__str__</code> : 오류 메세지를 print문으로 출력할 때 호출되는 메서드<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LowInter</span><span class="params">(Exception)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"이자율을 1.03이상으로 설정"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HighInter</span><span class="params">(Exception)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"이자율을 1.10이하로 설정"</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Account</span>:</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, interest)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> interest &lt; <span class="number">1.03</span>:</span><br><span class="line">            <span class="keyword">raise</span> LowInter()</span><br><span class="line">        <span class="keyword">elif</span> interest &gt; <span class="number">1.10</span>:</span><br><span class="line">            <span class="keyword">raise</span> HighInter()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.interest = interest</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">disp</span><span class="params">(self)</span>:</span></span><br><span class="line">        interest = round((self.interest - <span class="number">1</span>)*<span class="number">100</span>, <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"계좌 설정 이자율은 &#123;&#125;%"</span>.format(interest)</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Python/">Python</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/if/">if</a><a href="/tags/삼항연산/">삼항연산</a><a href="/tags/try/">try</a><a href="/tags/exception/">exception</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next<span></span></a>
@@ -858,11 +918,11 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/Python/Numpy/" title="Numpy">Numpy<sup>2</sup></a></li>
+			<li><a href="/categories/Python/Numpy/" title="Numpy">Numpy<sup>3</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/Python/" title="Python">Python<sup>13</sup></a></li>
+			<li><a href="/categories/Python/" title="Python">Python<sup>14</sup></a></li>
 		  
 		
 		</ul>
@@ -875,7 +935,7 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/list-comprehension/" title="list comprehension">list comprehension<sup>1</sup></a></li>
+				<li><a href="/tags/lambda/" title="lambda">lambda<sup>1</sup></a></li>
 			
 		
 			
@@ -899,6 +959,22 @@
 			
 		
 			
+				<li><a href="/tags/for/" title="for">for<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/while/" title="while">while<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/break/" title="break">break<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/list-comprehension/" title="list comprehension">list comprehension<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/if/" title="if">if<sup>1</sup></a></li>
 			
 		
@@ -915,23 +991,7 @@
 			
 		
 			
-				<li><a href="/tags/for/" title="for">for<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/while/" title="while">while<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/break/" title="break">break<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/datatype/" title="datatype">datatype<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/lambda/" title="lambda">lambda<sup>1</sup></a></li>
 			
 		
 			
@@ -947,11 +1007,11 @@
 			
 		
 			
-				<li><a href="/tags/module/" title="module">module<sup>1</sup></a></li>
+				<li><a href="/tags/pickle/" title="pickle">pickle<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/writefile/" title="writefile">writefile<sup>1</sup></a></li>
+				<li><a href="/tags/module/" title="module">module<sup>1</sup></a></li>
 			
 		
 		</ul>
